@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.silancarapps.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_pendaftaranKKFragment"
+            app:destination="@id/pendaftaranKKFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pendaftaranKTPFragment"
+            app:destination="@id/pendaftaranKTPFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pendaftaranKKFragment"
+        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranKKFragment"
+        android:label="Pendaftaran KK"
+        tools:layout="@layout/fragment_pendaftaran_k_k" />
+
+    <fragment
+        android:id="@+id/pendaftaranKTPFragment"
+        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranKTPFragment"
+        android:label="Pendaftaran KTP"
+        tools:layout="@layout/fragment_pendaftaran_k_t_p" />
+
+    <fragment
+        android:id="@+id/riwayatFragment"
+        android:name="com.example.silancarapps.ui.riwayat.RiwayatFragment"
+        android:label="Riwayat"
+        tools:layout="@layout/fragment_riwayat" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.silancarapps.ui.profile.ProfileFragment"
+        android:label="Profil"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.silancarapps.ui.settings.SettingsFragment"
+        android:label="Pengaturan"
+        tools:layout="@layout/fragment_settings" />
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.silancarapps.ui.auth.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="com.example.silancarapps.ui.splash.SplashActivity"
+        android:label="activity_splash"
+        tools:layout="@layout/activity_splash" />
+
+</navigation>

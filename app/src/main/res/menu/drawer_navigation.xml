@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/homeFragment"
+            android:title="@string/home_fragment" />
+    </group>
+
+    <item android:title="Pelayanan SiLancar">
+        <menu>
+            <item
+                android:id="@+id/pendaftaranKK"
+                android:title="Pendaftaran KK" />
+
+            <item
+                android:id="@+id/pendaftaranKTP"
+                android:title="Pendaftaran KTP" />
+
+            <item
+                android:id="@+id/pendaftaranAktaLahir"
+                android:title="Pendaftaran Akta Kelahiran" />
+
+            <item
+            android:id="@+id/pendaftaranAktaKematian"
+            android:title="Pendaftaran Akta Kematian" />"
+        </menu>
+    </item>
+
+</menu>

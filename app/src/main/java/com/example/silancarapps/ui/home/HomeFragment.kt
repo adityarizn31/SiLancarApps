@@ -1,0 +1,65 @@
+package com.example.silancarapps.ui.home
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.silancarapps.R
+import com.example.silancarapps.adapter.ListPelayananAdapter
+import com.example.silancarapps.data.model.Pelayanan
+import com.example.silancarapps.databinding.FragmentHomeBinding
+
+class HomeFragment : Fragment() {
+
+    private var _binding : FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupRecyclerView()
+        
+        binding.btnAjukan.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_pendaftaranKKFragment)
+        }
+    }
+
+    private fun setupRecyclerView() {
+        val listPelayanan = listOf(
+            Pelayanan("Pendaftaran KK", R.drawable.ic_launcher_foreground),
+            Pelayanan("Pendaftaran KTP", R.drawable.ic_launcher_foreground),
+            Pelayanan("Akta Kelahiran", R.drawable.ic_launcher_foreground),
+            Pelayanan("Akta Kematian", R.drawable.ic_launcher_foreground)
+        )
+
+        val adapter = ListPelayananAdapter(listPelayanan) { position ->
+            when(position) {
+                0 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranKKFragment)
+                1 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranKTPFragment)
+            }
+        }
+
+        binding.rvMenu.apply {
+            layoutManager = GridLayoutManager(requireContext(), 2)
+            this.adapter = adapter
+            isNestedScrollingEnabled = false
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+}
