@@ -44,6 +44,5 @@ class RiwayatKTPAdapter (
         list = newList
         notifyDataSetChanged()
     }
-    }
 
 }

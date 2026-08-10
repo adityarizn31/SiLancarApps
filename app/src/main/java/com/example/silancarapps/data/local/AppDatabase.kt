@@ -4,17 +4,21 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.silancarapps.data.local.dao.PengajuanAktaKelahiranDao
+import com.example.silancarapps.data.local.dao.PengajuanAktaKematianDao
+import com.example.silancarapps.data.local.dao.PengajuanKKDao
+import com.example.silancarapps.data.local.dao.PengajuanKTPDao
 
 @Database(entities = [PengajuanKK::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun pengajuanDao(): PengajuanDao
+    abstract fun pengajuanKKDao(): PengajuanKKDao
 
-    abstract fun pengajuanKTPDao(): PengajuanDaoKTP
+    abstract fun pengajuanKTPDao(): PengajuanKTPDao
 
-    abstract fun pengajuanAktaKelahiranDao(): PengajuanDaoAktaKelahiran
+    abstract fun pengajuanAktaKelahiranDao(): PengajuanAktaKelahiranDao
 
-    abstract fun pengajuanAktaKematianDao(): PengajuanDaoAktaKematian
+    abstract fun pengajuanAktaKematianDao(): PengajuanAktaKematianDao
 
     companion object {
         @Volatile

@@ -14,7 +14,7 @@ import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.databinding.FragmentRiwayatBinding
 import kotlinx.coroutines.launch
 
-class RiwayatFragment : Fragment() {
+class RiwayatKKFragment : Fragment() {
 
     private var _binding: FragmentRiwayatBinding? = null
     private val binding get() = _binding!!
@@ -41,14 +41,14 @@ class RiwayatFragment : Fragment() {
         }
         binding.rvRiwayat.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            this.adapter = this@RiwayatFragment.adapter
+            this.adapter = this@RiwayatKKFragment.adapter
         }
     }
 
     private fun observeData() {
         val database = AppDatabase.getDatabase(requireContext())
         lifecycleScope.launch {
-            database.pengajuanDao().getAllPengajuan().collect { list ->
+            database.pengajuanKKDao().getAllPengajuanKK().collect { list ->
                 if (list.isEmpty()) {
                     binding.tvEmpty.visibility = View.VISIBLE
                     binding.rvRiwayat.visibility = View.GONE
@@ -64,7 +64,7 @@ class RiwayatFragment : Fragment() {
     private fun deletePengajuan(pengajuan: PengajuanKK) {
         val database = AppDatabase.getDatabase(requireContext())
         lifecycleScope.launch {
-            database.pengajuanDao().deletePengajuan(pengajuan)
+            database.pengajuanKKDao().deletePengajuanKK(pengajuan)
             Toast.makeText(requireContext(), "Pengajuan dihapus", Toast.LENGTH_SHORT).show()
         }
     }

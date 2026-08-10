@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 data class PengajuanAktaKelahiran (
     @PrimaryKey(autoGenerate = true)
     val id : Int= 0,
+    val jenisLayanan : String,
     val nama : String,
     val nik : String,
     val noKK: String,

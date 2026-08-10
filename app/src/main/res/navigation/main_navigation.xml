@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/riwayatFragment"
-        android:name="com.example.silancarapps.ui.riwayat.RiwayatFragment"
+        android:name="com.example.silancarapps.ui.riwayat.RiwayatKKFragment"
         android:label="Riwayat"
         tools:layout="@layout/fragment_riwayat" />
 

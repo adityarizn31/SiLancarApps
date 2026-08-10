@@ -11,14 +11,14 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface PengajuanKKDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPengajuan(pengajuanKK: PengajuanKK)
+    suspend fun insertPengajuanKK(pengajuanKK: PengajuanKK)
 
     @Query("SELECT * FROM pengajuanKK ORDER BY tanggal DESC")
-    fun getAllPengajuan(): Flow<List<PengajuanKK>>
+    fun getAllPengajuanKK(): Flow<List<PengajuanKK>>
 
     @Query("SELECT * FROM pengajuanKK WHERE id = :id")
-    suspend fun getPengajuanById(id: Int): PengajuanKK?
+    suspend fun getPengajuanKKById(id: Int): PengajuanKK?
 
     @Delete
-    suspend fun deletePengajuan(pengajuanKK: PengajuanKK)
+    suspend fun deletePengajuanKK(pengajuanKK: PengajuanKK)
 }
