@@ -5,9 +5,16 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Pengajuan::class], version = 2, exportSchema = false)
+@Database(entities = [PengajuanKK::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
+
     abstract fun pengajuanDao(): PengajuanDao
+
+    abstract fun pengajuanKTPDao(): PengajuanDaoKTP
+
+    abstract fun pengajuanAktaKelahiranDao(): PengajuanDaoAktaKelahiran
+
+    abstract fun pengajuanAktaKematianDao(): PengajuanDaoAktaKematian
 
     companion object {
         @Volatile
@@ -20,7 +27,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "silancar_database"
                 )
-                .fallbackToDestructiveMigration() // Reset DB if schema changes
+                .fallbackToDestructiveMigration()
                 .build()
                 INSTANCE = instance
                 instance

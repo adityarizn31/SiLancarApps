@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.silancarapps.R
 import com.example.silancarapps.data.local.AppDatabase
-import com.example.silancarapps.data.local.Pengajuan
+import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.databinding.FragmentPendaftaranKKBinding
 import com.example.silancarapps.utils.ValidateKK
 import kotlinx.coroutines.launch
@@ -38,36 +38,44 @@ class PendaftaranKKFragment : Fragment() {
 
     private fun validateAndSubmit() {
         val nama = binding.edtNama.text.toString().trim()
-        val nik = binding.edtNik.text.toString().trim()
-        val noKK = binding.edtNoKK.text.toString().trim()
+        val nikSuami = binding.edtNikSuami.text.toString().trim()
+        val nikIstri = binding.edtNikIstri.text.toString().trim()
+        val noKKSuami = binding.edtNoKKSuami.text.toString().trim()
+        val noKKIstri = binding.edtNoKKIstri.text.toString().trim()
         val noHp = binding.edtNoHp.text.toString().trim()
         val alamat = binding.edtAlamat.text.toString().trim()
 
         val isNameValid = ValidateKK.isValidName(nama)
-        val isNikValid = ValidateKK.isValidNik(nik)
-        val isNoKkValid = ValidateKK.isValidNoKKLama(noKK)
+        val isNikSuamiValid = ValidateKK.isValidNikSuami(nikSuami)
+        val isNikIstriValid = ValidateKK.isValidNikIstri(nikIstri)
+        val isNoKKSuamiValid = ValidateKK.isValidNoKKSuami(noKKSuami)
+        val isNoKKIstriValid = ValidateKK.isValidNoKKIstri(noKKIstri)
         val isNoHpValid = ValidateKK.isValidNoHp(noHp)
         val isAlamatValid = ValidateKK.isValidAlamat(alamat)
 
-        if (!isNameValid || !isNikValid || !isNoKkValid || !isNoHpValid || !isAlamatValid) {
+        if (!isNameValid || !isNikSuamiValid || !isNikIstriValid || !isNoKKSuamiValid || !isNoKKIstriValid || !isNoHpValid || !isAlamatValid) {
             if (!isNameValid) binding.edtNama.error = "Nama tidak boleh kosong"
-            if (!isNikValid) binding.edtNik.error = "NIK harus 16 digit angka"
-            if (!isNoKkValid) binding.edtNoKK.error = "Nomor KK tidak boleh kosong"
+            if (!isNikSuamiValid) binding.edtNikSuami.error = "NIK Suami harus 16 digit angka"
+            if (!isNikIstriValid) binding.edtNikIstri.error = "NIK Istri harus 16 digit angka"
+            if (!isNoKKSuamiValid) binding.edtNoKKSuami.error = "No KK Suami tidak boleh kosong"
+            if (!isNoKKIstriValid) binding.edtNoKKIstri.error = "No KK Istri tidak boleh kosong"
             if (!isNoHpValid) binding.edtNoHp.error = "Nomor HP harus 12 digit angka"
             if (!isAlamatValid) binding.edtAlamat.error = "Alamat tidak boleh kosong"
             
             Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
         } else {
-            saveToDatabase(nama, nik, noKK, noHp, alamat)
+            saveToDatabase(nama, nikSuami, nikIstri, noKKSuami, noKKIstri, noHp, alamat)
         }
     }
 
-    private fun saveToDatabase(nama: String, nik: String, noKK: String, noHp: String, alamat: String) {
-        val pengajuan = Pengajuan(
+    private fun saveToDatabase(nama: String, nikSuami: String, nikIstri: String, noKKSuami: String, noKKIstri: String, noHp: String, alamat: String) {
+        val pengajuan = PengajuanKK(
             jenisLayanan = "Pendaftaran KK",
             nama = nama,
-            nik = nik,
-            noKK = noKK,
+            nikSuami = nikSuami,
+            nikIstri = nikIstri,
+            noKKSuami = noKKSuami,
+            noKKIstri = noKKIstri,
             noHp = noHp,
             alamat = alamat
         )

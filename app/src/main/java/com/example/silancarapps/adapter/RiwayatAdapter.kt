@@ -3,15 +3,15 @@ package com.example.silancarapps.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.silancarapps.data.local.Pengajuan
+import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.databinding.ItemRiwayatBinding
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
 class RiwayatAdapter(
-    private var list: List<Pengajuan>,
-    private val onDelete: (Pengajuan) -> Unit
+    private var list: List<PengajuanKK>,
+    private val onDelete: (PengajuanKK) -> Unit
 ) : RecyclerView.Adapter<RiwayatAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: ItemRiwayatBinding) : RecyclerView.ViewHolder(binding.root)
@@ -37,7 +37,7 @@ class RiwayatAdapter(
 
     override fun getItemCount(): Int = list.size
 
-    fun updateData(newList: List<Pengajuan>) {
+    fun updateData(newList: List<PengajuanKK>) {
         list = newList
         notifyDataSetChanged()
     }

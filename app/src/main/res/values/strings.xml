@@ -89,4 +89,8 @@
     <string name="riwayat">Riwayat</string>
     <string name="profil">Profil</string>
     <string name="pengaturan">Pengaturan</string>
+    <string name="nik_suami">NIK Suami</string>
+    <string name="nik_istri">NIK Istri</string>
+    <string name="nomor_kk_suami">No KK Suami\n</string>
+    <string name="nomor_kk_istri">No KK Istri\n</string>
 </resources>

@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.silancarapps.data.local.AppDatabase
 import com.example.silancarapps.adapter.RiwayatAdapter
+import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.databinding.FragmentRiwayatBinding
 import kotlinx.coroutines.launch
 
@@ -60,7 +61,7 @@ class RiwayatFragment : Fragment() {
         }
     }
 
-    private fun deletePengajuan(pengajuan: com.example.silancarapps.data.local.Pengajuan) {
+    private fun deletePengajuan(pengajuan: PengajuanKK) {
         val database = AppDatabase.getDatabase(requireContext())
         lifecycleScope.launch {
             database.pengajuanDao().deletePengajuan(pengajuan)

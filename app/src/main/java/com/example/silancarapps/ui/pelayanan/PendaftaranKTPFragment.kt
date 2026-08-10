@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.silancarapps.R
 import com.example.silancarapps.data.local.AppDatabase
-import com.example.silancarapps.data.local.Pengajuan
+import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.databinding.FragmentPendaftaranKTPBinding
 import com.example.silancarapps.utils.ValidateKK
 import kotlinx.coroutines.launch
@@ -43,7 +43,7 @@ class PendaftaranKTPFragment : Fragment() {
         val alamat = binding.edtAlamat.text.toString().trim()
 
         val isNameValid = ValidateKK.isValidName(nama)
-        val isNikValid = ValidateKK.isValidNik(nik)
+        val isNikValid = nik.length == 16 // Simple validation for KTP
         val isNoHpValid = ValidateKK.isValidNoHp(noHp)
         val isAlamatValid = ValidateKK.isValidAlamat(alamat)
 
@@ -60,11 +60,13 @@ class PendaftaranKTPFragment : Fragment() {
     }
 
     private fun saveToDatabase(nama: String, nik: String, noHp: String, alamat: String) {
-        val pengajuan = Pengajuan(
+        val pengajuan = PengajuanKK(
             jenisLayanan = "Pendaftaran KTP",
             nama = nama,
-            nik = nik,
-            noKK = "-", // KTP tidak butuh No KK Lama di form ini
+            nikSuami = nik, // Map generic NIK to nikSuami for now since using common model
+            nikIstri = "-",
+            noKKSuami = "-",
+            noKKIstri = "-",
             noHp = noHp,
             alamat = alamat
         )
