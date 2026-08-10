@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.silancarapps.data.local.AppDatabase
-import com.example.silancarapps.adapter.RiwayatAdapter
+import com.example.silancarapps.adapter.RiwayatKKAdapter
 import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.databinding.FragmentRiwayatBinding
 import kotlinx.coroutines.launch
@@ -18,7 +18,7 @@ class RiwayatFragment : Fragment() {
 
     private var _binding: FragmentRiwayatBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapter: RiwayatAdapter
+    private lateinit var adapter: RiwayatKKAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +36,7 @@ class RiwayatFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = RiwayatAdapter(emptyList()) { pengajuan ->
+        adapter = RiwayatKKAdapter(emptyList()) { pengajuan ->
             deletePengajuan(pengajuan)
         }
         binding.rvRiwayat.apply {

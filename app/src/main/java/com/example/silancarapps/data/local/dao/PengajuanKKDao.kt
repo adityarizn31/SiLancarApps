@@ -1,10 +1,11 @@
-package com.example.silancarapps.data.local
+package com.example.silancarapps.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Delete
+import com.example.silancarapps.data.local.PengajuanKK
 import kotlinx.coroutines.flow.Flow
 
 @Dao
