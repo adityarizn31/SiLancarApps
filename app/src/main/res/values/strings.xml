@@ -93,4 +93,8 @@
     <string name="nik_istri">NIK Istri</string>
     <string name="nomor_kk_suami">No KK Suami\n</string>
     <string name="nomor_kk_istri">No KK Istri\n</string>
+    <string name="nomor_KK">Nomor KK</string>
+    <string name="nomor_ktp_suami">No KTP Suami\n</string>
+    <string name="nomor_ktp_istri">No KTP Istri\n</string>
+    <string name="akta_kelahiran">AKTA KELAHIRAN</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.silancarapps.ui.auth
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import androidx.fragment.app.Fragment
@@ -8,12 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
+import com.example.silancarapps.data.local.User
 import com.example.silancarapps.databinding.FragmentFirstBinding
+import com.example.silancarapps.ui.viewmodel.AuthViewModel
+import com.example.silancarapps.ui.viewmodel.ViewModelFactory
 
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: AuthViewModel by viewModels {
+        ViewModelFactory.getInstance(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,8 +38,10 @@ class FirstFragment : Fragment() {
         }
 
         binding.tvLogin.setOnClickListener {
-            requireActivity().finish() // Kembali ke LoginActivity
+            requireActivity().finish()
         }
+
+        observeViewModel()
     }
 
     private fun validateRegister() {
@@ -47,29 +56,33 @@ class FirstFragment : Fragment() {
             binding.edtName.error = "Nama lengkap harus diisi"
             isValid = false
         }
-
-        if (email.isEmpty()) {
-            binding.edtEmail.error = "Email harus diisi"
-            isValid = false
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.edtEmail.error = "Format email tidak valid"
+        if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            binding.edtEmail.error = "Email tidak valid"
             isValid = false
         }
-
         if (password.length < 6) {
-            binding.edtPassword.error = "Kata sandi minimal 6 karakter"
+            binding.edtPassword.error = "Minimal 6 karakter"
             isValid = false
         }
-
         if (confirmPassword != password) {
-            binding.edtConfirmPassword.error = "Konfirmasi kata sandi tidak cocok"
+            binding.edtConfirmPassword.error = "Password tidak cocok"
             isValid = false
         }
 
         if (isValid) {
-            // Simulasi Registrasi Berhasil
-            Toast.makeText(requireContext(), "Pendaftaran Berhasil! Silakan Masuk", Toast.LENGTH_LONG).show()
-            requireActivity().finish() // Kembali ke LoginActivity setelah daftar
+            val user = User(email, name, password)
+            viewModel.register(user)
+        }
+    }
+
+    private fun observeViewModel() {
+        viewModel.registerResult.observe(viewLifecycleOwner) { isSuccess ->
+            if (isSuccess) {
+                Toast.makeText(requireContext(), "Daftar Berhasil! Silakan Masuk", Toast.LENGTH_LONG).show()
+                requireActivity().finish()
+            } else {
+                Toast.makeText(requireContext(), "Email sudah terdaftar", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

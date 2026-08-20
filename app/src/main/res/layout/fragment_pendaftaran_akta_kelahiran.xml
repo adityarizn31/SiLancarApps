@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F7FA"
     android:fillViewport="true"
-    tools:context=".ui.pelayanan.PendaftaranKTPFragment">
+    tools:context=".ui.pelayanan.PendaftaranAktaKelahiranFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pendaftaran"
-            android:textColor="@color/primary"
+            android:textColor="#1565C0"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -26,8 +26,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="@string/kartu_tanda_penduduk"
-            android:textColor="@color/text_primary"
+            android:text="@string/akta_kelahiran"
+            android:textColor="#212121"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -36,14 +36,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="@string/lengkapi"
-            android:textColor="@color/text_secondary"
+            android:textColor="#757575"
             android:textSize="14sp" />
 
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.SiLancar.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,7 +58,7 @@
                     android:text="@string/data_pemohon"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_primary"/>
+                    android:textColor="#424242"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -99,7 +100,37 @@
                         android:id="@+id/edtNoKK"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="phone" />
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:hint="@string/nik_suami">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtNik_suami"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:hint="@string/nik_istri">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtNik_istri"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -141,7 +172,6 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnKirim"
-            style="@style/Widget.SiLancar.Button.Rounded"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="24dp"
@@ -149,7 +179,8 @@
             android:text="@string/kirim_pengajuan"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            app:cornerRadius="12dp" />
 
     </LinearLayout>
 

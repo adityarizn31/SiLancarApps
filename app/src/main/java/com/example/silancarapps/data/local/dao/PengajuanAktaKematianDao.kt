@@ -14,7 +14,7 @@ interface PengajuanAktaKematianDao {
     suspend fun insertPengajuanAktaKematina(pengajuanAktaKematian: PengajuanAktaKematian)
 
     @Query("SELECT * FROM pengajuanAktaKematian ORDER BY tanggal DESC")
-    suspend fun getAllPengajuanAktaKematian(): Flow<List<PengajuanAktaKematian>>
+    fun getAllPengajuanAktaKematian(): Flow<List<PengajuanAktaKematian>>
 
     @Query("SELECT * FROM pengajuanAktaKematian WHERE id = :id")
     suspend fun getPengajuanAktaKematianById(id: Int): PengajuanAktaKematian

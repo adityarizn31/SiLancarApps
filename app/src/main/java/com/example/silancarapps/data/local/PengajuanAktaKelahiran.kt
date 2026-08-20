@@ -13,7 +13,7 @@ data class PengajuanAktaKelahiran (
     val noKK: String,
     val noKTPSuami: String,
     val noKTPIstri: String,
-    val bukuNikah: String,
+    val noHp : String,
     val alamat : String,
     val status : String = "Menunggu",
     val tanggal : Long = System.currentTimeMillis()

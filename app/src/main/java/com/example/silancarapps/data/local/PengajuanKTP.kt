@@ -10,6 +10,7 @@ data class PengajuanKTP (
     val jenisLayanan : String,
     val nama : String,
     val nik : String,
+    val noKK : String,
     val noHp : String,
     val alamat : String,
     val status : String = "Menunggu",

@@ -6,19 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.silancarapps.R
-import com.example.silancarapps.data.local.AppDatabase
 import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.databinding.FragmentPendaftaranKKBinding
+import com.example.silancarapps.ui.viewmodel.PengajuanViewModel
+import com.example.silancarapps.ui.viewmodel.ViewModelFactory
 import com.example.silancarapps.utils.ValidateKK
-import kotlinx.coroutines.launch
 
 class PendaftaranKKFragment : Fragment() {
 
     private var _binding : FragmentPendaftaranKKBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: PengajuanViewModel by viewModels {
+        ViewModelFactory.getInstance(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,33 +68,20 @@ class PendaftaranKKFragment : Fragment() {
             
             Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
         } else {
-            saveToDatabase(nama, nikSuami, nikIstri, noKKSuami, noKKIstri, noHp, alamat)
-        }
-    }
-
-    private fun saveToDatabase(nama: String, nikSuami: String, nikIstri: String, noKKSuami: String, noKKIstri: String, noHp: String, alamat: String) {
-        val pengajuan = PengajuanKK(
-            jenisLayanan = "Pendaftaran KK",
-            nama = nama,
-            nikSuami = nikSuami,
-            nikIstri = nikIstri,
-            noKKSuami = noKKSuami,
-            noKKIstri = noKKIstri,
-            noHp = noHp,
-            alamat = alamat
-        )
-
-        val database = AppDatabase.getDatabase(requireContext())
-        val dao = database.pengajuanDao()
-
-        viewLifecycleOwner.lifecycleScope.launch {
-            try {
-                dao.insertPengajuan(pengajuan)
-                Toast.makeText(requireContext(), getString(R.string.pengajuan_berhasil), Toast.LENGTH_LONG).show()
-                findNavController().popBackStack()
-            } catch (e: Exception) {
-                Toast.makeText(requireContext(), "Gagal menyimpan data: ${e.message}", Toast.LENGTH_SHORT).show()
-            }
+            val pengajuan = PengajuanKK(
+                jenisLayanan = "Pendaftaran KK",
+                nama = nama,
+                nikSuami = nikSuami,
+                nikIstri = nikIstri,
+                noKKSuami = noKKSuami,
+                noKKIstri = noKKIstri,
+                noHp = noHp,
+                alamat = alamat
+            )
+            
+            viewModel.insertKK(pengajuan)
+            Toast.makeText(requireContext(), getString(R.string.pengajuan_berhasil), Toast.LENGTH_LONG).show()
+            findNavController().popBackStack()
         }
     }
 
