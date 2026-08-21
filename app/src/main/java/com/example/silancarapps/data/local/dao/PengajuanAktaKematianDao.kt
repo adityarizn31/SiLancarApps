@@ -20,5 +20,5 @@ interface PengajuanAktaKematianDao {
     suspend fun getPengajuanAktaKematianById(id: Int): PengajuanAktaKematian
 
     @Delete
-    suspend fun deletePengajuan(pengajuanAktaKematian: PengajuanAktaKematian)
+    suspend fun deletePengajuanAktaKematian(pengajuanAktaKematian: PengajuanAktaKematian)
 }

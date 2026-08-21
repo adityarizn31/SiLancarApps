@@ -20,7 +20,7 @@ interface PengajuanKTPDao {
     suspend fun getPengajuanKTPById(id: Int): PengajuanKTP?
 
     @Delete
-    suspend fun deletePengajuan(pengajuanKTP: PengajuanKTP)
+    suspend fun deletePengajuanKTP(pengajuanKTP: PengajuanKTP)
 }
 
 

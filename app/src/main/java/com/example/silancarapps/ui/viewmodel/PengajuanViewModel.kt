@@ -17,33 +17,51 @@ class PengajuanViewModel(private val repository: PengajuanRepository) : ViewMode
     val allAktaKelahiran: Flow<List<PengajuanAktaKelahiran>> = repository.getAllAktaKelahiran()
     val allAktaKematian: Flow<List<PengajuanAktaKematian>> = repository.getAllAktaKematian()
 
-    fun insertKK(pengajuan: PengajuanKK) {
+    fun insertKK(pengajuanInsertKK: PengajuanKK) {
         viewModelScope.launch {
-            repository.insertKK(pengajuan)
+            repository.insertKK(pengajuanInsertKK)
         }
     }
 
-    fun deleteKK(pengajuan: PengajuanKK) {
+    fun deleteKK(pengajuanDeleteKK: PengajuanKK) {
         viewModelScope.launch {
-            repository.deleteKK(pengajuan)
+            repository.deleteKK(pengajuanDeleteKK)
         }
     }
 
-    fun insertKTP(pengajuan: PengajuanKTP) {
+    fun insertKTP(pengajuanInsertKTP: PengajuanKTP) {
         viewModelScope.launch {
-            repository.insertKTP(pengajuan)
+            repository.insertKTP(pengajuanInsertKTP)
         }
     }
 
-    fun insertAktaKelahiran(pengajuan: PengajuanAktaKelahiran) {
+    fun deleteKTP(pengajuanDeleteKTP : PengajuanKTP) {
         viewModelScope.launch {
-            repository.insertAktaKelahiran(pengajuan)
+            repository.deleteKTP(pengajuanDeleteKTP)
         }
     }
 
-    fun insertAktaKematian(pengajuan: PengajuanAktaKematian) {
+    fun insertAktaKelahiran(pengajuanAktaKelahiran: PengajuanAktaKelahiran) {
         viewModelScope.launch {
-            repository.insertAktaKematian(pengajuan)
+            repository.insertAktaKelahiran(pengajuanAktaKelahiran)
+        }
+    }
+
+    fun deleteAktaKelahiran(pengajuanDeleteAktaKelahiran : PengajuanAktaKelahiran) {
+        viewModelScope.launch {
+            repository.deleteAktaKelahiran(pengajuanDeleteAktaKelahiran)
+        }
+    }
+
+    fun insertAktaKematian(pengajuanAktaKematian: PengajuanAktaKematian) {
+        viewModelScope.launch {
+            repository.insertAktaKematian(pengajuanAktaKematian)
+        }
+    }
+
+    fun deleteAktaKematian(pengajuanAktaKematian: PengajuanAktaKematian) {
+        viewModelScope.launch {
+            repository.deleteAktaKematian(pengajuanAktaKematian)
         }
     }
 }

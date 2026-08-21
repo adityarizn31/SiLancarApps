@@ -22,15 +22,19 @@ class PengajuanRepository(
 
     // KTP Operations
     fun getAllPengajuanKTP(): Flow<List<PengajuanKTP>> = ktpDao.getAllPengajuanKTP()
-    suspend fun insertKTP(pengajuan: PengajuanKTP) = ktpDao.insertPengajuanKTP(pengajuan)
+    suspend fun insertKTP(pengajuanInsertKTP: PengajuanKTP) = ktpDao.insertPengajuanKTP(pengajuanInsertKTP)
+    suspend fun deleteKTP(pengajuanKTP: PengajuanKTP) = ktpDao.deletePengajuanKTP(pengajuanKTP)
 
     // Akta Kelahiran Operations
     fun getAllAktaKelahiran(): Flow<List<PengajuanAktaKelahiran>> = aktaKelahiranDao.getAllPengajuanAktaKelahiran()
-    suspend fun insertAktaKelahiran(pengajuan: PengajuanAktaKelahiran) = aktaKelahiranDao.insertPengajuanAktaKelahiran(pengajuan)
+    suspend fun insertAktaKelahiran(pengajuanAktaKelahiran: PengajuanAktaKelahiran) = aktaKelahiranDao.insertPengajuanAktaKelahiran(pengajuanAktaKelahiran)
+
+    suspend fun deleteAktaKelahiran(pengajuanAktaKelahiran : PengajuanAktaKelahiran) = aktaKelahiranDao.deletePengajuanAktaKelahiran(pengajuanAktaKelahiran)
 
     // Akta Kematian Operations
     fun getAllAktaKematian(): Flow<List<PengajuanAktaKematian>> = aktaKematianDao.getAllPengajuanAktaKematian()
-    suspend fun insertAktaKematian(pengajuan: PengajuanAktaKematian) = aktaKematianDao.insertPengajuanAktaKematina(pengajuan)
+    suspend fun insertAktaKematian(pengajuanAktaKematian: PengajuanAktaKematian) = aktaKematianDao.insertPengajuanAktaKematina(pengajuanAktaKematian)
+    suspend fun deleteAktaKematian(pengajuanAktaKematian : PengajuanAktaKematian) = aktaKematianDao.deletePengajuanAktaKematian(pengajuanAktaKematian)
 
     // Auth Operations
     suspend fun registerUser(user: User) = userDao.registerUser(user)
