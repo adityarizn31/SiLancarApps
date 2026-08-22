@@ -12,10 +12,12 @@ import com.example.silancarapps.MainActivity
 import com.example.silancarapps.databinding.ActivityLoginBinding
 import com.example.silancarapps.ui.viewmodel.AuthViewModel
 import com.example.silancarapps.ui.viewmodel.ViewModelFactory
+import com.example.silancarapps.utils.SessionManager
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var sessionManager: SessionManager
     private val viewModel: AuthViewModel by viewModels {
         ViewModelFactory.getInstance(this)
     }
@@ -26,6 +28,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
+        sessionManager = SessionManager(this)
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -64,6 +68,9 @@ class LoginActivity : AppCompatActivity() {
         viewModel.loginUser.observe(this) { user ->
             if (user != null) {
                 if (user.password == binding.edtPassword.text.toString().trim()) {
+                    // Simpan sesi login
+                    sessionManager.saveSession(user.nama, user.email)
+
                     Toast.makeText(this, "Login Berhasil, Halo ${user.nama}", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)

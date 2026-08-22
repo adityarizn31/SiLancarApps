@@ -24,16 +24,14 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/circle_background"
-                android:backgroundTint="@color/accent_blue" />
+                android:background="@drawable/circle_background" />
 
             <ImageView
                 android:id="@+id/imgPelayanan"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_foreground"
-                app:tint="@color/primary" />
+                android:src="@drawable/ic_launcher_foreground" />
         </FrameLayout>
 
         <TextView

@@ -16,6 +16,18 @@
         <action
             android:id="@+id/action_homeFragment_to_pendaftaranKTPFragment"
             app:destination="@id/pendaftaranKTPFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pendaftaranAktaKelahiranFragment"
+            app:destination="@id/pendaftaranAktaKelahiranFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_registerActivity"
+            app:destination="@id/registerActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_pendaftaranAktaKematianFragment"
+            app:destination="@id/pendaftaranAktaKematianFragment" />
     </fragment>
 
     <fragment
@@ -59,5 +71,20 @@
         android:name="com.example.silancarapps.ui.splash.SplashActivity"
         android:label="activity_splash"
         tools:layout="@layout/activity_splash" />
+    <fragment
+        android:id="@+id/pendaftaranAktaKelahiranFragment"
+        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranAktaKelahiranFragment"
+        android:label="fragment_pendaftaran_akta_kelahiran"
+        tools:layout="@layout/fragment_pendaftaran_akta_kelahiran" />
+    <activity
+        android:id="@+id/registerActivity"
+        android:name="com.example.silancarapps.ui.auth.RegisterActivity"
+        android:label="activity_register"
+        tools:layout="@layout/activity_register" />
+    <fragment
+        android:id="@+id/pendaftaranAktaKematianFragment"
+        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranAktaKematianFragment"
+        android:label="fragment_pendaftaran_akta_kematian"
+        tools:layout="@layout/fragment_pendaftaran_akta_kematian" />
 
 </navigation>

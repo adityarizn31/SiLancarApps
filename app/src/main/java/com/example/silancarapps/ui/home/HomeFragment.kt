@@ -11,11 +11,13 @@ import com.example.silancarapps.R
 import com.example.silancarapps.adapter.ListPelayananAdapter
 import com.example.silancarapps.data.model.Pelayanan
 import com.example.silancarapps.databinding.FragmentHomeBinding
+import com.example.silancarapps.utils.SessionManager
 
 class HomeFragment : Fragment() {
 
     private var _binding : FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +29,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        
+        sessionManager = SessionManager(requireContext())
+        
+        setupHeader()
         setupRecyclerView()
         
         binding.btnAjukan.setOnClickListener {
@@ -35,18 +40,25 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun setupHeader() {
+        val userName = sessionManager.getUserName()
+        binding.txtHello.text = "Halo $userName 👋"
+    }
+
     private fun setupRecyclerView() {
         val listPelayanan = listOf(
-            Pelayanan("Pendaftaran KK", R.drawable.ic_launcher_foreground),
-            Pelayanan("Pendaftaran KTP", R.drawable.ic_launcher_foreground),
-            Pelayanan("Akta Kelahiran", R.drawable.ic_launcher_foreground),
-            Pelayanan("Akta Kematian", R.drawable.ic_launcher_foreground)
+            Pelayanan("Kartu Keluarga", R.drawable.ic_kartukeluarga),
+            Pelayanan("Kartu Tanda Penduduk", R.drawable.ic_kartutandapenduduk),
+            Pelayanan("Akta Kelahiran", R.drawable.ic_aktakelahiran),
+            Pelayanan("Akta Kematian", R.drawable.ic_aktakematian)
         )
 
         val adapter = ListPelayananAdapter(listPelayanan) { position ->
             when(position) {
                 0 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranKKFragment)
                 1 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranKTPFragment)
+                2 -> findNavController().navigate(R.id.pendaftaranAktaKelahiranFragment)
+                3 -> findNavController().navigate(R.id.pendaftaranAktaKematianFragment)
             }
         }
 
