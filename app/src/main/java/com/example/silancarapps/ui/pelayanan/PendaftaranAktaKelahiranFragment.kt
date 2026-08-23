@@ -18,7 +18,6 @@ class PendaftaranAktaKelahiranFragment : Fragment() {
 
     private var _binding : FragmentPendaftaranAktaKelahiranBinding? = null
     private val binding get() = _binding!!
-
     private val viewModel : PengajuanViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }

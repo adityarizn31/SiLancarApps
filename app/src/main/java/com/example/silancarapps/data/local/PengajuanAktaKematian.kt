@@ -8,13 +8,17 @@ data class PengajuanAktaKematian (
     @PrimaryKey(autoGenerate = true)
     val id : Int= 0,
     val jenisLayanan : String,
-    val nama : String,
-    val nik : String,
-    val noKK: String,
-    val noKTP: String,
-    val noKTPSaksi: String,
-    val noAkta: String,
-    val alamat : String,
+
+    val namaAlm : String,
+    val nikAlm : String,
+    val noKKAlm: String,
+    val noAktaAlm: String,
+
+    val nameSaksi : String,
+    val nikSaksi: String,
+    val noHpSaksi : String,
+    val alamatSaksi : String,
+
     val status : String = "Menunggu",
     val tanggal : Long = System.currentTimeMillis()
 )

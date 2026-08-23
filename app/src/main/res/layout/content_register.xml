@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/imgSilancar"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_marginTop="32dp"
-        android:src="@drawable/silancar"
+        android:src="@drawable/ic_silancar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

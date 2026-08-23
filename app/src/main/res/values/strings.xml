@@ -97,4 +97,14 @@
     <string name="nomor_ktp_suami">No KTP Suami\n</string>
     <string name="nomor_ktp_istri">No KTP Istri\n</string>
     <string name="akta_kelahiran">AKTA KELAHIRAN</string>
+    <string name="akta_kematian">AKTA KEMATIAN</string>
+    <string name="nik_saksi">NIK Saksi\n</string>
+    <string name="nik_alm">NIK Almarhum</string>
+    <string name="nomor_KK_alm">No KK Almarhum</string>
+    <string name="nomor_aktalahir_alm">No Akta Lahir Almarhum\n</string>
+    <string name="nomor_hp_saksi">No Hp Saksi</string>
+    <string name="alamat_saksi">Alamat Saksi</string>
+    <string name="nama_alm">Nama Almarhum</string>
+    <string name="nama_saksi">Nama Saksi</string>
+    <string name="s_i_l_a_n_c_a_r">Sistem Layanan Cepat dari Rumah</string>
 </resources>

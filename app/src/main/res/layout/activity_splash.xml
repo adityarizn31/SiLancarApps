@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/splashScreen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/ic_silancar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/tvSilancar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="S I L A N C A R"
+        android:text="@string/s_i_l_a_n_c_a_r"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textAlignment="center"
