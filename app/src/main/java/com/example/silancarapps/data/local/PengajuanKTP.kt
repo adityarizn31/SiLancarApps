@@ -13,6 +13,10 @@ data class PengajuanKTP (
     val noKK : String,
     val noHp : String,
     val alamat : String,
+
+    val docKtp : String ?,
+    val docKK : String ?,
+
     val status : String = "Menunggu",
     val tanggal : Long = System.currentTimeMillis()
 )

@@ -15,6 +15,11 @@ data class PengajuanAktaKelahiran (
     val noKTPIstri: String,
     val noHp : String,
     val alamat : String,
+
+    val docKK : String?,
+    val docKTPSuami : String?,
+    val docKTPIstri : String?,
+
     val status : String = "Menunggu",
     val tanggal : Long = System.currentTimeMillis()
 )

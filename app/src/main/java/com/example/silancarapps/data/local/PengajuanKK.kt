@@ -15,6 +15,13 @@ data class PengajuanKK (
     val noKKIstri : String,
     val noHp : String,
     val alamat : String,
+
+    val docKTPSuami : String?,
+    val docKTPIstri : String?,
+    val docKKSuami : String?,
+    val docKKIstri : String?,
+
+
     val status : String = "Menunggu",
     val tanggal : Long = System.currentTimeMillis()
 )

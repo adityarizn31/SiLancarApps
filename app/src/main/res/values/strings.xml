@@ -174,5 +174,16 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="upload_ktp_suami">Upload KTP Suami</string>
+    <string name="upload_ktp_istri">Upload KTP Istri</string>
+    <string name="upload_kk_suami">Upload KK Suami</string>
+    <string name="upload_kk_istri">Upload KK Istri</string>
+    <string name="upload_kk">Upload KK</string>
+    <string name="belum_ada_file">Belum ada file</string>
+    <string name="upload_ktp_alm">Upload KTP Almarhum</string>
+    <string name="upload_kk_almarhum">Upload KK Almarhum</string>
+    <string name="upload_kk_alm">Upload KK Almarhum</string>
+    <string name="upload_aktakelahiran_alm">Upload Akta Kelahiran Almarhum</string>
+    <string name="upload_ktp_saksi">Upload KTP Saksi</string>
 
 </resources>

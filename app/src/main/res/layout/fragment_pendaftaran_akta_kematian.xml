@@ -185,6 +185,95 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadKTPAlm"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/upload_ktp_alm"
+                    app:icon="@android:drawable/ic_menu_upload" />
+
+                <TextView
+                    android:id="@+id/tvKtpAlmarhum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Belum ada file"
+                    android:textSize="12sp"
+                    android:textColor="#757575"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadKKAlm"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/upload_kk_alm"
+                    app:icon="@android:drawable/ic_menu_upload" />
+
+                <TextView
+                    android:id="@+id/tvKKAlm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Belum ada file"
+                    android:textSize="12sp"
+                    android:textColor="#757575"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadAktaKelahiranAlm"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/upload_aktakelahiran_alm"
+                    app:icon="@android:drawable/ic_menu_upload" />
+
+                <TextView
+                    android:id="@+id/tvAktaKelahiranAlm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/belum_ada_file"
+                    android:textSize="12sp"
+                    android:textColor="#757575"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadKTPSaksi"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/upload_ktp_saksi"
+                    app:icon="@android:drawable/ic_menu_upload" />
+
+                <TextView
+                    android:id="@+id/tvKTPSaksi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Belum ada file"
+                    android:textSize="12sp"
+                    android:textColor="#757575"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnKirim"
             android:layout_width="match_parent"

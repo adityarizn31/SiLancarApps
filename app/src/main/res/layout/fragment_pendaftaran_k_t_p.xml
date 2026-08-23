@@ -139,6 +139,56 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            android:elevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dokumen_persyaratan"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#424242"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadKTP"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/upload_ktp"
+                    icon="@android:drawable/ic_menu_upload" />
+
+                <TextView
+                    android:id="@+id/tvKtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Belum ada file"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadKK"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/upload_kk"
+                    icon="@android:drawable/ic_menu_upload" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnKirim"
             style="@style/Widget.SiLancar.Button.Rounded"
