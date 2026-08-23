@@ -22,8 +22,8 @@
                 android:title="Pendaftaran Akta Kelahiran" />
 
             <item
-            android:id="@+id/pendaftaranAktaKematian"
-            android:title="Pendaftaran Akta Kematian" />"
+                android:id="@+id/pendaftaranAktaKematian"
+                android:title="Pendaftaran Akta Kematian" />
         </menu>
     </item>
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.silancarapps.R
@@ -24,6 +25,27 @@ class PendaftaranKKFragment : Fragment() {
         ViewModelFactory.getInstance(requireContext())
     }
 
+    private var ktpUri: android.net.Uri? = null
+    private var kkUri: android.net.Uri? = null
+
+    private val launcherIntentKtp = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri ->
+        if (uri != null) {
+            ktpUri = uri
+            binding.tvKtpFileName.text = "File terpilih"
+        }
+    }
+
+    private val launcherIntentKk = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri ->
+        if (uri != null) {
+            kkUri = uri
+            binding.tvKkFileName.text = "File terpilih"
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,6 +57,14 @@ class PendaftaranKKFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
+        binding.btnUploadKTP.setOnClickListener {
+            launcherIntentKtp.launch("image/*")
+        }
+
+        binding.btnUploadKK.setOnClickListener {
+            launcherIntentKk.launch("image/*")
+        }
+
         binding.btnKirim.setOnClickListener {
             validateAndSubmit()
         }
@@ -66,7 +96,11 @@ class PendaftaranKKFragment : Fragment() {
             if (!isNoHpValid) binding.edtNoHp.error = "Nomor HP harus 12 digit angka"
             if (!isAlamatValid) binding.edtAlamat.error = "Alamat tidak boleh kosong"
             
-            Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
+            if (ktpUri == null || kkUri == null) {
+                Toast.makeText(requireContext(), "Harap lampirkan dokumen", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
+            }
         } else {
             val pengajuan = PengajuanKK(
                 jenisLayanan = "Pendaftaran KK",

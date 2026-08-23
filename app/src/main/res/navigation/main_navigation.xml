@@ -33,19 +33,31 @@
     <fragment
         android:id="@+id/pendaftaranKKFragment"
         android:name="com.example.silancarapps.ui.pelayanan.PendaftaranKKFragment"
-        android:label="Pendaftaran KK"
+        android:label="Pendaftaran Kartu Keluarga"
         tools:layout="@layout/fragment_pendaftaran_k_k" />
 
     <fragment
         android:id="@+id/pendaftaranKTPFragment"
         android:name="com.example.silancarapps.ui.pelayanan.PendaftaranKTPFragment"
-        android:label="Pendaftaran KTP"
+        android:label="Pendaftaran Kartu Tanda Penduduk"
         tools:layout="@layout/fragment_pendaftaran_k_t_p" />
+
+    <fragment
+        android:id="@+id/pendaftaranAktaKelahiranFragment"
+        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranAktaKelahiranFragment"
+        android:label="fragment_pendaftaran_akta_kelahiran"
+        tools:layout="@layout/fragment_pendaftaran_akta_kelahiran" />
+
+    <fragment
+        android:id="@+id/pendaftaranAktaKematianFragment"
+        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranAktaKematianFragment"
+        android:label="fragment_pendaftaran_akta_kematian"
+        tools:layout="@layout/fragment_pendaftaran_akta_kematian" />
 
     <fragment
         android:id="@+id/riwayatFragment"
         android:name="com.example.silancarapps.ui.riwayat.RiwayatKKFragment"
-        android:label="Riwayat"
+        android:label="Riwayat Pendaftaran Kartu Keluarga"
         tools:layout="@layout/fragment_riwayat" />
 
     <fragment
@@ -71,20 +83,11 @@
         android:name="com.example.silancarapps.ui.splash.SplashActivity"
         android:label="activity_splash"
         tools:layout="@layout/activity_splash" />
-    <fragment
-        android:id="@+id/pendaftaranAktaKelahiranFragment"
-        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranAktaKelahiranFragment"
-        android:label="fragment_pendaftaran_akta_kelahiran"
-        tools:layout="@layout/fragment_pendaftaran_akta_kelahiran" />
+
     <activity
         android:id="@+id/registerActivity"
         android:name="com.example.silancarapps.ui.auth.RegisterActivity"
         android:label="activity_register"
         tools:layout="@layout/activity_register" />
-    <fragment
-        android:id="@+id/pendaftaranAktaKematianFragment"
-        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranAktaKematianFragment"
-        android:label="fragment_pendaftaran_akta_kematian"
-        tools:layout="@layout/fragment_pendaftaran_akta_kematian" />
 
 </navigation>

@@ -170,57 +170,66 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-<!--        <com.google.android.material.card.MaterialCardView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            app:cardCornerRadius="16dp"-->
-<!--            app:cardElevation="2dp">-->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="vertical"-->
-<!--                android:padding="16dp">-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/dokumen_persyaratan"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:textColor="#424242"/>-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dokumen_persyaratan"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#424242"/>
 
-<!--                <com.google.android.material.button.MaterialButton-->
-<!--                    android:id="@+id/btnUploadKTP"-->
-<!--                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="16dp"-->
-<!--                    android:text="@string/upload_ktp"-->
-<!--                    app:icon="@android:drawable/ic_menu_upload" />-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadKTP"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/upload_ktp"
+                    app:icon="@android:drawable/ic_menu_upload" />
 
-<!--                <com.google.android.material.button.MaterialButton-->
-<!--                    android:id="@+id/btnUploadKK"-->
-<!--                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="12dp"-->
-<!--                    android:text="@string/upload_kk_lama"-->
-<!--                    app:icon="@android:drawable/ic_menu_upload" />-->
+                <TextView
+                    android:id="@+id/tvKtpFileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Belum ada file"
+                    android:textSize="12sp"
+                    android:textColor="#757575"/>
 
-<!--                <com.google.android.material.button.MaterialButton-->
-<!--                    android:id="@+id/btnUploadPendukung"-->
-<!--                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="12dp"-->
-<!--                    android:text="@string/upload_dokumen_pendukung"-->
-<!--                    app:icon="@android:drawable/ic_menu_upload" />-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadKK"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/upload_kk_lama"
+                    app:icon="@android:drawable/ic_menu_upload" />
 
-<!--            </LinearLayout>-->
+                <TextView
+                    android:id="@+id/tvKkFileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Belum ada file"
+                    android:textSize="12sp"
+                    android:textColor="#757575"/>
 
-<!--        </com.google.android.material.card.MaterialCardView>-->
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnKirim"
