@@ -25,24 +25,47 @@ class PendaftaranKKFragment : Fragment() {
         ViewModelFactory.getInstance(requireContext())
     }
 
-    private var ktpUri: android.net.Uri? = null
-    private var kkUri: android.net.Uri? = null
+    private var ktpSuami: android.net.Uri? = null
 
-    private val launcherIntentKtp = registerForActivityResult(
+    private var ktpIstri: android.net.Uri? = null
+
+    private var kkSuami: android.net.Uri? = null
+
+    private var kkIstri: android.net.Uri? = null
+
+    private val launcherIntentKtpSuami = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri ->
         if (uri != null) {
-            ktpUri = uri
-            binding.tvKtpFileName.text = "File terpilih"
+            ktpSuami = uri
+            binding.tvKTPSuami.text = "File terpilih"
         }
     }
 
-    private val launcherIntentKk = registerForActivityResult(
+    private val launcherIntentKTPIstri = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ) { uri ->
         if (uri != null) {
-            kkUri = uri
-            binding.tvKkFileName.text = "File terpilih"
+            ktpIstri = uri
+            binding.tvKTPIstri.text = "File terpilih"
+        }
+    }
+
+    private val launcherIntentKKSuami = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri ->
+        if (uri != null) {
+            kkSuami = uri
+            binding.tvKKSuami.text = "File terpilih"
+        }
+    }
+
+    private val launcherIntentKKIstri = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri ->
+        if (uri != null) {
+            kkIstri = uri
+            binding.tvKKIstri.text = "File terpilih"
         }
     }
 
@@ -57,12 +80,20 @@ class PendaftaranKKFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        binding.btnUploadKTP.setOnClickListener {
-            launcherIntentKtp.launch("image/*")
+        binding.btnUploadKTPSuami.setOnClickListener {
+            launcherIntentKtpSuami.launch("image/*")
         }
 
-        binding.btnUploadKK.setOnClickListener {
-            launcherIntentKk.launch("image/*")
+        binding.btnUploadKTPIstri.setOnClickListener {
+            launcherIntentKTPIstri.launch("image/*")
+        }
+
+        binding.btnUploadKKSuami.setOnClickListener {
+            launcherIntentKKSuami.launch("image/*")
+        }
+
+        binding.btnUploadKKIstri.setOnClickListener {
+            launcherIntentKKIstri.launch("image/*")
         }
 
         binding.btnKirim.setOnClickListener {
@@ -96,7 +127,7 @@ class PendaftaranKKFragment : Fragment() {
             if (!isNoHpValid) binding.edtNoHp.error = "Nomor HP harus 12 digit angka"
             if (!isAlamatValid) binding.edtAlamat.error = "Alamat tidak boleh kosong"
             
-            if (ktpUri == null || kkUri == null) {
+            if (ktpSuami == null || ktpIstri == null || kkSuami == null || kkIstri == null) {
                 Toast.makeText(requireContext(), "Harap lampirkan dokumen", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
@@ -110,7 +141,11 @@ class PendaftaranKKFragment : Fragment() {
                 noKKSuami = noKKSuami,
                 noKKIstri = noKKIstri,
                 noHp = noHp,
-                alamat = alamat
+                alamat = alamat,
+                docKTPSuami = ktpSuami.toString(),
+                docKTPIstri = ktpIstri.toString(),
+                docKKSuami = kkSuami.toString(),
+                docKKIstri = kkIstri.toString()
             )
             
             viewModel.insertKK(pengajuan)

@@ -18,8 +18,14 @@ class AuthViewModel(private val repository: PengajuanRepository) : ViewModel() {
 
     fun register(user: User) {
         viewModelScope.launch {
-            val result = repository.registerUser(user)
-            _registerResult.postValue(result != -1L)
+            try {
+                val result = repository.registerUser(user)
+                android.util.Log.d("AUTH_DEBUG", "Register result ID: $result")
+                _registerResult.value = (result != -1L)
+            } catch (e: Exception) {
+                android.util.Log.e("AUTH_DEBUG", "Register error: ${e.message}")
+                _registerResult.value = false
+            }
         }
     }
 

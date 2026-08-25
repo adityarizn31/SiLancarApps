@@ -77,11 +77,12 @@ class FirstFragment : Fragment() {
 
     private fun observeViewModel() {
         viewModel.registerResult.observe(viewLifecycleOwner) { isSuccess ->
+            android.util.Log.d("AUTH_DEBUG", "Fragment observed success: $isSuccess")
             if (isSuccess) {
-                Toast.makeText(requireContext(), "Daftar Berhasil! Silakan Masuk", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext().applicationContext, "Daftar Berhasil! Silakan Masuk", Toast.LENGTH_LONG).show()
                 requireActivity().finish()
             } else {
-                Toast.makeText(requireContext(), "Email sudah terdaftar", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Gagal daftar. Email mungkin sudah terdaftar.", Toast.LENGTH_SHORT).show()
             }
         }
     }

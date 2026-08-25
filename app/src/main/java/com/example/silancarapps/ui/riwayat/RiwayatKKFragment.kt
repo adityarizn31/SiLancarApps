@@ -6,19 +6,28 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.silancarapps.data.local.AppDatabase
-import com.example.silancarapps.adapter.RiwayatKKAdapter
+import com.example.silancarapps.adapter.RiwayatSemuaAdapter
+import com.example.silancarapps.data.local.PengajuanAktaKelahiran
+import com.example.silancarapps.data.local.PengajuanAktaKematian
 import com.example.silancarapps.data.local.PengajuanKK
+import com.example.silancarapps.data.local.PengajuanKTP
+import com.example.silancarapps.data.model.RiwayatSemua
 import com.example.silancarapps.databinding.FragmentRiwayatBinding
+import com.example.silancarapps.ui.viewmodel.PengajuanViewModel
+import com.example.silancarapps.ui.viewmodel.ViewModelFactory
 import kotlinx.coroutines.launch
 
 class RiwayatKKFragment : Fragment() {
 
     private var _binding: FragmentRiwayatBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapter: RiwayatKKAdapter
+    private lateinit var adapter: RiwayatSemuaAdapter
+    private val viewModel: PengajuanViewModel by viewModels {
+        ViewModelFactory.getInstance(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,8 +45,8 @@ class RiwayatKKFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = RiwayatKKAdapter(emptyList()) { pengajuan ->
-            deletePengajuan(pengajuan)
+        adapter = RiwayatSemuaAdapter(emptyList()) { item ->
+            deletePengajuan(item)
         }
         binding.rvRiwayat.apply {
             layoutManager = LinearLayoutManager(requireContext())
@@ -46,9 +55,8 @@ class RiwayatKKFragment : Fragment() {
     }
 
     private fun observeData() {
-        val database = AppDatabase.getDatabase(requireContext())
         lifecycleScope.launch {
-            database.pengajuanKKDao().getAllPengajuanKK().collect { list ->
+            viewModel.riwayatSemua.collect { list ->
                 if (list.isEmpty()) {
                     binding.tvEmpty.visibility = View.VISIBLE
                     binding.rvRiwayat.visibility = View.GONE
@@ -61,10 +69,14 @@ class RiwayatKKFragment : Fragment() {
         }
     }
 
-    private fun deletePengajuan(pengajuan: PengajuanKK) {
-        val database = AppDatabase.getDatabase(requireContext())
+    private fun deletePengajuan(item: RiwayatSemua) {
         lifecycleScope.launch {
-            database.pengajuanKKDao().deletePengajuanKK(pengajuan)
+            when (val data = item.dataAsli) {
+                is PengajuanKK -> viewModel.deleteKK(data)
+                is PengajuanKTP -> viewModel.deleteKTP(data)
+                is PengajuanAktaKelahiran -> viewModel.deleteAktaKelahiran(data)
+                is PengajuanAktaKematian -> viewModel.deleteAktaKematian(data)
+            }
             Toast.makeText(requireContext(), "Pengajuan dihapus", Toast.LENGTH_SHORT).show()
         }
     }

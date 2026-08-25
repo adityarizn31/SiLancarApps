@@ -68,7 +68,10 @@ class PendaftaranKTPFragment : Fragment() {
                 nik = nik,
                 noKK = noKK,
                 noHp = noHp,
-                alamat = alamat
+                alamat = alamat,
+                docKTP = null,
+                docKK = null,
+
             )
             viewModel.insertKTP(pengajuan)
             Toast.makeText(requireContext(), getString(R.string.pengajuan_berhasil), Toast.LENGTH_LONG).show()

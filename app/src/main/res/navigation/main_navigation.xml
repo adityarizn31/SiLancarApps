@@ -28,6 +28,15 @@
         <action
             android:id="@+id/action_homeFragment_to_pendaftaranAktaKematianFragment"
             app:destination="@id/pendaftaranAktaKematianFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pendaftaranSuratPindahFragment"
+            app:destination="@id/pendaftaranSuratPindahFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pendaftaranKartuIdentitasAnakFragment"
+            app:destination="@id/pendaftaranKartuIdentitasAnakFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pendaftaranPelayananPemanfaatanDataFragment"
+            app:destination="@id/pendaftaranPelayananPemanfaatanDataFragment" />
     </fragment>
 
     <fragment
@@ -75,19 +84,35 @@
     <activity
         android:id="@+id/loginActivity"
         android:name="com.example.silancarapps.ui.auth.LoginActivity"
-        android:label="activity_login"
+        android:label="Login Account"
         tools:layout="@layout/activity_login" />
 
     <activity
         android:id="@+id/splashActivity"
         android:name="com.example.silancarapps.ui.splash.SplashActivity"
-        android:label="activity_splash"
+        android:label="Welcome at SiLancar"
         tools:layout="@layout/activity_splash" />
 
     <activity
         android:id="@+id/registerActivity"
         android:name="com.example.silancarapps.ui.auth.RegisterActivity"
-        android:label="activity_register"
+        android:label="Register Account"
         tools:layout="@layout/activity_register" />
+
+    <fragment
+        android:id="@+id/pendaftaranSuratPindahFragment"
+        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranSuratPindahFragment"
+        android:label="Pendaftaran Surat Pindah / Datang Provinsi dan Kabupaten"
+        tools:layout="@layout/fragment_pendaftaran_surat_pindah" />
+    <fragment
+        android:id="@+id/pendaftaranKartuIdentitasAnakFragment"
+        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranKartuIdentitasAnakFragment"
+        android:label="fragment_pendaftaran_kartu_identitas_anak"
+        tools:layout="@layout/fragment_pendaftaran_kartu_identitas_anak" />
+    <fragment
+        android:id="@+id/pendaftaranPelayananPemanfaatanDataFragment"
+        android:name="com.example.silancarapps.ui.pelayanan.PendaftaranPelayananPemanfaatanDataFragment"
+        android:label="fragment_pendaftaran_pelayanan_pemanfaatan_data"
+        tools:layout="@layout/fragment_pendaftaran_pelayanan_pemanfaatan_data" />
 
 </navigation>

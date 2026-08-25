@@ -14,7 +14,7 @@ import com.example.silancarapps.data.local.dao.*
         PengajuanAktaKematian::class,
         User::class
     ],
-    version = 6,
+    version = 7,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

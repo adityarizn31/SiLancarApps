@@ -6,8 +6,10 @@ import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.data.local.PengajuanKTP
 import com.example.silancarapps.data.local.PengajuanAktaKelahiran
 import com.example.silancarapps.data.local.PengajuanAktaKematian
+import com.example.silancarapps.data.model.RiwayatSemua
 import com.example.silancarapps.data.repository.PengajuanRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
 class PengajuanViewModel(private val repository: PengajuanRepository) : ViewModel() {
@@ -16,6 +18,31 @@ class PengajuanViewModel(private val repository: PengajuanRepository) : ViewMode
     val allPengajuanKTP: Flow<List<PengajuanKTP>> = repository.getAllPengajuanKTP()
     val allAktaKelahiran: Flow<List<PengajuanAktaKelahiran>> = repository.getAllAktaKelahiran()
     val allAktaKematian: Flow<List<PengajuanAktaKematian>> = repository.getAllAktaKematian()
+
+    val riwayatSemua: Flow<List<RiwayatSemua>> = combine(
+        allPengajuanKK,
+        allPengajuanKTP,
+        allAktaKelahiran,
+        allAktaKematian
+    ) { kk, ktp, aktaLahir, aktaMati ->
+        val list = mutableListOf<RiwayatSemua>()
+        
+        kk.forEach { 
+            list.add(RiwayatSemua(it.id, it.jenisLayanan, it.nama, it.status, it.tanggal, it))
+        }
+        ktp.forEach { 
+            list.add(RiwayatSemua(it.id, it.jenisLayanan, it.nama, it.status, it.tanggal, it))
+        }
+        aktaLahir.forEach { 
+            list.add(RiwayatSemua(it.id, it.jenisLayanan, it.nama, it.status, it.tanggal, it))
+        }
+        aktaMati.forEach { 
+            list.add(RiwayatSemua(it.id, it.id.toString(), it.namaAlm, it.status, it.tanggal, it))
+        }
+        
+        list.sortByDescending { it.tanggal }
+        list
+    }
 
     fun insertKK(pengajuanInsertKK: PengajuanKK) {
         viewModelScope.launch {

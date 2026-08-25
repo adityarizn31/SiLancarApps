@@ -201,11 +201,11 @@
                     app:icon="@android:drawable/ic_menu_upload" />
 
                 <TextView
-                    android:id="@+id/tvKtpSuami"
+                    android:id="@+id/tvKTPSuami"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Belum ada file"
+                    android:text="@string/belum_ada_file"
                     android:textSize="12sp"
                     android:textColor="#757575"/>
 
@@ -223,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Belum ada file"
+                    android:text="@string/belum_ada_file"
                     android:textSize="12sp"
                     android:textColor="#757575"/>
 

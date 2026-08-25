@@ -83,7 +83,11 @@ class PendaftaranAktaKematianFragment : Fragment() {
                 nameSaksi = nameSaksi,
                 nikSaksi = noNikAksi,
                 noHpSaksi = noHpSaksi,
-                alamatSaksi = alamatSaksi
+                alamatSaksi = alamatSaksi,
+                docKTPAlm = null,
+                docKKAlm = null,
+                docAktaKelahiran = null,
+                docKTPSaksi = null
             )
 
             viewModel.insertAktaKematian(pengajuan)

@@ -50,7 +50,11 @@ class HomeFragment : Fragment() {
             Pelayanan("Kartu Keluarga", R.drawable.ic_kartukeluarga),
             Pelayanan("Kartu Tanda Penduduk", R.drawable.ic_kartutandapenduduk),
             Pelayanan("Akta Kelahiran", R.drawable.ic_aktakelahiran),
-            Pelayanan("Akta Kematian", R.drawable.ic_aktakematian)
+            Pelayanan("Akta Kematian", R.drawable.ic_aktakematian),
+            Pelayanan("Kartu Identitas Anak", R.drawable.ic_kia),
+            Pelayanan("Pelayanan Pemanfaatan Data", R.drawable.ic_pelayanan_pemanfaatandata),
+            Pelayanan("Surat Perpindahan/Datang Provinsi & Kabupaten", R.drawable.ic_suratpindah),
+
         )
 
         val adapter = ListPelayananAdapter(listPelayanan) { position ->
@@ -59,6 +63,9 @@ class HomeFragment : Fragment() {
                 1 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranKTPFragment)
                 2 -> findNavController().navigate(R.id.pendaftaranAktaKelahiranFragment)
                 3 -> findNavController().navigate(R.id.pendaftaranAktaKematianFragment)
+                4 -> findNavController().navigate(R.id.pendaftaranKartuIdentitasAnakFragment)
+                5 -> findNavController().navigate(R.id.pendaftaranPelayananPemanfaatanDataFragment)
+                6 -> findNavController().navigate(R.id.pendaftaranSuratPindahFragment)
             }
         }
 

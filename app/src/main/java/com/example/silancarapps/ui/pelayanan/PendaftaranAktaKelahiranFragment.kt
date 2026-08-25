@@ -76,7 +76,10 @@ class PendaftaranAktaKelahiranFragment : Fragment() {
                 noKTPSuami = nikSuami,
                 noKTPIstri = nikIstri,
                 noHp = noHp,
-                alamat = alamat
+                alamat = alamat,
+                docKK = null,
+                docKTPSuami = null,
+                docKTPIstri = null
             )
 
             viewModel.insertAktaKelahiran(pengajuan)
