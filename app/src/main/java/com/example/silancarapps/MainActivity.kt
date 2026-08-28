@@ -1,7 +1,10 @@
 package com.example.silancarapps
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -62,7 +65,21 @@ class MainActivity : AppCompatActivity() {
         }
         
         binding.fab.setOnClickListener {
-            navController.navigate(R.id.pendaftaranKKFragment)
+            openWhatsApp()
+        }
+    }
+
+    private fun openWhatsApp() {
+        val phoneNumber = "628123456789" // Ganti dengan nomor WA admin beneran bang
+        val message = getString(R.string.bantuan_whatsapp)
+        val url = "https://api.whatsapp.com/send?phone=$phoneNumber&text=${Uri.encode(message)}"
+        
+        try {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        } catch (e: Exception) {
+            Toast.makeText(this, "WhatsApp tidak terinstall", Toast.LENGTH_SHORT).show()
         }
     }
 

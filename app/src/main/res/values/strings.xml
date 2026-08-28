@@ -190,5 +190,14 @@
     <string name="upload_form_surat_pindah">Upload Form Surat Pindah</string>
     <string name="surat_pelayanan_pemanfaatan_data">Surat Pelayanan Pemanfaatan Data</string>
     <string name="upload_form_surat_permohonon">Upload Form Surat Permohonon</string>
+    <string name="keluar_akun">Keluar Akun</string>
+    <string name="silancar_versi_1_0_0">SiLancar • Versi 1.0.0</string>
+    <string name="tentang_silancar">Tentang SiLancar</string>
+    <string name="pusat_bantuan">Pusat Bantuan</string>
+    <string name="keamanan_akun">Keamanan Akun</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="edit_profil">Edit Profil</string>
+    <string name="bantuan_whatsapp">Halo Admin SiLancar, saya butuh bantuan terkait pengajuan saya.</string>
+    <string name="hubungi_kami">Hubungi Kami</string>
 
 </resources>

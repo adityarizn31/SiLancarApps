@@ -54,19 +54,19 @@
     <fragment
         android:id="@+id/pendaftaranAktaKelahiranFragment"
         android:name="com.example.silancarapps.ui.pelayanan.PendaftaranAktaKelahiranFragment"
-        android:label="fragment_pendaftaran_akta_kelahiran"
+        android:label="Pendaftaran Akta Kelahiran"
         tools:layout="@layout/fragment_pendaftaran_akta_kelahiran" />
 
     <fragment
         android:id="@+id/pendaftaranAktaKematianFragment"
         android:name="com.example.silancarapps.ui.pelayanan.PendaftaranAktaKematianFragment"
-        android:label="fragment_pendaftaran_akta_kematian"
+        android:label="Pendaftaran Akta Kematian"
         tools:layout="@layout/fragment_pendaftaran_akta_kematian" />
 
     <fragment
         android:id="@+id/riwayatFragment"
         android:name="com.example.silancarapps.ui.riwayat.RiwayatKKFragment"
-        android:label="Riwayat Pendaftaran Kartu Keluarga"
+        android:label="Riwayat Pendaftaran"
         tools:layout="@layout/fragment_riwayat" />
 
     <fragment
@@ -107,12 +107,12 @@
     <fragment
         android:id="@+id/pendaftaranKartuIdentitasAnakFragment"
         android:name="com.example.silancarapps.ui.pelayanan.PendaftaranKartuIdentitasAnakFragment"
-        android:label="fragment_pendaftaran_kartu_identitas_anak"
+        android:label="Pendaftaran Kartu Identitas Anak"
         tools:layout="@layout/fragment_pendaftaran_kartu_identitas_anak" />
     <fragment
         android:id="@+id/pendaftaranPelayananPemanfaatanDataFragment"
         android:name="com.example.silancarapps.ui.pelayanan.PendaftaranPelayananPemanfaatanDataFragment"
-        android:label="fragment_pendaftaran_pelayanan_pemanfaatan_data"
+        android:label="Pendaftaran Pelayanan Pemanfaatan Data"
         tools:layout="@layout/fragment_pendaftaran_pelayanan_pemanfaatan_data" />
 
 </navigation>

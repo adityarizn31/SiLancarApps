@@ -5,7 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="#F5F7FA">
+    android:background="@color/background">
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,53 +17,196 @@
         android:text="Pengaturan"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#1565C0"
-        android:layout_marginBottom="24dp"/>
+        android:textColor="@color/primary"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kelola preferensi dan keamanan akun Anda"
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="24dp" />
+
+
+    <!-- ========================= -->
+    <!-- PENGATURAN AKUN -->
+    <!-- ========================= -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Akun"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="10dp" />
 
     <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.SiLancar.Card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp"
+        app:cardCornerRadius="16dp"
         app:cardElevation="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="6dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Ubah Profil"
-                android:drawableEnd="@android:drawable/ic_menu_edit" />
+            <!-- Notifikasi -->
 
-            <View
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNotification"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#EEEEEE" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
+                android:layout_height="56dp"
+                android:gravity="start|center_vertical"
                 android:text="Notifikasi"
-                android:drawableEnd="@android:drawable/btn_star" />
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                app:icon="@android:drawable/ic_dialog_info"
+                app:iconTint="@color/primary" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#EEEEEE" />
+                android:layout_marginHorizontal="12dp"
+                android:background="#F1F5F9" />
 
-            <TextView
+            <!-- Keamanan -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSecurity"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Tentang Aplikasi"
-                android:drawableEnd="@android:drawable/ic_menu_info_details" />
+                android:layout_height="56dp"
+                android:gravity="start|center_vertical"
+                android:text="Keamanan Akun"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                app:icon="@android:drawable/ic_lock_lock"
+                app:iconTint="@color/primary" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="12dp"
+                android:background="#F1F5F9" />
+
+            <!-- Privasi -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPrivacy"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="start|center_vertical"
+                android:text="Privasi &amp; Data"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                app:icon="@android:drawable/ic_menu_view"
+                app:iconTint="@color/primary" />
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
+
+    <!-- ========================= -->
+    <!-- BANTUAN -->
+    <!-- ========================= -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bantuan"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="10dp" />
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.SiLancar.Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <!-- Pusat Bantuan -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHelp"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="start|center_vertical"
+                android:text="Pusat Bantuan"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                app:icon="@android:drawable/ic_menu_help"
+                app:iconTint="@color/primary" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="12dp"
+                android:background="#F1F5F9" />
+
+            <!-- Tentang -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAbout"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="start|center_vertical"
+                android:text="Tentang SiLancar"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                app:icon="@android:drawable/ic_menu_info_details"
+                app:iconTint="@color/primary" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- ========================= -->
+    <!-- VERSI APLIKASI -->
+    <!-- ========================= -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:text="SiLancar"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:text="Versi 1.0.0"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp" />
+
 </LinearLayout>
+

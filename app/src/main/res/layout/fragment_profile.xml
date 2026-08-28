@@ -1,103 +1,436 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:fillViewport="true"
     tools:context=".ui.profile.ProfileFragment">
 
-    <View
-        android:id="@+id/viewHeader"
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:background="@color/primary"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imgProfile"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="160dp"
-        android:background="@color/white"
-        android:padding="4dp"
-        android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-        app:strokeColor="@color/primary"
-        app:strokeWidth="4dp" />
-
-    <TextView
-        android:id="@+id/tvProfileName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="User SiLancar"
-        android:textColor="@color/text_primary"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgProfile" />
-
-    <TextView
-        android:id="@+id/tvProfileEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="user@silancar.com"
-        android:textColor="@color/text_secondary"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
-
-    <com.google.android.material.card.MaterialCardView
-        style="@style/Widget.SiLancar.Card"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/tvProfileEmail">
+        android:orientation="vertical">
+
+        <!-- ========================= -->
+        <!-- HEADER PROFILE -->
+        <!-- ========================= -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/primary">
+
+            <TextView
+                android:id="@+id/tvProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Profil Saya"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/white"
+                android:padding="4dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_foreground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvProfileTitle"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                app:strokeColor="@color/white"
+                app:strokeWidth="4dp" />
+
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="User SiLancar"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgProfile" />
+
+            <TextView
+                android:id="@+id/tvProfileEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="user@silancar.com"
+                android:textColor="#E3F2FD"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- ========================= -->
+        <!-- CONTENT -->
+        <!-- ========================= -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-24dp"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="32dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnEditProfile"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+
+            <!-- ========================= -->
+            <!-- STATUS AKUN -->
+            <!-- ========================= -->
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SiLancar.Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="start|center_vertical"
-                android:text="Edit Profil"
-                android:textColor="@color/text_primary"
-                app:icon="@android:drawable/ic_menu_edit"
-                app:iconTint="@color/primary" />
+                app:cardCornerRadius="16dp">
 
-            <View
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:background="#E8F5E9"
+                        android:padding="10dp"
+                        android:src="@android:drawable/ic_menu_info_details"
+                        app:tint="@color/primary" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Status Akun"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tvAccountStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Akun Aktif"
+                            android:textColor="@color/primary"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ========================= -->
+            <!-- INFORMASI PRIBADI -->
+            <!-- ========================= -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Informasi Pribadi"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SiLancar.Card"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginHorizontal="16dp"
-                android:background="#F1F5F9" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <!-- Nama -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnInfoName"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="Nama Lengkap"
+                        android:textColor="@color/text_primary"
+                        app:icon="@android:drawable/ic_menu_myplaces"
+                        app:iconTint="@color/primary" />
+
+                    <TextView
+                        android:id="@+id/tvInfoName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="56dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="User SiLancar"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="#F1F5F9" />
+
+                    <!-- NIK -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnInfoNik"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="NIK"
+                        android:textColor="@color/text_primary"
+                        app:icon="@android:drawable/ic_menu_edit"
+                        app:iconTint="@color/primary" />
+
+                    <TextView
+                        android:id="@+id/tvInfoNik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="56dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="320xxxxxxxxxxxxxx"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="#F1F5F9" />
+
+                    <!-- No HP -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnInfoPhone"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="Nomor HP"
+                        android:textColor="@color/text_primary"
+                        app:icon="@android:drawable/ic_menu_call"
+                        app:iconTint="@color/primary" />
+
+                    <TextView
+                        android:id="@+id/tvInfoPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="56dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="08xxxxxxxxxx"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ========================= -->
+            <!-- PENGATURAN -->
+            <!-- ========================= -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="@string/pengaturan"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SiLancar.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <!-- Edit Profile -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEditProfile"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/edit_profil"
+                        android:textColor="@color/text_primary"
+                        app:icon="@android:drawable/ic_menu_edit"
+                        app:iconTint="@color/primary" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="#F1F5F9" />
+
+                    <!-- Notifikasi -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnNotification"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/notifikasi"
+                        android:textColor="@color/text_primary"
+                        app:icon="@android:drawable/ic_dialog_info"
+                        app:iconTint="@color/primary" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="#F1F5F9" />
+
+                    <!-- Keamanan -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSecurity"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/keamanan_akun"
+                        android:textColor="@color/text_primary"
+                        app:icon="@android:drawable/ic_lock_lock"
+                        app:iconTint="@color/primary" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ========================= -->
+            <!-- BANTUAN -->
+            <!-- ========================= -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Bantuan"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SiLancar.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnHelp"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/pusat_bantuan"
+                        android:textColor="@color/text_primary"
+                        app:icon="@android:drawable/ic_menu_help"
+                        app:iconTint="@color/primary" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:background="#F1F5F9" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAbout"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/tentang_silancar"
+                        android:textColor="@color/text_primary"
+                        app:icon="@android:drawable/ic_menu_info_details"
+                        app:iconTint="@color/primary" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ========================= -->
+            <!-- LOGOUT -->
+            <!-- ========================= -->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start|center_vertical"
-                android:text="Keluar Akun"
+                android:layout_height="52dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/keluar_akun"
                 android:textColor="@color/error_red"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                app:cornerRadius="12dp"
                 app:icon="@android:drawable/ic_lock_power_off"
                 app:iconTint="@color/error_red" />
 
+            <TextView
+                android:id="@+id/tvAppVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="@string/silancar_versi_1_0_0"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
