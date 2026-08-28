@@ -185,5 +185,10 @@
     <string name="upload_kk_alm">Upload KK Almarhum</string>
     <string name="upload_aktakelahiran_alm">Upload Akta Kelahiran Almarhum</string>
     <string name="upload_ktp_saksi">Upload KTP Saksi</string>
+    <string name="surat_pindah_datang_provinsi_dan_kabupaten">Surat Pindah / Datang Provinsi dan Kabupaten</string>
+    <string name="nomor_kk">Nomor KK\n</string>
+    <string name="upload_form_surat_pindah">Upload Form Surat Pindah</string>
+    <string name="surat_pelayanan_pemanfaatan_data">Surat Pelayanan Pemanfaatan Data</string>
+    <string name="upload_form_surat_permohonon">Upload Form Surat Permohonon</string>
 
 </resources>

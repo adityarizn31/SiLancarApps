@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.silancarapps.R
@@ -14,6 +15,7 @@ import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.databinding.FragmentPendaftaranKKBinding
 import com.example.silancarapps.ui.viewmodel.PengajuanViewModel
 import com.example.silancarapps.ui.viewmodel.ViewModelFactory
+import com.example.silancarapps.utils.FileUtils
 import com.example.silancarapps.utils.ValidateKK
 
 class PendaftaranKKFragment : Fragment() {
@@ -26,11 +28,8 @@ class PendaftaranKKFragment : Fragment() {
     }
 
     private var ktpSuami: android.net.Uri? = null
-
     private var ktpIstri: android.net.Uri? = null
-
     private var kkSuami: android.net.Uri? = null
-
     private var kkIstri: android.net.Uri? = null
 
     private val launcherIntentKtpSuami = registerForActivityResult(
@@ -97,11 +96,11 @@ class PendaftaranKKFragment : Fragment() {
         }
 
         binding.btnKirim.setOnClickListener {
-            validateAndSubmit()
+            validateAndProcess()
         }
     }
 
-    private fun validateAndSubmit() {
+    private fun validateAndProcess() {
         val nama = binding.edtNama.text.toString().trim()
         val nikSuami = binding.edtNikSuami.text.toString().trim()
         val nikIstri = binding.edtNikIstri.text.toString().trim()
@@ -133,25 +132,81 @@ class PendaftaranKKFragment : Fragment() {
                 Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
             }
         } else {
-            val pengajuan = PengajuanKK(
-                jenisLayanan = "Pendaftaran KK",
-                nama = nama,
-                nikSuami = nikSuami,
-                nikIstri = nikIstri,
-                noKKSuami = noKKSuami,
-                noKKIstri = noKKIstri,
-                noHp = noHp,
-                alamat = alamat,
-                docKTPSuami = ktpSuami.toString(),
-                docKTPIstri = ktpIstri.toString(),
-                docKKSuami = kkSuami.toString(),
-                docKKIstri = kkIstri.toString()
-            )
-            
-            viewModel.insertKK(pengajuan)
-            Toast.makeText(requireContext(), getString(R.string.pengajuan_berhasil), Toast.LENGTH_LONG).show()
-            findNavController().popBackStack()
+            if (ktpSuami == null || ktpIstri == null || kkSuami == null || kkIstri == null) {
+                Toast.makeText(requireContext(), "Harap lampirkan semua dokumen", Toast.LENGTH_SHORT).show()
+                return
+            }
+
+            showConfirmationDialog(nama, nikSuami, nikIstri, noKKSuami, noKKIstri, noHp, alamat)
         }
+    }
+
+    private fun showConfirmationDialog(
+        nama: String, nikSuami: String, nikIstri: String,
+        noKKSuami: String, noKKIstri: String, noHp: String, alamat: String
+    ) {
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_konfirmasi_data, null)
+        val tvSummary = dialogView.findViewById<android.widget.TextView>(R.id.tvSummary)
+        val btnBatal = dialogView.findViewById<com.google.android.material.button.MaterialButton>(R.id.btnBatal)
+        val btnKirim = dialogView.findViewById<com.google.android.material.button.MaterialButton>(R.id.btnKirim)
+
+        val summary = """
+            Nama Lengkap: $nama
+            NIK Suami: $nikSuami
+            NIK Istri: $nikIstri
+            No KK Suami: $noKKSuami
+            No KK Istri: $noKKIstri
+            No HP: $noHp
+            Alamat: $alamat
+        """.trimIndent()
+
+        tvSummary.text = summary
+
+        val dialog = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .create()
+        
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        btnBatal.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        btnKirim.setOnClickListener {
+            dialog.dismiss()
+            submitData(nama, nikSuami, nikIstri, noKKSuami, noKKIstri, noHp, alamat)
+        }
+
+        dialog.show()
+    }
+
+    private fun submitData(
+        nama: String, nikSuami: String, nikIstri: String,
+        noKKSuami: String, noKKIstri: String, noHp: String, alamat: String
+    ) {
+        val fileKtpSuami = FileUtils.uriToFile(ktpSuami!!, requireContext())
+        val fileKtpIstri = FileUtils.uriToFile(ktpIstri!!, requireContext())
+        val fileKkSuami = FileUtils.uriToFile(kkSuami!!, requireContext())
+        val fileKkIstri = FileUtils.uriToFile(kkIstri!!, requireContext())
+
+        val pengajuan = PengajuanKK(
+            jenisLayanan = "Pendaftaran KK",
+            nama = nama,
+            nikSuami = nikSuami,
+            nikIstri = nikIstri,
+            noKKSuami = noKKSuami,
+            noKKIstri = noKKIstri,
+            noHp = noHp,
+            alamat = alamat,
+            docKTPSuami = fileKtpSuami.absolutePath,
+            docKTPIstri = fileKtpIstri.absolutePath,
+            docKKSuami = fileKkSuami.absolutePath,
+            docKKIstri = fileKkIstri.absolutePath
+        )
+        
+        viewModel.insertKK(pengajuan)
+        Toast.makeText(requireContext(), getString(R.string.pengajuan_berhasil), Toast.LENGTH_LONG).show()
+        findNavController().popBackStack()
     }
 
     override fun onDestroyView() {
