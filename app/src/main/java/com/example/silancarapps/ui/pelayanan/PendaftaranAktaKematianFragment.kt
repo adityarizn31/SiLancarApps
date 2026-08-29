@@ -18,6 +18,7 @@ import com.example.silancarapps.databinding.FragmentPendaftaranAktaKematianBindi
 import com.example.silancarapps.ui.viewmodel.PendaftaranViewModel
 import com.example.silancarapps.ui.viewmodel.ViewModelFactory
 import com.example.silancarapps.utils.FileUtils
+import com.example.silancarapps.utils.ValidateAktaKematian
 import java.util.Calendar
 
 class PendaftaranAktaKematianFragment : Fragment() {
@@ -109,17 +110,36 @@ class PendaftaranAktaKematianFragment : Fragment() {
         val noHpSaksi = binding.edtNoHpSaksi.text.toString().trim()
         val alamatSaksi = binding.edtAlamatSaksi.text.toString().trim()
 
-        if (namaAlm.isEmpty() || nikAlm.length != 16 || namaSaksi.isEmpty() || !binding.cbPersetujuan.isChecked) {
-            Toast.makeText(requireContext(), "Lengkapi data dan centang persetujuan", Toast.LENGTH_SHORT).show()
-            return
-        }
+        val isNamaAlmValid = ValidateAktaKematian.isValidNamaAlm(namaAlm)
+        val isNikValid = ValidateAktaKematian.isValidNikAlm(nikAlm)
+        val isNoKKValid = ValidateAktaKematian.isValidNoKKAlm(noKKAlm)
+        val isNoAktaValid = ValidateAktaKematian.isValidNoAktaLahirAlm(noAktaAlm)
+        val isTempatMatiValid = ValidateAktaKematian.isValidNameSaksi(tempatMati)
+        val isNamaSaksiValid = ValidateAktaKematian.isValidNameSaksi(namaSaksi)
+        val isNikSaksiValid = ValidateAktaKematian.isValidNikSaksi(nikSaksi)
+        val isNoHpSaksiValid = ValidateAktaKematian.isValidNoHpSaksi(noHpSaksi)
+        val isAlamatSaksiValid = ValidateAktaKematian.isValidAlamatSaksi(alamatSaksi)
 
-        if (uriKtpAlm == null || uriKkAlm == null || uriAktaLahirAlm == null || uriKtpSaksi == null) {
-            Toast.makeText(requireContext(), "Harap lampirkan semua dokumen persyaratan", Toast.LENGTH_SHORT).show()
-            return
-        }
 
-        showConfirmationDialog(namaAlm, nikAlm, tglMati, namaSaksi, nikSaksi, noHpSaksi)
+        if ( !isNamaAlmValid || !isNikValid || !isNoKKValid || !isNoAktaValid || !isTempatMatiValid || !isNamaSaksiValid || !isNikSaksiValid || !isNoHpSaksiValid || !isAlamatSaksiValid || !binding.cbPersetujuan.isChecked) {
+            if(!isNamaAlmValid) binding.edtNama.error = "Nama tidak boleh kosong"
+            if(!isNikValid) binding.edtNikAlm.error = "NIK harus 16 digit angka"
+            if(!isNoKKValid) binding.edtNoKKAlm.error = "No KK tidak boleh kosong"
+            if(!isNoAktaValid) binding.edtNoAktaLahirAlm.error = "No Akta Kelahiran tidak boleh kosong"
+            if(!isTempatMatiValid) binding.edtTempatKematian.error = "Tempat Kematian tidak boleh kosong"
+            if(!isNamaSaksiValid) binding.edtNamaSaksi.error = "Nama tidak boleh kosong"
+            if(!isNikSaksiValid) binding.edtNikSaksi.error = "NIK harus 16 digit angka"
+            if(!isNoHpSaksiValid) binding.edtNoHpSaksi.error = "Nomor HP harus 12 digit angka"
+            if(!isAlamatSaksiValid) binding.edtAlamatSaksi.error = "Alamat tidak boleh kosong"
+            if(!binding.cbPersetujuan.isChecked) binding.cbPersetujuan.error = "Anda harus centang persetujuan"
+
+            if (uriKtpAlm == null || uriKkAlm == null || uriAktaLahirAlm == null || uriKtpSaksi == null) {
+                Toast.makeText(requireContext(), "Harap lampirkan semua dokumen persyaratan !!", Toast.LENGTH_SHORT).show()
+                return
+            }
+
+            showConfirmationDialog(namaAlm, nikAlm, tglMati, namaSaksi, nikSaksi, noHpSaksi)
+        }
     }
 
     private fun showConfirmationDialog(namaAlm: String, nikAlm: String, tgl: String, namaSaksi: String, nikSaksi: String, hp: String) {
@@ -168,7 +188,7 @@ class PendaftaranAktaKematianFragment : Fragment() {
             nikAlm = binding.edtNikAlm.text.toString().trim(),
             noKKAlm = binding.edtNoKKAlm.text.toString().trim(),
             noAktaAlm = binding.edtNoAktaLahirAlm.text.toString().trim(),
-            nameSaksi = binding.edtNamaSaksi.text.toString().trim(),
+            namaSaksi = binding.edtNamaSaksi.text.toString().trim(),
             nikSaksi = binding.edtNikSaksi.text.toString().trim(),
             noHpSaksi = binding.edtNoHpSaksi.text.toString().trim(),
             alamatSaksi = binding.edtAlamatSaksi.text.toString().trim(),

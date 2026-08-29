@@ -2,7 +2,7 @@ package com.example.silancarapps.utils
 
 object ValidateAktaKematian {
 
-    fun isValidNameAlm(nameAlm : String): Boolean {
+    fun isValidNamaAlm(nameAlm : String): Boolean {
         return nameAlm.isNotEmpty()
     }
 

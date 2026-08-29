@@ -14,7 +14,7 @@ data class PengajuanAktaKematian (
     val noKKAlm: String,
     val noAktaAlm: String,
 
-    val nameSaksi : String,
+    val namaSaksi : String,
     val nikSaksi: String,
     val noHpSaksi : String,
     val alamatSaksi : String,
