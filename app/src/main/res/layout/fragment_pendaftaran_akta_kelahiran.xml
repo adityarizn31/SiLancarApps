@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F5F7FA"
+    android:background="@color/background"
     android:fillViewport="true"
     tools:context=".ui.pelayanan.PendaftaranAktaKelahiranFragment">
 
@@ -14,11 +15,15 @@
         android:orientation="vertical"
         android:padding="20dp">
 
+        <!-- ========================= -->
+        <!-- HEADER -->
+        <!-- ========================= -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pendaftaran"
-            android:textColor="#1565C0"
+            android:textColor="@color/primary"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -27,22 +32,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="@string/akta_kelahiran"
-            android:textColor="#212121"
+            android:textColor="@color/text_primary"
             android:textSize="28sp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/lengkapi"
-            android:textColor="#757575"
-            android:textSize="14sp" />
-
-        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="6dp"
+            android:text="@string/lengkapi_data_kelahiran_dan_dokumen_persyaratan_untuk_mengajukan_akta_kelahiran"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <!-- ========================= -->
+        <!-- DATA ANAK -->
+        <!-- ========================= -->
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SiLancar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="2dp">
 
@@ -55,114 +65,165 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/data_pemohon"
+                    android:text="@string/data_anak"
+                    android:textColor="@color/text_primary"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#424242"/>
+                    android:textStyle="bold" />
+
+
+                <!-- Nama Anak -->
 
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="@string/nama_lengkap">
+                    android:hint="@string/nama_lengkap_anak">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtNama"
+                        android:id="@+id/edtNamaAnak"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Jenis Kelamin -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <RadioGroup
+                    android:id="@+id/rgJenisKelamin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbLaki"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/laki" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbPerempuan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/perempuan" />
+                </RadioGroup>
+
+                <!-- Tempat Lahir -->
+
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="@string/nik">
+                    android:hint="@string/tempat_kelahiran">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtNik"
+                        android:id="@+id/edtTempatLahir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- Tanggal Lahir -->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/tanggal_lahir">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtTanggalLahir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- Waktu Lahir -->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/waktu_kelahiran">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtWaktuLahir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- Urutan Kelahiran -->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/anak_ke">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtAnakKe"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Berat Bayi -->
+
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="@string/nomor_KK">
+                    android:hint="@string/berat_bayi_saat_lahir_gram">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtNoKK"
+                        android:id="@+id/edtBeratBayi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+                        android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Panjang Bayi -->
+
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="@string/nik_suami">
+                    android:hint="@string/panjang_bayi_saat_lahir_cm">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtNik_suami"
+                        android:id="@+id/edtPanjangBayi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="@string/nik_istri">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtNik_istri"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="@string/nomor_hp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtNoHp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="phone" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="@string/alamat">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtAlamat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:lines="3"
-                        android:gravity="top"
-                        android:inputType="textMultiLine" />
+                        android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -170,11 +231,16 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- ========================= -->
+        <!-- DATA AYAH -->
+        <!-- ========================= -->
+
         <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SiLancar.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:cardCornerRadius="6dp"
+            app:cardCornerRadius="16dp"
             app:cardElevation="2dp">
 
             <LinearLayout
@@ -183,76 +249,268 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnUploadKK"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/data_ayah"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="@string/upload_kk"
-                    app:icon="@android:drawable/ic_menu_upload" />
+                    android:hint="@string/nik_ayah">
 
-                <TextView
-                    android:id="@+id/tvKK"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/belum_ada_file"
-                    android:textSize="12sp"
-                    android:textColor="#757575"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtNikAyah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="16" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnUploadKTPSuami"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/upload_ktp_suami"
-                    app:icon="@android:drawable/ic_menu_upload" />
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/nama_lengkap_ayah">
 
-                <TextView
-                    android:id="@+id/tvKtpSuami"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/belum_ada_file"
-                    android:textSize="12sp"
-                    android:textColor="#757575"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtNamaAyah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnUploadKTPIstri"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/upload_ktp_istri"
-                    app:icon="@android:drawable/ic_menu_upload" />
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/nik_ibu">
 
-                <TextView
-                    android:id="@+id/tvKTPIstri"
-                    android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtNikIbu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="16" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/belum_ada_file"
-                    android:textSize="12sp"
-                    android:textColor="#757575"/>
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/nama_lengkap_ibu">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtNamaIbu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- ========================= -->
+        <!-- DOKUMEN PERSYARATAN -->
+        <!-- ========================= -->
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SiLancar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dokumen_persyaratan"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/upload_dokumen_yang_diperlukan_dengan_jelas_dan_dapat_terbaca"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+
+                <!-- Surat Keterangan Lahir -->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadSuratKeteranganLahir"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/upload_surat_keterangan_lahir"
+                    android:textAllCaps="false"
+                    app:icon="@android:drawable/ic_menu_upload"
+                    app:iconTint="@color/primary" />
+
+                <TextView
+                    android:id="@+id/tvSuratKeteranganLahir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/belum_ada_file"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+
+                <!-- Kartu Keluarga -->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadKK"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/upload_kk"
+                    android:textAllCaps="false"
+                    app:icon="@android:drawable/ic_menu_upload"
+                    app:iconTint="@color/primary" />
+
+                <TextView
+                    android:id="@+id/tvKK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/belum_ada_file"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+
+                <!-- KTP Ayah -->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadKtpAyah"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/upload_ktp_ayah"
+                    android:textAllCaps="false"
+                    app:icon="@android:drawable/ic_menu_upload"
+                    app:iconTint="@color/primary" />
+
+                <TextView
+                    android:id="@+id/tvKtpAyah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/belum_ada_file"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+
+                <!-- KTP Ibu -->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadKtpIbu"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/upload_ktp_ibu"
+                    android:textAllCaps="false"
+                    app:icon="@android:drawable/ic_menu_upload"
+                    app:iconTint="@color/primary" />
+
+                <TextView
+                    android:id="@+id/tvKtpIbu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/belum_ada_file"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ========================= -->
+        <!-- PERNYATAAN -->
+        <!-- ========================= -->
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SiLancar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <CheckBox
+                    android:id="@+id/cbPersetujuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/saya_menyatakan_bahwa_data_dan_dokumen_yang_saya_berikan_adalah_benar_dan_dapat_dipertanggungjawabkan"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ========================= -->
+        <!-- BUTTON KIRIM -->
+        <!-- ========================= -->
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnKirim"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="56dp"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="32dp"
             android:text="@string/kirim_pengajuan"
+            android:textAllCaps="false"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textAllCaps="false"
             app:cornerRadius="12dp" />
 
     </LinearLayout>
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

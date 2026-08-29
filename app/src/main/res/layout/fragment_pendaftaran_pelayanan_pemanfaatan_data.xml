@@ -61,7 +61,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Data Instansi"
+                    android:text="@string/data_instansi"
                     android:textColor="#424242"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -72,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Nama Instansi">
+                    android:hint="@string/nama_instansi">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtNamaInstansi"
@@ -89,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Jenis Instansi">
+                    android:hint="@string/jenis_instansi">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtJenisInstansi"
@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Alamat Instansi">
+                    android:hint="@string/alamat_instansi">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtAlamatInstansi"
@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Nomor Telepon Instansi">
+                    android:hint="@string/nomor_telepon_instansi">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtTeleponInstansi"
@@ -142,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Email Instansi">
+                    android:hint="@string/email_instansi">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtEmailInstansi"
@@ -177,7 +177,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Penanggung Jawab"
+                    android:text="@string/penanggung_jawab"
                     android:textColor="#424242"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -189,7 +189,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Nama Penanggung Jawab">
+                    android:hint="@string/nama_penanggung_jawab">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtNamaPenanggungJawab"
@@ -206,7 +206,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Jabatan">
+                    android:hint="@string/jabatan">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtJabatan"
@@ -223,7 +223,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="NIK Penanggung Jawab">
+                    android:hint="@string/nik_penanggung_jawab">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtNikPenanggungJawab"
@@ -241,7 +241,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Nomor HP Penanggung Jawab">
+                    android:hint="@string/nomor_hp_penanggung_jawab">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtNoHp"
@@ -276,7 +276,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Detail Permohonan"
+                    android:text="@string/detail_permohonan"
                     android:textColor="#424242"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -288,7 +288,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Tujuan Pemanfaatan Data">
+                    android:hint="@string/tujuan_pemanfaatan_data">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtTujuanPemanfaatan"
@@ -307,7 +307,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Data yang Dibutuhkan">
+                    android:hint="@string/data_yang_dibutuhkan">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtDataDibutuhkan"
@@ -326,7 +326,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:hint="Keterangan">
+                    android:hint="@string/keterangan">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtKeterangan"
@@ -363,7 +363,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dokumen Persyaratan"
+                    android:text="@string/dokumen_persyaratan"
                     android:textColor="#424242"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -376,7 +376,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Upload Surat Permohonan Instansi"
+                    android:text="@string/upload_surat_permohonan_instansi"
                     android:textAllCaps="false"
                     app:icon="@android:drawable/ic_menu_upload" />
 
@@ -397,7 +397,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Upload KTP Penanggung Jawab"
+                    android:text="@string/upload_ktp_penanggung_jawab"
                     android:textAllCaps="false"
                     app:icon="@android:drawable/ic_menu_upload" />
 
@@ -418,7 +418,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Upload Surat Tugas"
+                    android:text="@string/upload_surat_tugas"
                     android:textAllCaps="false"
                     app:icon="@android:drawable/ic_menu_upload" />
 
@@ -439,7 +439,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Upload Dokumen Legalitas Instansi"
+                    android:text="@string/upload_dokumen_legalitas_instansi"
                     android:textAllCaps="false"
                     app:icon="@android:drawable/ic_menu_upload" />
 

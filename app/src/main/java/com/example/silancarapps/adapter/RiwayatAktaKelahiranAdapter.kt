@@ -31,7 +31,7 @@ class RiwayatAktaKelahiranAdapter(
         val item = list[position]
         with (holder.binding) {
             tvJenisLayanan.text = item.jenisLayanan
-            tvNamaPemohon.text = "Nama: ${item.nama}"
+            tvNamaPemohon.text = "Nama: ${item.namaAnak}"
             tvStatus.text = item.status
 
             val sdf = SimpleDateFormat("dd MM yyyy, KK:mm", Locale.getDefault())

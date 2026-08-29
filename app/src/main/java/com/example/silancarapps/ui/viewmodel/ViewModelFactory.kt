@@ -28,10 +28,11 @@ class ViewModelFactory(private val repository: PengajuanRepository) : ViewModelP
             return INSTANCE ?: synchronized(this) {
                 val database = AppDatabase.getDatabase(context)
                 val repository = PengajuanRepository(
-                    database.pengajuanKKDao(),
-                    database.pengajuanKTPDao(),
                     database.pengajuanAktaKelahiranDao(),
                     database.pengajuanAktaKematianDao(),
+                    database.pengajuanKIADao(),
+                    database.pengajuanKKDao(),
+                    database.pengajuanKTPDao(),
                     database.userDao()
                 )
                 ViewModelFactory(repository).also { INSTANCE = it }

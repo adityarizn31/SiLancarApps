@@ -8,21 +8,23 @@ import com.example.silancarapps.data.local.dao.*
 
 @Database(
     entities = [
-        PengajuanKK::class,
-        PengajuanKTP::class,
         PengajuanAktaKelahiran::class,
         PengajuanAktaKematian::class,
+        PengajuanKIA::class,
+        PengajuanKK::class,
+        PengajuanKTP::class,
         User::class
     ],
-    version = 8,
+    version = 10,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun pengajuanKKDao(): PengajuanKKDao
-    abstract fun pengajuanKTPDao(): PengajuanKTPDao
     abstract fun pengajuanAktaKelahiranDao(): PengajuanAktaKelahiranDao
     abstract fun pengajuanAktaKematianDao(): PengajuanAktaKematianDao
+    abstract fun pengajuanKIADao(): PengajuanKIADao
+    abstract fun pengajuanKKDao(): PengajuanKKDao
+    abstract fun pengajuanKTPDao(): PengajuanKTPDao
     abstract fun userDao(): UserDao
 
     companion object {

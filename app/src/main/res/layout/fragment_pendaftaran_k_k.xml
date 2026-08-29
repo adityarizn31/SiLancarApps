@@ -191,6 +191,14 @@
                     android:textStyle="bold"
                     android:textColor="#424242"/>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/upload_dokumen_persyaratan_dengan_jelas_dan_dapat_terbaca"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnUploadKTPSuami"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"

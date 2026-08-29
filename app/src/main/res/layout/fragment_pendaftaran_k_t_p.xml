@@ -14,6 +14,10 @@
         android:orientation="vertical"
         android:padding="20dp">
 
+        <!-- ========================= -->
+        <!-- HEADER -->
+        <!-- ========================= -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,6 +42,10 @@
             android:text="@string/lengkapi"
             android:textColor="@color/text_secondary"
             android:textSize="14sp" />
+
+        <!-- ========================= -->
+        <!-- DATA PEMOHON -->
+        <!-- ========================= -->
 
         <com.google.android.material.card.MaterialCardView
             style="@style/Widget.SiLancar.Card"
@@ -139,6 +147,10 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- ========================= -->
+        <!-- Dokumen Persyaratan -->
+        <!-- ========================= -->
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -167,14 +179,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="@string/upload_ktp"
-                    icon="@android:drawable/ic_menu_upload" />
+                    app:icon="@android:drawable/ic_menu_upload" />
 
                 <TextView
                     android:id="@+id/tvKtp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Belum ada file"/>
+                    android:text="@string/belum_ada_file"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnUploadKK"
@@ -183,11 +195,58 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:text="@string/upload_kk"
-                    icon="@android:drawable/ic_menu_upload" />
+                    app:icon="@android:drawable/ic_menu_upload" />
+
+                <TextView
+                    android:id="@+id/tvKk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/belum_ada_file"/>
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
+        <!-- ========================= -->
+        <!-- PERNYATAAN -->
+        <!-- ========================= -->
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SiLancar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <CheckBox
+                    android:id="@+id/cbPersetujuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/saya_menyatakan_bahwa_data_dan_dokumen_yang_saya_berikan_adalah_benar_dan_dapat_dipertanggungjawabkan"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ========================= -->
+        <!-- PENGIRIMAN -->
+        <!-- ========================= -->
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnKirim"

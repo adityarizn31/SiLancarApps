@@ -54,7 +54,7 @@
 
     <!-- ==================== KARTU KELUARGA ==================== -->
 
-    <string name="kartu_keluarga">KARTU KELUARGA</string>
+    <string name="kartu_keluarga">Kartu Keluarga</string>
     <string name="nomor_kk_lama">Nomor KK Lama</string>
     <string name="nomor_KK">Nomor KK</string>
 
@@ -66,12 +66,12 @@
 
     <!-- ==================== AKTA KELAHIRAN ==================== -->
 
-    <string name="akta_kelahiran">AKTA KELAHIRAN</string>
+    <string name="akta_kelahiran">Akta Kelahiran</string>
 
 
     <!-- ==================== AKTA KEMATIAN ==================== -->
 
-    <string name="akta_kematian">AKTA KEMATIAN</string>
+    <string name="akta_kematian">Akta Kematian</string>
 
     <string name="nik_alm">NIK Almarhum</string>
     <string name="nomor_KK_alm">No KK Almarhum</string>
@@ -199,5 +199,62 @@
     <string name="edit_profil">Edit Profil</string>
     <string name="bantuan_whatsapp">Halo Admin SiLancar, saya butuh bantuan terkait pengajuan saya.</string>
     <string name="hubungi_kami">Hubungi Kami</string>
+    <string name="upload_ktp_ibu">Upload KTP Ibu</string>
+    <string name="upload_ktp_ayah">Upload KTP Ayah</string>
+    <string name="upload_surat_keterangan_lahir">Upload Surat Keterangan Lahir</string>
+    <string name="upload_dokumen_yang_diperlukan_dengan_jelas_dan_dapat_terbaca">Upload dokumen yang diperlukan dengan jelas dan dapat terbaca.</string>
+    <string name="lengkapi_data_kelahiran_dan_dokumen_persyaratan_untuk_mengajukan_akta_kelahiran">Lengkapi data kelahiran dan dokumen persyaratan untuk mengajukan Akta Kelahiran.</string>
+    <string name="kartu_identitas_anak">Kartu Identitas Anak</string>
+    <string name="saya_menyatakan_bahwa_data_dan_dokumen_yang_saya_berikan_adalah_benar_dan_dapat_dipertanggungjawabkan">Saya menyatakan bahwa data dan dokumen yang saya berikan adalah benar dan dapat dipertanggungjawabkan.</string>
+    <string name="nama_lengkap_ibu">Nama Lengkap Ibu</string>
+    <string name="waktu_kelahiran">Waktu Kelahiran</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <string name="tempat_kelahiran">Tempat Kelahiran</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="nama_lengkap_anak">Nama Lengkap Anak</string>
+    <string name="nik_ibu">NIK Ibu</string>
+    <string name="nama_lengkap_ayah">Nama Lengkap Ayah</string>
+    <string name="nik_ayah">NIK Ayah</string>
+    <string name="data_ayah">Data Ayah</string>
+    <string name="panjang_bayi_saat_lahir_cm">Panjang Bayi Saat Lahir (cm)</string>
+    <string name="berat_bayi_saat_lahir_gram">Berat Bayi Saat Lahir (gram)</string>
+    <string name="anak_ke">Anak Ke-</string>
+    <string name="data_anak">Data Anak</string>
+    <string name="lengkapi_data_anak_dan_dokumen_persyaratan_untuk_mengajukan_kia">Lengkapi data anak dan dokumen persyaratan untuk mengajukan KIA.</string>
+    <string name="nik_anak">NIK Anak</string>
+    <string name="tempat_lahir">Tempat Lahir</string>
+    <string name="data_orang_tua_wali">Data Orang Tua / Wali</string>
+    <string name="pastikan_dokumen_yang_diunggah_dapat_dibaca_dengan_jelas">Pastikan dokumen yang diunggah dapat dibaca dengan jelas.</string>
+    <string name="upload_akta_kelahiran">Upload Akta Kelahiran</string>
+    <string name="desa_kelurahan">Desa / Kelurahan</string>
+    <string name="kecamatan">Kecamatan</string>
+    <string name="alamat_lengkap_tujuan">Alamat Lengkap Tujuan</string>
+    <string name="alamat_asal">Alamat Asal</string>
+    <string name="alamat_tujuan">Alamat Tujuan</string>
+    <string name="upload_dokumen_sesuai_dengan_jenis_pengajuan_yang_dipilih">Upload dokumen sesuai dengan jenis pengajuan yang dipilih.</string>
+    <string name="upload_kartu_keluarga">Upload Kartu Keluarga</string>
+    <string name="upload_ktp_pemohon">Upload KTP Pemohon</string>
+    <string name="data_instansi">Data Instansi</string>
+    <string name="nama_instansi">Nama Instansi</string>
+    <string name="jenis_instansi">Jenis Instansi</string>
+    <string name="alamat_instansi">Alamat Instansi</string>
+    <string name="upload_dokumen_legalitas_instansi">Upload Dokumen Legalitas Instansi</string>
+    <string name="upload_ktp_penanggung_jawab">Upload KTP Penanggung Jawab</string>
+    <string name="upload_surat_tugas">Upload Surat Tugas</string>
+    <string name="upload_surat_permohonan_instansi">Upload Surat Permohonan Instansi</string>
+    <string name="keterangan">Keterangan</string>
+    <string name="data_yang_dibutuhkan">Data yang Dibutuhkan</string>
+    <string name="tujuan_pemanfaatan_data">Tujuan Pemanfaatan Data</string>
+    <string name="detail_permohonan">Detail Permohonan</string>
+    <string name="nomor_telepon_instansi">Nomor Telepon Instansi</string>
+    <string name="email_instansi">Email Instansi</string>
+    <string name="penanggung_jawab">Penanggung Jawab</string>
+    <string name="nama_penanggung_jawab">Nama Penanggung Jawab</string>
+    <string name="jabatan">Jabatan</string>
+    <string name="nik_penanggung_jawab">NIK Penanggung Jawab</string>
+    <string name="nomor_hp_penanggung_jawab">Nomor HP Penanggung Jawab</string>
+    <string name="upload_dokumen_persyaratan_dengan_jelas_dan_dapat_terbaca">Upload dokumen persyaratan dengan jelas dan dapat terbaca.</string>
+    <string name="laki">Laki</string>
+    <string name="perempuan">Perempuan</string>
 
 </resources>

@@ -21,7 +21,6 @@ data class PengajuanKK (
     val docKKSuami : String?,
     val docKKIstri : String?,
 
-
     val status : String = "Menunggu",
     val tanggal : Long = System.currentTimeMillis()
 )
