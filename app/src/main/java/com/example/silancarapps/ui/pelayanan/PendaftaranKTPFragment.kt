@@ -23,7 +23,6 @@ class PendaftaranKTPFragment : Fragment() {
 
     private var _binding: FragmentPendaftaranKTPBinding? = null
     private val binding get() = _binding!!
-
     private val viewModel: PendaftaranViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }
@@ -56,8 +55,13 @@ class PendaftaranKTPFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        binding.btnUploadKTP.setOnClickListener { launcherKtp.launch("image/*") }
-        binding.btnUploadKK.setOnClickListener { launcherKK.launch("image/*") }
+        binding.btnUploadKTP.setOnClickListener {
+            launcherKtp.launch("image/*")
+        }
+
+        binding.btnUploadKK.setOnClickListener {
+            launcherKK.launch("image/*")
+        }
 
         binding.btnKirim.setOnClickListener {
             validateAndProcess()
@@ -72,7 +76,7 @@ class PendaftaranKTPFragment : Fragment() {
         val alamat = binding.edtAlamat.text.toString().trim()
 
         val isNameValid = ValidateKTP.isValidName(nama)
-        val isNikValid = nik.length == 16 
+        val isNikValid = ValidateKTP.isValidNik(nik)
         val isNoKKValid = ValidateKTP.isValidNoKK(noKK)
         val isNoHpValid = ValidateKTP.isValidNoHp(noHp)
         val isAlamatValid = ValidateKTP.isValidAlamat(alamat)
@@ -112,11 +116,15 @@ class PendaftaranKTPFragment : Fragment() {
 
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        btnBatal.setOnClickListener { dialog.dismiss() }
+        btnBatal.setOnClickListener {
+            dialog.dismiss()
+        }
+
         btnKirim.setOnClickListener {
             dialog.dismiss()
             submitData(nama, nik, noKK, noHp, alamat)
         }
+
         dialog.show()
     }
 
@@ -124,8 +132,8 @@ class PendaftaranKTPFragment : Fragment() {
         val fileKtp = FileUtils.uriToFile(uriKtp!!, requireContext())
         val fileKK = FileUtils.uriToFile(uriKK!!, requireContext())
 
-        val pengajuan = PengajuanKTP(
-            jenisLayanan = "Pendaftaran KTP",
+        val pengajuanKTP = PengajuanKTP(
+            jenisLayanan = "Pendaftaran Kartu Tanda Penduduk",
             nama = nama,
             nik = nik,
             noKK = noKK,
@@ -134,7 +142,7 @@ class PendaftaranKTPFragment : Fragment() {
             docKTP = fileKtp.absolutePath,
             docKK = fileKK.absolutePath
         )
-        viewModel.insertKTP(pengajuan)
+        viewModel.insertKTP(pengajuanKTP)
         Toast.makeText(requireContext(), getString(R.string.pengajuan_berhasil), Toast.LENGTH_LONG).show()
         findNavController().popBackStack()
     }

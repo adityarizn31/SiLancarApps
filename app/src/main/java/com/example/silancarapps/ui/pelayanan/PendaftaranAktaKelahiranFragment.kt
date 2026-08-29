@@ -19,6 +19,7 @@ import com.example.silancarapps.databinding.FragmentPendaftaranAktaKelahiranBind
 import com.example.silancarapps.ui.viewmodel.PendaftaranViewModel
 import com.example.silancarapps.ui.viewmodel.ViewModelFactory
 import com.example.silancarapps.utils.FileUtils
+import com.example.silancarapps.utils.ValidateAktaKelahiran
 import java.util.Calendar
 
 class PendaftaranAktaKelahiranFragment : Fragment() {
@@ -120,8 +121,29 @@ class PendaftaranAktaKelahiranFragment : Fragment() {
         val selectedGenderId = binding.rgJenisKelamin.checkedRadioButtonId
         val jenisKelamin = if (selectedGenderId == R.id.rbLaki) "Laki-laki" else "Perempuan"
 
-        if (namaAnak.isEmpty() || tempatLahir.isEmpty() || tanggalLahir.isEmpty() || nikAyah.length != 16 || nikIbu.length != 16 || !binding.cbPersetujuan.isChecked) {
-            Toast.makeText(requireContext(), "Lengkapi semua data dan centang persetujuan", Toast.LENGTH_SHORT).show()
+        val isNamaAnakValid = ValidateAktaKelahiran.isValidNameAnak(namaAnak)
+        val isTempatLahirValid = ValidateAktaKelahiran.isValidTempatLahir(tempatLahir)
+        val isTanggalLahirValid = ValidateAktaKelahiran.isValidTanggalLahir(tanggalLahir)
+        val isWaktuLahirValid = ValidateAktaKelahiran.isValidWaktuLahir(waktuLahir)
+        val isAnakKeValid = ValidateAktaKelahiran.isValidAnakKe(anakKe)
+        val isBeratBayiValid = ValidateAktaKelahiran.isValidBeratBayi(beratBayi)
+        val isPanjangBayiValid = ValidateAktaKelahiran.isValidPanjangBayi(panjangBayi)
+        val isNikAyahValid = ValidateAktaKelahiran.isValidNik(nikAyah)
+        val isNamaAyahValid = ValidateAktaKelahiran.isValidNameOrangTua(namaAyah)
+        val isNikIbuValid = ValidateAktaKelahiran.isValidNik(nikIbu)
+        val isNamaIbuValid = ValidateAktaKelahiran.isValidNameOrangTua(namaIbu)
+
+        if (!isNamaAnakValid || !isTempatLahirValid || !isTanggalLahirValid || !isWaktuLahirValid || 
+            !isAnakKeValid || !isBeratBayiValid || !isPanjangBayiValid || 
+            !isNikAyahValid || !isNamaAyahValid || !isNikIbuValid || !isNamaIbuValid || 
+            !binding.cbPersetujuan.isChecked) {
+            
+            if (!isNamaAnakValid) binding.edtNamaAnak.error = "Nama anak harus diisi"
+            if (!isTempatLahirValid) binding.edtTempatLahir.error = "Tempat lahir harus diisi"
+            if (!isNikAyahValid) binding.edtNikAyah.error = "NIK Ayah harus 16 digit"
+            if (!isNikIbuValid) binding.edtNikIbu.error = "NIK Ibu harus 16 digit"
+            
+            Toast.makeText(requireContext(), "Lengkapi semua data dengan benar dan centang persetujuan", Toast.LENGTH_SHORT).show()
             return
         }
 

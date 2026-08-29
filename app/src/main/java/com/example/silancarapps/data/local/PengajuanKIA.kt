@@ -18,7 +18,7 @@ data class PengajuanKIA(
     val namaIbu: String,
     val nikIbu: String,
 
-    val docAktaKelahrian : String?,
+    val docAktaKelahiran : String?,
     val docKK : String,
     val docKTPAyah: String?,
     val docKTPIbu: String?,

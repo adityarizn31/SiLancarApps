@@ -6,8 +6,8 @@ object ValidateKTP {
         return name.isNotEmpty()
     }
 
-    fun isValidKTP(ktp: String): Boolean {
-        return ktp.length == 16 && ktp.all { it.isDigit() }
+    fun isValidNik(nik: String): Boolean {
+        return nik.length == 16 && nik.all { it.isDigit() }
     }
 
     fun isValidNoKK(noKK: String): Boolean {

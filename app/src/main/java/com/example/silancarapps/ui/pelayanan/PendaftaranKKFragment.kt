@@ -22,7 +22,6 @@ class PendaftaranKKFragment : Fragment() {
 
     private var _binding : FragmentPendaftaranKKBinding? = null
     private val binding get() = _binding!!
-
     private val viewModel: PendaftaranViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }
@@ -78,7 +77,15 @@ class PendaftaranKKFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+
+        setupUploadButtons()
+
+        binding.btnKirim.setOnClickListener {
+            validateAndProcess()
+        }
+    }
+
+    private fun setupUploadButtons() {
         binding.btnUploadKTPSuami.setOnClickListener {
             launcherIntentKtpSuami.launch("image/*")
         }
@@ -93,10 +100,6 @@ class PendaftaranKKFragment : Fragment() {
 
         binding.btnUploadKKIstri.setOnClickListener {
             launcherIntentKKIstri.launch("image/*")
-        }
-
-        binding.btnKirim.setOnClickListener {
-            validateAndProcess()
         }
     }
 
@@ -189,8 +192,8 @@ class PendaftaranKKFragment : Fragment() {
         val fileKkSuami = FileUtils.uriToFile(kkSuami!!, requireContext())
         val fileKkIstri = FileUtils.uriToFile(kkIstri!!, requireContext())
 
-        val pengajuan = PengajuanKK(
-            jenisLayanan = "Pendaftaran KK",
+        val pengajuanKK = PengajuanKK(
+            jenisLayanan = "Pendaftaran Kartu Keluarga",
             nama = nama,
             nikSuami = nikSuami,
             nikIstri = nikIstri,
@@ -204,7 +207,7 @@ class PendaftaranKKFragment : Fragment() {
             docKKIstri = fileKkIstri.absolutePath
         )
         
-        viewModel.insertKK(pengajuan)
+        viewModel.insertKK(pengajuanKK)
         Toast.makeText(requireContext(), getString(R.string.pengajuan_berhasil), Toast.LENGTH_LONG).show()
         findNavController().popBackStack()
     }
