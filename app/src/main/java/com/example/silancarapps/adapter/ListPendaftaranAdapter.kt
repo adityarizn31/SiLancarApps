@@ -7,12 +7,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.silancarapps.R
 import androidx.recyclerview.widget.RecyclerView
-import com.example.silancarapps.data.model.Pelayanan
+import com.example.silancarapps.data.model.Pendaftaran
 
-class ListPelayananAdapter(
-    private val listPelayanan: List<Pelayanan>,
+class ListPendaftaranAdapter(
+    private val listPendaftaran: List<Pendaftaran>,
     private val onItemClick: (Int) -> Unit
-) : RecyclerView.Adapter<ListPelayananAdapter.ListViewHolder>() {
+) : RecyclerView.Adapter<ListPendaftaranAdapter.ListViewHolder>() {
 
     class ListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgPelayanan: ImageView = view.findViewById(R.id.imgPelayanan)
@@ -25,7 +25,7 @@ class ListPelayananAdapter(
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val item = listPelayanan[position]
+        val item = listPendaftaran[position]
         holder.imgPelayanan.setImageResource(item.image)
         holder.tvPelayanan.text = item.title
         
@@ -34,5 +34,5 @@ class ListPelayananAdapter(
         }
     }
 
-    override fun getItemCount(): Int = listPelayanan.size
+    override fun getItemCount(): Int = listPendaftaran.size
 }

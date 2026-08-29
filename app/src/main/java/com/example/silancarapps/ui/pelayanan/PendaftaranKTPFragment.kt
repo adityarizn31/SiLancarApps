@@ -14,7 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.silancarapps.R
 import com.example.silancarapps.data.local.PengajuanKTP
 import com.example.silancarapps.databinding.FragmentPendaftaranKTPBinding
-import com.example.silancarapps.ui.viewmodel.PengajuanViewModel
+import com.example.silancarapps.ui.viewmodel.PendaftaranViewModel
 import com.example.silancarapps.ui.viewmodel.ViewModelFactory
 import com.example.silancarapps.utils.FileUtils
 import com.example.silancarapps.utils.ValidateKTP
@@ -24,7 +24,7 @@ class PendaftaranKTPFragment : Fragment() {
     private var _binding: FragmentPendaftaranKTPBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: PengajuanViewModel by viewModels {
+    private val viewModel: PendaftaranViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }
 

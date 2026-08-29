@@ -1,6 +1,6 @@
 package com.example.silancarapps.data.model
 
-data class Pelayanan(
+data class Pendaftaran(
     val title: String,
     val image: Int
 )

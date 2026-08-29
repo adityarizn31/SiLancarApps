@@ -9,7 +9,7 @@ import com.example.silancarapps.data.local.PengajuanKIA
 import com.example.silancarapps.data.local.User
 import kotlinx.coroutines.flow.Flow
 
-class PengajuanRepository(
+class PendaftaranRepository(
     private val aktaKelahiranDao: PengajuanAktaKelahiranDao,
     private val aktaKematianDao: PengajuanAktaKematianDao,
     private val kiaDao: PengajuanKIADao,

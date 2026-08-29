@@ -1,6 +1,6 @@
 package com.example.silancarapps.data.model
 
-data class RiwayatSemua(
+data class RiwayatPendaftaran(
     val id: Int,
     val jenisLayanan: String,
     val nama: String,

@@ -9,15 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.silancarapps.adapter.RiwayatKKAdapter
-import com.example.silancarapps.adapter.RiwayatSemuaAdapter
+import com.example.silancarapps.adapter.RiwayatPendaftaranAdapter
 import com.example.silancarapps.data.local.PengajuanAktaKelahiran
 import com.example.silancarapps.data.local.PengajuanAktaKematian
 import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.data.local.PengajuanKTP
-import com.example.silancarapps.data.model.RiwayatSemua
+import com.example.silancarapps.data.model.RiwayatPendaftaran
 import com.example.silancarapps.databinding.FragmentRiwayatBinding
-import com.example.silancarapps.ui.viewmodel.PengajuanViewModel
+import com.example.silancarapps.ui.viewmodel.PendaftaranViewModel
 import com.example.silancarapps.ui.viewmodel.ViewModelFactory
 import kotlinx.coroutines.launch
 
@@ -25,8 +24,8 @@ class RiwayatFragment : Fragment() {
 
     private var _binding: FragmentRiwayatBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapter: RiwayatSemuaAdapter
-    private val viewModel: PengajuanViewModel by viewModels {
+    private lateinit var adapter: RiwayatPendaftaranAdapter
+    private val viewModel: PendaftaranViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }
 
@@ -46,7 +45,7 @@ class RiwayatFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = RiwayatSemuaAdapter(emptyList()) { item ->
+        adapter = RiwayatPendaftaranAdapter(emptyList()) { item ->
             deletePengajuan(item)
         }
         binding.rvRiwayat.apply {
@@ -57,7 +56,7 @@ class RiwayatFragment : Fragment() {
 
     private fun observeData() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.riwayatSemua.collect { list ->
+            viewModel.riwayatPendaftaran.collect { list ->
                 if (list.isEmpty()) {
                     binding.tvEmpty.visibility = View.VISIBLE
                     binding.rvRiwayat.visibility = View.GONE
@@ -74,7 +73,7 @@ class RiwayatFragment : Fragment() {
 //        viewModel.deleteKK(pengajuan)
 //        Toast.makeText(requireContext(), "Pengajuan dihapus", Toast.LENGTH_SHORT).show()
 //    }
-private fun deletePengajuan(item: RiwayatSemua) {
+private fun deletePengajuan(item: RiwayatPendaftaran) {
     lifecycleScope.launch {
         when (val data = item.dataAsli) {
             is PengajuanKK -> viewModel.deleteKK(data)

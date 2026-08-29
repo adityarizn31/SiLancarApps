@@ -5,10 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.silancarapps.data.local.User
-import com.example.silancarapps.data.repository.PengajuanRepository
+import com.example.silancarapps.data.repository.PendaftaranRepository
 import kotlinx.coroutines.launch
 
-class AuthViewModel(private val repository: PengajuanRepository) : ViewModel() {
+class AuthViewModel(private val repository: PendaftaranRepository) : ViewModel() {
 
     private val _registerResult = MutableLiveData<Boolean>()
     val registerResult: LiveData<Boolean> = _registerResult

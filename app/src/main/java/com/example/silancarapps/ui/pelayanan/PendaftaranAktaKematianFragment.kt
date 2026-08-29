@@ -15,7 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.silancarapps.R
 import com.example.silancarapps.data.local.PengajuanAktaKematian
 import com.example.silancarapps.databinding.FragmentPendaftaranAktaKematianBinding
-import com.example.silancarapps.ui.viewmodel.PengajuanViewModel
+import com.example.silancarapps.ui.viewmodel.PendaftaranViewModel
 import com.example.silancarapps.ui.viewmodel.ViewModelFactory
 import com.example.silancarapps.utils.FileUtils
 import java.util.Calendar
@@ -24,7 +24,7 @@ class PendaftaranAktaKematianFragment : Fragment() {
 
     private var _binding: FragmentPendaftaranAktaKematianBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: PengajuanViewModel by viewModels {
+    private val viewModel: PendaftaranViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }
 

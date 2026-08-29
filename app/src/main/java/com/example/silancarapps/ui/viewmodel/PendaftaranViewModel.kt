@@ -7,13 +7,13 @@ import com.example.silancarapps.data.local.PengajuanKTP
 import com.example.silancarapps.data.local.PengajuanAktaKelahiran
 import com.example.silancarapps.data.local.PengajuanAktaKematian
 import com.example.silancarapps.data.local.PengajuanKIA
-import com.example.silancarapps.data.model.RiwayatSemua
-import com.example.silancarapps.data.repository.PengajuanRepository
+import com.example.silancarapps.data.model.RiwayatPendaftaran
+import com.example.silancarapps.data.repository.PendaftaranRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
-class PengajuanViewModel(private val repository: PengajuanRepository) : ViewModel() {
+class PendaftaranViewModel(private val repository: PendaftaranRepository) : ViewModel() {
 
     val allAktaKelahiran: Flow<List<PengajuanAktaKelahiran>> = repository.getAllAktaKelahiran()
     val allAktaKematian: Flow<List<PengajuanAktaKematian>> = repository.getAllAktaKematian()
@@ -21,29 +21,29 @@ class PengajuanViewModel(private val repository: PengajuanRepository) : ViewMode
     val allPengajuanKK: Flow<List<PengajuanKK>> = repository.getAllPengajuanKK()
     val allPengajuanKTP: Flow<List<PengajuanKTP>> = repository.getAllPengajuanKTP()
 
-    val riwayatSemua: Flow<List<RiwayatSemua>> = combine(
+    val riwayatPendaftaran: Flow<List<RiwayatPendaftaran>> = combine(
         allAktaKelahiran,
         allAktaKematian,
         allKIA,
         allPengajuanKK,
         allPengajuanKTP,
     ) { aktaLahir, aktaMati, kia, kk, ktp ->
-        val list = mutableListOf<RiwayatSemua>()
+        val list = mutableListOf<RiwayatPendaftaran>()
 
         aktaLahir.forEach {
-            list.add(RiwayatSemua(it.id, it.jenisLayanan, it.namaAnak, it.status, it.tanggal, it))
+            list.add(RiwayatPendaftaran(it.id, it.jenisLayanan, it.namaAnak, it.status, it.tanggal, it))
         }
         aktaMati.forEach {
-            list.add(RiwayatSemua(it.id, it.jenisLayanan, it.namaAlm, it.status, it.tanggal, it))
+            list.add(RiwayatPendaftaran(it.id, it.jenisLayanan, it.namaAlm, it.status, it.tanggal, it))
         }
         kia.forEach {
-            list.add(RiwayatSemua(it.id, it.jenisLayanan, it.namaLengkapAnak, it.status, it.tanggal, it))
+            list.add(RiwayatPendaftaran(it.id, it.jenisLayanan, it.namaLengkapAnak, it.status, it.tanggal, it))
         }
         kk.forEach {
-            list.add(RiwayatSemua(it.id, it.jenisLayanan, it.nama, it.status, it.tanggal, it))
+            list.add(RiwayatPendaftaran(it.id, it.jenisLayanan, it.nama, it.status, it.tanggal, it))
         }
         ktp.forEach { 
-            list.add(RiwayatSemua(it.id, it.jenisLayanan, it.nama, it.status, it.tanggal, it))
+            list.add(RiwayatPendaftaran(it.id, it.jenisLayanan, it.nama, it.status, it.tanggal, it))
         }
         
         list.sortByDescending { it.tanggal }

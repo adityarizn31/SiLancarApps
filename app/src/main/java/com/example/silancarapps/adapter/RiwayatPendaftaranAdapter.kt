@@ -3,23 +3,20 @@ package com.example.silancarapps.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.silancarapps.data.local.PengajuanKK
+import com.example.silancarapps.data.model.RiwayatPendaftaran
 import com.example.silancarapps.databinding.ItemRiwayatBinding
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class RiwayatKKAdapter(
-    private var list: List<PengajuanKK>,
-    private val onDelete: (PengajuanKK) -> Unit
-) : RecyclerView.Adapter<RiwayatKKAdapter.ViewHolder>() {
+class RiwayatPendaftaranAdapter(
+    private var list: List<RiwayatPendaftaran>,
+    private val onDelete: (RiwayatPendaftaran) -> Unit
+) : RecyclerView.Adapter<RiwayatPendaftaranAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: ItemRiwayatBinding) : RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int)
-    : ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemRiwayatBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
@@ -40,7 +37,7 @@ class RiwayatKKAdapter(
 
     override fun getItemCount(): Int = list.size
 
-    fun updateData(newList: List<PengajuanKK>) {
+    fun updateData(newList: List<RiwayatPendaftaran>) {
         list = newList
         notifyDataSetChanged()
     }

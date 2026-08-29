@@ -13,7 +13,7 @@ import com.example.silancarapps.databinding.FragmentFirstBinding
 import com.example.silancarapps.ui.viewmodel.AuthViewModel
 import com.example.silancarapps.ui.viewmodel.ViewModelFactory
 
-class FirstFragment : Fragment() {
+class RegisterFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
