@@ -42,6 +42,19 @@
     <string name="kirim_pengajuan">Kirim Pengajuan</string>
     <string name="pengajuan_berhasil">Pengajuan Anda telah berhasil dikirim!</string>
     <string name="harap_isi_data">Harap isi semua data dengan benar.</string>
+    <string name="harap_lampirkan_dokumen">Harap lampirkan semua dokumen persyaratan.</string>
+    <string name="err_empty_name">Nama tidak boleh kosong</string>
+    <string name="err_invalid_nik">NIK harus 16 digit angka</string>
+    <string name="err_empty_no_kk">Nomor KK tidak boleh kosong</string>
+    <string name="err_invalid_no_hp">Nomor HP harus 12 digit angka</string>
+    <string name="err_empty_alamat">Alamat tidak boleh kosong</string>
+    <string name="err_empty_tempat_lahir">Tempat lahir tidak boleh kosong</string>
+    <string name="err_empty_tanggal_lahir">Tanggal lahir tidak boleh kosong</string>
+    <string name="err_empty_anak_ke">Anak ke tidak boleh kosong</string>
+    <string name="err_empty_berat_bayi">Berat bayi tidak boleh kosong</string>
+    <string name="err_empty_panjang_bayi">Panjang bayi tidak boleh kosong</string>
+    <string name="err_empty_persetujuan">Anda harus centang persetujuan</string>
+    <string name="err_empty_waktu_lahir">Waktu lahir tidak boleh kosong</string>
 
 
     <!-- ==================== DOKUMEN ==================== -->
@@ -256,5 +269,14 @@
     <string name="upload_dokumen_persyaratan_dengan_jelas_dan_dapat_terbaca">Upload dokumen persyaratan dengan jelas dan dapat terbaca.</string>
     <string name="laki">Laki</string>
     <string name="perempuan">Perempuan</string>
+    <string name="wajib_sesuai_ketentuan_layanan">Wajib sesuai ketentuan layanan</string>
+    <string name="upload_pas_foto_anak">Upload Pas Foto Anak</string>
+    <string name="pendaftaran_kartu_keluarga">Pendaftaran Kartu Keluarga</string>
+    <string name="pendaftaran_kartu_tanda_penduduk">Pendaftaran Kartu Tanda Penduduk</string>
+    <string name="pendaftaran_akta_kelahiran">Pendaftaran Akta Kelahiran</string>
+    <string name="pendaftaran_akta_kematian">Pendaftaran Akta Kematian</string>
+    <string name="pendaftaran_kartu_identitas_anak">Pendaftaran Kartu Identitas Anak</string>
+    <string name="pendaftaran_pemanfaatan_data">Pendaftaran Pemanfaatan Data</string>
+    <string name="pendaftaran_perpindahan_datang_provinsi_dan_kabupaten">Pendaftaran Perpindahan Datang Provinsi dan Kabupaten</string>
 
 </resources>

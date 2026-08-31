@@ -23,6 +23,7 @@ class PendaftaranKTPFragment : Fragment() {
 
     private var _binding: FragmentPendaftaranKTPBinding? = null
     private val binding get() = _binding!!
+
     private val viewModel: PendaftaranViewModel by viewModels {
         ViewModelFactory.getInstance(requireContext())
     }
@@ -55,13 +56,8 @@ class PendaftaranKTPFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        binding.btnUploadKTP.setOnClickListener {
-            launcherKtp.launch("image/*")
-        }
-
-        binding.btnUploadKK.setOnClickListener {
-            launcherKK.launch("image/*")
-        }
+        binding.btnUploadKTP.setOnClickListener { launcherKtp.launch("image/*") }
+        binding.btnUploadKK.setOnClickListener { launcherKK.launch("image/*") }
 
         binding.btnKirim.setOnClickListener {
             validateAndProcess()
@@ -75,22 +71,39 @@ class PendaftaranKTPFragment : Fragment() {
         val noHp = binding.edtNoHp.text.toString().trim()
         val alamat = binding.edtAlamat.text.toString().trim()
 
-        val isNameValid = ValidateKTP.isValidName(nama)
-        val isNikValid = ValidateKTP.isValidNik(nik)
-        val isNoKKValid = ValidateKTP.isValidNoKK(noKK)
-        val isNoHpValid = ValidateKTP.isValidNoHp(noHp)
-        val isAlamatValid = ValidateKTP.isValidAlamat(alamat)
+        // 1. Validasi Teks via Object
+        val nameErr = ValidateKTP.getNameError(nama)
+        val nikErr = ValidateKTP.getNikError(nik)
+        val noKKErr = ValidateKTP.getNoKKError(noKK)
+        val noHpErr = ValidateKTP.getNoHpError(noHp)
+        val alamatErr = ValidateKTP.getAlamatError(alamat)
 
-        if (!isNameValid || !isNikValid || !isNoKKValid || !isNoHpValid || !isAlamatValid || !binding.cbPersetujuan.isChecked) {
-            Toast.makeText(requireContext(), "Lengkapi data dan centang persetujuan", Toast.LENGTH_SHORT).show()
+        // 2. Tampilkan Error di UI
+        binding.edtNama.error = nameErr?.let { getString(it) }
+        binding.edtNik.error = nikErr?.let { getString(it) }
+        binding.edtNoKK.error = noKKErr?.let { getString(it) }
+        binding.edtNoHp.error = noHpErr?.let { getString(it) }
+        binding.edtAlamat.error = alamatErr?.let { getString(it) }
+
+        val hasError = listOf(nameErr, nikErr, noKKErr, noHpErr, alamatErr).any { it != null }
+
+        if (hasError) {
+            Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
             return
         }
 
+        if (!binding.cbPersetujuan.isChecked) {
+            Toast.makeText(requireContext(), getString(R.string.err_empty_persetujuan), Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // 3. Cek Lampiran
         if (uriKtp == null || uriKK == null) {
-            Toast.makeText(requireContext(), "Harap lampirkan dokumen persyaratan", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.harap_lampirkan_dokumen), Toast.LENGTH_SHORT).show()
             return
         }
 
+        // 4. Konfirmasi
         showConfirmationDialog(nama, nik, noKK, noHp, alamat)
     }
 
@@ -116,15 +129,11 @@ class PendaftaranKTPFragment : Fragment() {
 
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        btnBatal.setOnClickListener {
-            dialog.dismiss()
-        }
-
+        btnBatal.setOnClickListener { dialog.dismiss() }
         btnKirim.setOnClickListener {
             dialog.dismiss()
             submitData(nama, nik, noKK, noHp, alamat)
         }
-
         dialog.show()
     }
 
@@ -132,7 +141,7 @@ class PendaftaranKTPFragment : Fragment() {
         val fileKtp = FileUtils.uriToFile(uriKtp!!, requireContext())
         val fileKK = FileUtils.uriToFile(uriKK!!, requireContext())
 
-        val pengajuanKTP = PengajuanKTP(
+        val pengajuan = PengajuanKTP(
             jenisLayanan = "Pendaftaran Kartu Tanda Penduduk",
             nama = nama,
             nik = nik,
@@ -142,7 +151,7 @@ class PendaftaranKTPFragment : Fragment() {
             docKTP = fileKtp.absolutePath,
             docKK = fileKK.absolutePath
         )
-        viewModel.insertKTP(pengajuanKTP)
+        viewModel.insertKTP(pengajuan)
         Toast.makeText(requireContext(), getString(R.string.pengajuan_berhasil), Toast.LENGTH_LONG).show()
         findNavController().popBackStack()
     }

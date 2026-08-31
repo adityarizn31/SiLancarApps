@@ -148,7 +148,7 @@ tools:context=".ui.pelayanan.PendaftaranKartuIdentitasAnakFragment">
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jenis Kelamin"
+                android:text="@string/jenis_kelamin"
                 android:textColor="@color/text_primary"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -338,7 +338,7 @@ tools:context=".ui.pelayanan.PendaftaranKartuIdentitasAnakFragment">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Belum ada file"
+                android:text="@string/belum_ada_file"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
@@ -351,7 +351,7 @@ tools:context=".ui.pelayanan.PendaftaranKartuIdentitasAnakFragment">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Upload Kartu Keluarga *"
+                android:text="@string/upload_kk"
                 android:textAllCaps="false"
                 app:icon="@android:drawable/ic_menu_upload"
                 app:iconTint="@color/primary" />
@@ -361,7 +361,7 @@ tools:context=".ui.pelayanan.PendaftaranKartuIdentitasAnakFragment">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Belum ada file"
+                android:text="@string/belum_ada_file"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
@@ -374,17 +374,17 @@ tools:context=".ui.pelayanan.PendaftaranKartuIdentitasAnakFragment">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Upload KTP Ayah / Wali *"
+                android:text="@string/upload_ktp_ayah"
                 android:textAllCaps="false"
                 app:icon="@android:drawable/ic_menu_upload"
                 app:iconTint="@color/primary" />
 
             <TextView
-                android:id="@+id/tvKtpAyah"
+                android:id="@+id/tvKTPAyah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Belum ada file"
+                android:text="@string/belum_ada_file"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
@@ -397,17 +397,17 @@ tools:context=".ui.pelayanan.PendaftaranKartuIdentitasAnakFragment">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Upload KTP Ibu"
+                android:text="@string/upload_ktp_ibu"
                 android:textAllCaps="false"
                 app:icon="@android:drawable/ic_menu_upload"
                 app:iconTint="@color/primary" />
 
             <TextView
-                android:id="@+id/tvKtpIbu"
+                android:id="@+id/tvKTPIbu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Belum ada file"
+                android:text="@string/belum_ada_file"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
@@ -420,17 +420,17 @@ tools:context=".ui.pelayanan.PendaftaranKartuIdentitasAnakFragment">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Upload Pas Foto Anak"
+                android:text="@string/upload_pas_foto_anak"
                 android:textAllCaps="false"
                 app:icon="@android:drawable/ic_menu_camera"
                 app:iconTint="@color/primary" />
 
             <TextView
-                android:id="@+id/tvPasFoto"
+                android:id="@+id/tvPasFotoAnak"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Wajib sesuai ketentuan layanan"
+                android:text="@string/wajib_sesuai_ketentuan_layanan"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
@@ -466,7 +466,7 @@ tools:context=".ui.pelayanan.PendaftaranKartuIdentitasAnakFragment">
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
-                android:text="Saya menyatakan bahwa data dan dokumen yang saya berikan adalah benar dan dapat dipertanggungjawabkan."
+                android:text="@string/saya_menyatakan_bahwa_data_dan_dokumen_yang_saya_berikan_adalah_benar_dan_dapat_dipertanggungjawabkan"
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
 
@@ -485,7 +485,7 @@ tools:context=".ui.pelayanan.PendaftaranKartuIdentitasAnakFragment">
         android:layout_height="56dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
-        android:text="Kirim Pengajuan"
+        android:text="@string/kirim_pengajuan"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textAllCaps="false"

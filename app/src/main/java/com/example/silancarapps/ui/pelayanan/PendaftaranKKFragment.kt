@@ -86,21 +86,10 @@ class PendaftaranKKFragment : Fragment() {
     }
 
     private fun setupUploadButtons() {
-        binding.btnUploadKTPSuami.setOnClickListener {
-            launcherIntentKtpSuami.launch("image/*")
-        }
-
-        binding.btnUploadKTPIstri.setOnClickListener {
-            launcherIntentKTPIstri.launch("image/*")
-        }
-
-        binding.btnUploadKKSuami.setOnClickListener {
-            launcherIntentKKSuami.launch("image/*")
-        }
-
-        binding.btnUploadKKIstri.setOnClickListener {
-            launcherIntentKKIstri.launch("image/*")
-        }
+        binding.btnUploadKTPSuami.setOnClickListener { launcherIntentKtpSuami.launch("image/*") }
+        binding.btnUploadKTPIstri.setOnClickListener { launcherIntentKTPIstri.launch("image/*") }
+        binding.btnUploadKKSuami.setOnClickListener { launcherIntentKKSuami.launch("image/*") }
+        binding.btnUploadKKIstri.setOnClickListener { launcherIntentKKIstri.launch("image/*") }
     }
 
     private fun validateAndProcess() {
@@ -112,36 +101,40 @@ class PendaftaranKKFragment : Fragment() {
         val noHp = binding.edtNoHp.text.toString().trim()
         val alamat = binding.edtAlamat.text.toString().trim()
 
-        val isNameValid = ValidateKK.isValidName(nama)
-        val isNikSuamiValid = ValidateKK.isValidNikSuami(nikSuami)
-        val isNikIstriValid = ValidateKK.isValidNikIstri(nikIstri)
-        val isNoKKSuamiValid = ValidateKK.isValidNoKKSuami(noKKSuami)
-        val isNoKKIstriValid = ValidateKK.isValidNoKKIstri(noKKIstri)
-        val isNoHpValid = ValidateKK.isValidNoHp(noHp)
-        val isAlamatValid = ValidateKK.isValidAlamat(alamat)
+        // 1. Validasi Teks via Object
+        val nameErr = ValidateKK.getNameError(nama)
+        val nikSuamiErr = ValidateKK.getNikError(nikSuami)
+        val nikIstriErr = ValidateKK.getNikError(nikIstri)
+        val noKKSuamiErr = ValidateKK.getNoKKError(noKKSuami)
+        val noKKIstriErr = ValidateKK.getNoKKError(noKKIstri)
+        val noHpErr = ValidateKK.getNoHpError(noHp)
+        val alamatErr = ValidateKK.getAlamatError(alamat)
 
-        if (!isNameValid || !isNikSuamiValid || !isNikIstriValid || !isNoKKSuamiValid || !isNoKKIstriValid || !isNoHpValid || !isAlamatValid) {
-            if (!isNameValid) binding.edtNama.error = "Nama tidak boleh kosong"
-            if (!isNikSuamiValid) binding.edtNikSuami.error = "NIK Suami harus 16 digit angka"
-            if (!isNikIstriValid) binding.edtNikIstri.error = "NIK Istri harus 16 digit angka"
-            if (!isNoKKSuamiValid) binding.edtNoKKSuami.error = "No KK Suami tidak boleh kosong"
-            if (!isNoKKIstriValid) binding.edtNoKKIstri.error = "No KK Istri tidak boleh kosong"
-            if (!isNoHpValid) binding.edtNoHp.error = "Nomor HP harus 12 digit angka"
-            if (!isAlamatValid) binding.edtAlamat.error = "Alamat tidak boleh kosong"
-            
-            if (ktpSuami == null || ktpIstri == null || kkSuami == null || kkIstri == null) {
-                Toast.makeText(requireContext(), "Harap lampirkan dokumen", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
-            }
-        } else {
-            if (ktpSuami == null || ktpIstri == null || kkSuami == null || kkIstri == null) {
-                Toast.makeText(requireContext(), "Harap lampirkan semua dokumen", Toast.LENGTH_SHORT).show()
-                return
-            }
+        // 2. Tampilkan Error di UI
+        binding.edtNama.error = nameErr?.let { getString(it) }
+        binding.edtNikSuami.error = nikSuamiErr?.let { getString(it) }
+        binding.edtNikIstri.error = nikIstriErr?.let { getString(it) }
+        binding.edtNoKKSuami.error = noKKSuamiErr?.let { getString(it) }
+        binding.edtNoKKIstri.error = noKKIstriErr?.let { getString(it) }
+        binding.edtNoHp.error = noHpErr?.let { getString(it) }
+        binding.edtAlamat.error = alamatErr?.let { getString(it) }
 
-            showConfirmationDialog(nama, nikSuami, nikIstri, noKKSuami, noKKIstri, noHp, alamat)
+        // 3. Cek apakah ada error teks
+        val hasError = listOf(nameErr, nikSuamiErr, nikIstriErr, noKKSuamiErr, noKKIstriErr, noHpErr, alamatErr).any { it != null }
+
+        if (hasError) {
+            Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
+            return
         }
+
+        // 4. Cek Lampiran (Hanya sekali di sini)
+        if (ktpSuami == null || ktpIstri == null || kkSuami == null || kkIstri == null) {
+            Toast.makeText(requireContext(), getString(R.string.harap_lampirkan_dokumen), Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // 5. Jika lolos semua, lanjut Konfirmasi
+        showConfirmationDialog(nama, nikSuami, nikIstri, noKKSuami, noKKIstri, noHp, alamat)
     }
 
     private fun showConfirmationDialog(
@@ -171,9 +164,7 @@ class PendaftaranKKFragment : Fragment() {
         
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        btnBatal.setOnClickListener {
-            dialog.dismiss()
-        }
+        btnBatal.setOnClickListener { dialog.dismiss() }
 
         btnKirim.setOnClickListener {
             dialog.dismiss()

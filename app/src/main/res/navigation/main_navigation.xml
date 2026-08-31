@@ -65,7 +65,7 @@
 
     <fragment
         android:id="@+id/riwayatFragment"
-        android:name="com.example.silancarapps.ui.riwayat.RiwayatKKFragment"
+        android:name="com.example.silancarapps.ui.riwayat.RiwayatFragment"
         android:label="Riwayat Pendaftaran"
         tools:layout="@layout/fragment_riwayat" />
 

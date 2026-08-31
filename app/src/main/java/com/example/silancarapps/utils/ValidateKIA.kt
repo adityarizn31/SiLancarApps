@@ -1,40 +1,30 @@
 package com.example.silancarapps.utils
 
+import com.example.silancarapps.R
+
 object ValidateKIA {
 
-    fun isValidNamaLengkapAnak(nameAnak : String): Boolean {
-        return nameAnak.isNotEmpty()
+    fun getNameAnakError(name: String): Int? {
+        return if (name.isEmpty()) R.string.err_empty_name else null
     }
 
-    fun isValidNikAnak(nikAnak : String): Boolean {
-        return nikAnak.length == 16 && nikAnak.all { it.isDigit() }
+    fun getNikAnakError(nik: String): Int? {
+        return if (nik.length != 16 || !nik.all { it.isDigit() }) R.string.err_invalid_nik else null
     }
 
-    fun isValidTempatLahirAnak(tempatLahirAnak : String): Boolean {
-        return tempatLahirAnak.isNotEmpty()
+    fun getTempatLahirError(tempat: String): Int? {
+        return if (tempat.isEmpty()) R.string.err_empty_tempat_lahir else null
     }
 
-    fun isValidTanggalLahirAnak(tanggalLahirAnak : String): Boolean {
-        return tanggalLahirAnak.isNotEmpty()
+    fun getTanggalLahirError(tanggal: String): Int? {
+        return if (tanggal.isEmpty()) R.string.err_empty_tanggal_lahir else null
     }
 
-    fun isValidJenisKelaminAnak(jenisKelaminAnak : String): Boolean {
-        return jenisKelaminAnak.isNotEmpty()
+    fun getNameOrangTuaError(name: String): Int? {
+        return if (name.isEmpty()) R.string.err_empty_name else null
     }
 
-    fun isValidNamaAyah(namaAyah : String): Boolean {
-        return namaAyah.isNotEmpty()
-    }
-
-    fun isValidNikAyah(nikAyah : String): Boolean {
-        return nikAyah.length == 16 && nikAyah.all { it.isDigit() }
-    }
-
-    fun isValidNamaIbu(namaIbu : String): Boolean {
-        return namaIbu.isNotEmpty()
-    }
-
-    fun isValidNikIbu(nikIbu : String): Boolean {
-        return nikIbu.length == 16 && nikIbu.all { it.isDigit() }
+    fun getNikOrangTuaError(nik: String): Int? {
+        return if (nik.length != 16 || !nik.all { it.isDigit() }) R.string.err_invalid_nik else null
     }
 }

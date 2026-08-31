@@ -1,32 +1,26 @@
 package com.example.silancarapps.utils
 
+import com.example.silancarapps.R
+
 object ValidateKK {
 
-    fun isValidName(name: String): Boolean {
-        return name.isNotEmpty()
+    fun getNameError(name: String): Int? {
+        return if (name.isEmpty()) R.string.err_empty_name else null
     }
 
-    fun isValidNikSuami(nikSuami: String): Boolean {
-        return nikSuami.length == 16 && nikSuami.all { it.isDigit() }
+    fun getNikError(nik: String): Int? {
+        return if (nik.length != 16 || !nik.all { it.isDigit() }) R.string.err_invalid_nik else null
     }
 
-    fun isValidNikIstri(nikIstri: String): Boolean {
-        return nikIstri.length == 16 && nikIstri.all { it.isDigit() }
+    fun getNoKKError(noKK: String): Int? {
+        return if (noKK.isEmpty()) R.string.err_empty_no_kk else null
     }
 
-    fun isValidNoKKSuami(noKKSuami: String): Boolean {
-        return noKKSuami.isNotEmpty()
+    fun getNoHpError(noHp: String): Int? {
+        return if (noHp.length < 10 || noHp.length > 13 || !noHp.all { it.isDigit() }) R.string.err_invalid_no_hp else null
     }
 
-    fun isValidNoKKIstri(noKKIstri: String): Boolean {
-        return noKKIstri.isNotEmpty()
-    }
-
-    fun isValidNoHp(noHp: String): Boolean {
-        return noHp.length == 12 && noHp.all { it.isDigit() }
-    }
-
-    fun isValidAlamat(alamat: String): Boolean {
-        return alamat.isNotEmpty()
+    fun getAlamatError(alamat: String): Int? {
+        return if (alamat.isEmpty()) R.string.err_empty_alamat else null
     }
 }

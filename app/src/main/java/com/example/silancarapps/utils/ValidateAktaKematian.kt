@@ -1,36 +1,34 @@
 package com.example.silancarapps.utils
 
+import com.example.silancarapps.R
+
 object ValidateAktaKematian {
 
-    fun isValidNamaAlm(nameAlm : String): Boolean {
-        return nameAlm.isNotEmpty()
+    fun getNameAlmError(name: String): Int? {
+        return if (name.isEmpty()) R.string.err_empty_name else null
     }
 
-    fun isValidNikAlm(nikAlm : String): Boolean {
-        return nikAlm.length == 16 && nikAlm.all { it.isDigit() }
+    fun getNikAlmError(nik: String): Int? {
+        return if (nik.length != 16 || !nik.all { it.isDigit() }) R.string.err_invalid_nik else null
     }
 
-    fun isValidNoKKAlm(noKKAlm : String): Boolean {
-        return noKKAlm.isNotEmpty()
+    fun getNoKKAlmError(noKK: String): Int? {
+        return if (noKK.isEmpty()) R.string.err_empty_no_kk else null
     }
 
-    fun isValidNoAktaLahirAlm(noAktaLahirAlm : String): Boolean {
-        return noAktaLahirAlm.isNotEmpty()
+    fun getNameSaksiError(name: String): Int? {
+        return if (name.isEmpty()) R.string.err_empty_name else null
     }
 
-    fun isValidNameSaksi(nameSaksi : String): Boolean {
-        return nameSaksi.isNotEmpty()
+    fun getNikSaksiError(nik: String): Int? {
+        return if (nik.length != 16 || !nik.all { it.isDigit() }) R.string.err_invalid_nik else null
     }
 
-    fun isValidNikSaksi(nikSaksi : String): Boolean {
-        return nikSaksi.length == 16 && nikSaksi.all { it.isDigit() }
+    fun getNoHpSaksiError(noHp: String): Int? {
+        return if (noHp.length < 10 || noHp.length > 13 || !noHp.all { it.isDigit() }) R.string.err_invalid_no_hp else null
     }
 
-    fun isValidNoHpSaksi(noHpSaksi: String): Boolean {
-        return noHpSaksi.length == 12 && noHpSaksi.all { it.isDigit() }
-    }
-
-    fun isValidAlamatSaksi(alamatSaksi: String): Boolean {
-        return alamatSaksi.isNotEmpty()
+    fun getAlamatSaksiError(alamat: String): Int? {
+        return if (alamat.isEmpty()) R.string.err_empty_alamat else null
     }
 }

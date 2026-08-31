@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:fillViewport="true"
+    android:clipToPadding="false"
     tools:context=".ui.profile.ProfileFragment">
 
     <LinearLayout
@@ -90,7 +91,7 @@
             android:layout_marginTop="-24dp"
             android:orientation="vertical"
             android:paddingHorizontal="20dp"
-            android:paddingBottom="32dp">
+            android:paddingBottom="100dp">
 
 
             <!-- ========================= -->
@@ -432,5 +433,5 @@
 
     </LinearLayout>
 
-</androidx.core.widget.NestedScrollView>
+</ScrollView>
 

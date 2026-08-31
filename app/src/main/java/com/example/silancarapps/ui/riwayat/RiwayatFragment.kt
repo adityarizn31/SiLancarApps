@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.silancarapps.adapter.RiwayatPendaftaranAdapter
 import com.example.silancarapps.data.local.PengajuanAktaKelahiran
 import com.example.silancarapps.data.local.PengajuanAktaKematian
+import com.example.silancarapps.data.local.PengajuanKIA
 import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.data.local.PengajuanKTP
 import com.example.silancarapps.data.model.RiwayatPendaftaran
@@ -74,12 +75,13 @@ class RiwayatFragment : Fragment() {
 //        Toast.makeText(requireContext(), "Pengajuan dihapus", Toast.LENGTH_SHORT).show()
 //    }
 private fun deletePengajuan(item: RiwayatPendaftaran) {
-    lifecycleScope.launch {
+    viewLifecycleOwner.lifecycleScope.launch {
         when (val data = item.dataAsli) {
             is PengajuanKK -> viewModel.deleteKK(data)
             is PengajuanKTP -> viewModel.deleteKTP(data)
             is PengajuanAktaKelahiran -> viewModel.deleteAktaKelahiran(data)
             is PengajuanAktaKematian -> viewModel.deleteAktaKematian(data)
+            is PengajuanKIA -> viewModel.deleteKIA(data)
         }
         Toast.makeText(requireContext(), "Pengajuan dihapus", Toast.LENGTH_SHORT).show()
     }

@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         
         // Hubungkan NavController dengan NavigationView (Drawer)
         binding.navDrawer.setupWithNavController(navController)
+        binding.navDrawer.itemIconTintList = null
 
         // Hubungkan NavController dengan BottomNavigationView
         binding.bottomNav.setupWithNavController(navController)

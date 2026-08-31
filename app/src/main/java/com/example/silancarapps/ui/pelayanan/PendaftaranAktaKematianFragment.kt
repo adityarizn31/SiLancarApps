@@ -110,36 +110,48 @@ class PendaftaranAktaKematianFragment : Fragment() {
         val noHpSaksi = binding.edtNoHpSaksi.text.toString().trim()
         val alamatSaksi = binding.edtAlamatSaksi.text.toString().trim()
 
-        val isNamaAlmValid = ValidateAktaKematian.isValidNamaAlm(namaAlm)
-        val isNikValid = ValidateAktaKematian.isValidNikAlm(nikAlm)
-        val isNoKKValid = ValidateAktaKematian.isValidNoKKAlm(noKKAlm)
-        val isNoAktaValid = ValidateAktaKematian.isValidNoAktaLahirAlm(noAktaAlm)
-        val isTempatMatiValid = ValidateAktaKematian.isValidNameSaksi(tempatMati)
-        val isNamaSaksiValid = ValidateAktaKematian.isValidNameSaksi(namaSaksi)
-        val isNikSaksiValid = ValidateAktaKematian.isValidNikSaksi(nikSaksi)
-        val isNoHpSaksiValid = ValidateAktaKematian.isValidNoHpSaksi(noHpSaksi)
-        val isAlamatSaksiValid = ValidateAktaKematian.isValidAlamatSaksi(alamatSaksi)
+        // 1. Validasi Teks
+        val namaAlmErr = ValidateAktaKematian.getNameAlmError(namaAlm)
+        val nikAlmErr = ValidateAktaKematian.getNikAlmError(nikAlm)
+        val noKKAlmErr = ValidateAktaKematian.getNoKKAlmError(noKKAlm)
+        val namaSaksiErr = ValidateAktaKematian.getNameSaksiError(namaSaksi)
+        val nikSaksiErr = ValidateAktaKematian.getNikSaksiError(nikSaksi)
+        val noHpErr = ValidateAktaKematian.getNoHpSaksiError(noHpSaksi)
+        val alamatErr = ValidateAktaKematian.getAlamatSaksiError(alamatSaksi)
 
+        // 2. Set Error ke UI
+        binding.edtNama.error = namaAlmErr?.let { getString(it) }
+        binding.edtNikAlm.error = nikAlmErr?.let { getString(it) }
+        binding.edtNoKKAlm.error = noKKAlmErr?.let { getString(it) }
+        binding.edtNamaSaksi.error = namaSaksiErr?.let { getString(it) }
+        binding.edtNikSaksi.error = nikSaksiErr?.let { getString(it) }
+        binding.edtNoHpSaksi.error = noHpErr?.let { getString(it) }
+        binding.edtAlamatSaksi.error = alamatErr?.let { getString(it) }
 
-        if ( !isNamaAlmValid || !isNikValid || !isNoKKValid || !isNoAktaValid || !isTempatMatiValid || !isNamaSaksiValid || !isNikSaksiValid || !isNoHpSaksiValid || !isAlamatSaksiValid || !binding.cbPersetujuan.isChecked) {
-            if(!isNamaAlmValid) binding.edtNama.error = "Nama tidak boleh kosong"
-            if(!isNikValid) binding.edtNikAlm.error = "NIK harus 16 digit angka"
-            if(!isNoKKValid) binding.edtNoKKAlm.error = "No KK tidak boleh kosong"
-            if(!isNoAktaValid) binding.edtNoAktaLahirAlm.error = "No Akta Kelahiran tidak boleh kosong"
-            if(!isTempatMatiValid) binding.edtTempatKematian.error = "Tempat Kematian tidak boleh kosong"
-            if(!isNamaSaksiValid) binding.edtNamaSaksi.error = "Nama tidak boleh kosong"
-            if(!isNikSaksiValid) binding.edtNikSaksi.error = "NIK harus 16 digit angka"
-            if(!isNoHpSaksiValid) binding.edtNoHpSaksi.error = "Nomor HP harus 12 digit angka"
-            if(!isAlamatSaksiValid) binding.edtAlamatSaksi.error = "Alamat tidak boleh kosong"
-            if(!binding.cbPersetujuan.isChecked) binding.cbPersetujuan.error = "Anda harus centang persetujuan"
+        val hasError = listOf(namaAlmErr, nikAlmErr, noKKAlmErr, namaSaksiErr, nikSaksiErr, noHpErr, alamatErr).any { it != null }
 
-            if (uriKtpAlm == null || uriKkAlm == null || uriAktaLahirAlm == null || uriKtpSaksi == null) {
-                Toast.makeText(requireContext(), "Harap lampirkan semua dokumen persyaratan !!", Toast.LENGTH_SHORT).show()
-                return
-            }
-
-            showConfirmationDialog(namaAlm, nikAlm, tglMati, namaSaksi, nikSaksi, noHpSaksi)
+        if (hasError) {
+            Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
+            return
         }
+
+        if (tglMati.isEmpty() || tempatMati.isEmpty()) {
+            Toast.makeText(requireContext(), "Tgl & Tempat kematian harus diisi", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (!binding.cbPersetujuan.isChecked) {
+            Toast.makeText(requireContext(), getString(R.string.err_empty_persetujuan), Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // 3. Cek Lampiran
+        if (uriKtpAlm == null || uriKkAlm == null || uriAktaLahirAlm == null || uriKtpSaksi == null) {
+            Toast.makeText(requireContext(), getString(R.string.harap_lampirkan_dokumen), Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        showConfirmationDialog(namaAlm, nikAlm, tglMati, namaSaksi, nikSaksi, noHpSaksi)
     }
 
     private fun showConfirmationDialog(namaAlm: String, nikAlm: String, tgl: String, namaSaksi: String, nikSaksi: String, hp: String) {

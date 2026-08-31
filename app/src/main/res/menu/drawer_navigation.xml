@@ -4,26 +4,46 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/homeFragment"
+            android:icon="@drawable/ic_silancar"
             android:title="@string/home_fragment" />
     </group>
 
-    <item android:title="Pelayanan SiLancar">
+    <item android:title="@string/pelayanan_silancar">
         <menu>
             <item
                 android:id="@+id/pendaftaranKK"
-                android:title="Pendaftaran KK" />
+                android:icon="@drawable/ic_kartukeluarga"
+                android:title="@string/pendaftaran_kartu_keluarga" />
 
             <item
                 android:id="@+id/pendaftaranKTP"
-                android:title="Pendaftaran KTP" />
+                android:icon="@drawable/ic_kartutandapenduduk"
+                android:title="@string/pendaftaran_kartu_tanda_penduduk" />
 
             <item
                 android:id="@+id/pendaftaranAktaLahir"
-                android:title="Pendaftaran Akta Kelahiran" />
+                android:icon="@drawable/ic_aktakelahiran"
+                android:title="@string/pendaftaran_akta_kelahiran" />
 
             <item
                 android:id="@+id/pendaftaranAktaKematian"
-                android:title="Pendaftaran Akta Kematian" />
+                android:icon="@drawable/ic_aktakematian"
+                android:title="@string/pendaftaran_akta_kematian" />
+
+            <item
+                android:id="@+id/pendaftaranKartuIdentitasAnak"
+                android:icon="@drawable/ic_kia"
+                android:title="@string/pendaftaran_kartu_identitas_anak" />
+
+            <item
+                android:id="@+id/pendaftaranPelayananPemanfaatanData"
+                android:icon="@drawable/ic_pelayanan_pemanfaatandata"
+                android:title="@string/pendaftaran_pemanfaatan_data" />
+
+            <item
+                android:id="@+id/pendaftaranSuratPerpindahanDatangProvinsiKabupaten"
+                android:icon="@drawable/ic_suratpindah"
+                android:title="@string/pendaftaran_perpindahan_datang_provinsi_dan_kabupaten" />
         </menu>
     </item>
 
