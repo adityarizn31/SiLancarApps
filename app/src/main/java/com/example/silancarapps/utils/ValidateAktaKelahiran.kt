@@ -1,40 +1,51 @@
 package com.example.silancarapps.utils
 
+import com.example.silancarapps.R
+
 object ValidateAktaKelahiran {
 
-    fun isValidNameAnak(name: String): Boolean {
-        return name.isNotEmpty()
+    fun getNameAnakError(name: String): Int? {
+        return if (name.isEmpty()) R.string.err_empty_name else null
     }
 
-    fun isValidTempatLahir(tempatLahir: String): Boolean {
-        return tempatLahir.isNotEmpty()
+    fun getTempatLahirError(tempatLahir: String): Int? {
+        return if (tempatLahir.isEmpty()) R.string.err_empty_tempat_lahir else null
     }
 
-    fun isValidTanggalLahir(tanggalLahir: String): Boolean {
-        return tanggalLahir.isNotEmpty()
+    fun getTanggalLahirError(tanggalLahir: String): Int? {
+        return if (tanggalLahir.isEmpty()) R.string.err_empty_tanggal_lahir else null
     }
 
-    fun isValidWaktuLahir(waktuLahir: String): Boolean {
-        return waktuLahir.isNotEmpty()
+    fun getWaktuLahirError(waktuLahir: String): Int? {
+        return if (waktuLahir.isEmpty()) R.string.err_empty_waktu_lahir else null
     }
 
-    fun isValidAnakKe(anakKe: String): Boolean {
-        return anakKe.isNotEmpty()
+    fun getAnakKeError(anakKe: String): Int? {
+        return if (anakKe.isEmpty()) R.string.err_empty_anak_ke else null
     }
 
-    fun isValidBeratBayi(berat: String): Boolean {
-        return berat.isNotEmpty()
+    fun getBeratBayiError(berat: String): Int? {
+        return if (berat.isEmpty()) R.string.err_empty_berat_bayi else null
     }
 
-    fun isValidPanjangBayi(panjang: String): Boolean {
-        return panjang.isNotEmpty()
+    fun getPanjangBayiError(panjang: String): Int? {
+        return if (panjang.isEmpty()) R.string.err_empty_panjang_bayi else null
     }
 
-    fun isValidNik(nik: String): Boolean {
-        return nik.length == 16 && nik.all { it.isDigit() }
+    fun getNikAyahError(nik: String): Int? {
+        return if (nik.length != 16 || !nik.all { it.isDigit() }) R.string.err_invalid_nik else null
     }
 
-    fun isValidNameOrangTua(name: String): Boolean {
-        return name.isNotEmpty()
+    fun getNamaAyahError(name: String): Int? {
+        return if (name.isEmpty()) R.string.err_empty_name else null
     }
+
+    fun getNikIbuError(nik: String): Int? {
+        return if (nik.length != 16 || !nik.all { it.isDigit() }) R.string.err_invalid_nik else null
+    }
+
+    fun getNamaIbuError(name: String): Int? {
+        return if (name.isEmpty()) R.string.err_empty_name else null
+    }
+
 }

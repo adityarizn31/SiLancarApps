@@ -55,13 +55,17 @@ class PendaftaranKTPFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
-        binding.btnUploadKTP.setOnClickListener { launcherKtp.launch("image/*") }
-        binding.btnUploadKK.setOnClickListener { launcherKK.launch("image/*") }
+
+        setupUploaduttons()
 
         binding.btnKirim.setOnClickListener {
             validateAndProcess()
         }
+    }
+
+    private fun setupUploaduttons() {
+        binding.btnUploadKTP.setOnClickListener { launcherKtp.launch("image/*") }
+        binding.btnUploadKK.setOnClickListener { launcherKK.launch("image/*") }
     }
 
     private fun validateAndProcess() {
@@ -85,6 +89,7 @@ class PendaftaranKTPFragment : Fragment() {
         binding.edtNoHp.error = noHpErr?.let { getString(it) }
         binding.edtAlamat.error = alamatErr?.let { getString(it) }
 
+        // 3. Cek apakah ada error teks
         val hasError = listOf(nameErr, nikErr, noKKErr, noHpErr, alamatErr).any { it != null }
 
         if (hasError) {
@@ -92,18 +97,19 @@ class PendaftaranKTPFragment : Fragment() {
             return
         }
 
+        // 4. Checkbox Persetujuan
         if (!binding.cbPersetujuan.isChecked) {
             Toast.makeText(requireContext(), getString(R.string.err_empty_persetujuan), Toast.LENGTH_SHORT).show()
             return
         }
 
-        // 3. Cek Lampiran
+        // 5. Cek Lampiran
         if (uriKtp == null || uriKK == null) {
             Toast.makeText(requireContext(), getString(R.string.harap_lampirkan_dokumen), Toast.LENGTH_SHORT).show()
             return
         }
 
-        // 4. Konfirmasi
+        // 6. Jika lolos semua, lanjut Konfirmasi
         showConfirmationDialog(nama, nik, noKK, noHp, alamat)
     }
 

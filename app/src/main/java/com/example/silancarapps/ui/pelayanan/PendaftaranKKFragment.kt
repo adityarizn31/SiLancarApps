@@ -101,7 +101,7 @@ class PendaftaranKKFragment : Fragment() {
         val noHp = binding.edtNoHp.text.toString().trim()
         val alamat = binding.edtAlamat.text.toString().trim()
 
-        // 1. Validasi Teks via Object
+        // 1. Memvalidasi teks
         val nameErr = ValidateKK.getNameError(nama)
         val nikSuamiErr = ValidateKK.getNikError(nikSuami)
         val nikIstriErr = ValidateKK.getNikError(nikIstri)
@@ -110,7 +110,7 @@ class PendaftaranKKFragment : Fragment() {
         val noHpErr = ValidateKK.getNoHpError(noHp)
         val alamatErr = ValidateKK.getAlamatError(alamat)
 
-        // 2. Tampilkan Error di UI
+        // 2. Menampilkan error di UI
         binding.edtNama.error = nameErr?.let { getString(it) }
         binding.edtNikSuami.error = nikSuamiErr?.let { getString(it) }
         binding.edtNikIstri.error = nikIstriErr?.let { getString(it) }
@@ -119,7 +119,7 @@ class PendaftaranKKFragment : Fragment() {
         binding.edtNoHp.error = noHpErr?.let { getString(it) }
         binding.edtAlamat.error = alamatErr?.let { getString(it) }
 
-        // 3. Cek apakah ada error teks
+        // 3. Mengecek apakah ada error
         val hasError = listOf(nameErr, nikSuamiErr, nikIstriErr, noKKSuamiErr, noKKIstriErr, noHpErr, alamatErr).any { it != null }
 
         if (hasError) {
@@ -127,13 +127,19 @@ class PendaftaranKKFragment : Fragment() {
             return
         }
 
-        // 4. Cek Lampiran (Hanya sekali di sini)
+        // 4. Mengecek persetujuan
+        if (!binding.cbPersetujuan.isChecked) {
+            Toast.makeText(requireContext(), getString(R.string.err_empty_persetujuan), Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // 5. Mengecek lampiran
         if (ktpSuami == null || ktpIstri == null || kkSuami == null || kkIstri == null) {
             Toast.makeText(requireContext(), getString(R.string.harap_lampirkan_dokumen), Toast.LENGTH_SHORT).show()
             return
         }
 
-        // 5. Jika lolos semua, lanjut Konfirmasi
+        // 6. Menampilkan dialog konfirmasi
         showConfirmationDialog(nama, nikSuami, nikIstri, noKKSuami, noKKIstri, noHp, alamat)
     }
 
@@ -165,7 +171,6 @@ class PendaftaranKKFragment : Fragment() {
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
         btnBatal.setOnClickListener { dialog.dismiss() }
-
         btnKirim.setOnClickListener {
             dialog.dismiss()
             submitData(nama, nikSuami, nikIstri, noKKSuami, noKKIstri, noHp, alamat)

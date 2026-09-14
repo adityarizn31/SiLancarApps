@@ -33,7 +33,9 @@ class ViewModelFactory(private val repository: PendaftaranRepository) : ViewMode
                     database.pengajuanKIADao(),
                     database.pengajuanKKDao(),
                     database.pengajuanKTPDao(),
-                    database.userDao()
+                    database.userDao(),
+                    database.pengajuanPelayananPemanfaatanDataDao(),
+                    database.pengajuanSuratPindahDao()
                 )
                 ViewModelFactory(repository).also { INSTANCE = it }
             }

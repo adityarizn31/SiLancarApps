@@ -6,125 +6,44 @@
     <string name="app_name">SiLancar Apps</string>
     <string name="silancar">SiLancar</string>
     <string name="s_i_l_a_n_c_a_r">自宅からの迅速なサービスシステム</string>
-
-
-    <!-- ==================== HOME ==================== -->
-
-    <string name="hello">こんにちは 👋</string>
-    <string name="welcome_message">SiLancarへようこそ</string>
     <string name="app_description">自宅から迅速に行政サービスを利用できる情報システム</string>
-    <string name="pelayanan_silancar">SiLancarサービス</string>
-    <string name="pelayanan">サービス</string>
-    <string name="menu_layanan">サービスメニュー</string>
-    <string name="home">ホーム</string>
-    <string name="home_fragment">ホーム</string>
-
-
-    <!-- ==================== AJUKAN SURAT ==================== -->
-
-    <string name="ajukan_surat_title">オンライン申請</string>
-    <string name="ajukan_surat_desc">行政手続きをより簡単かつ迅速にします。</string>
-    <string name="ajukan_sekarang">今すぐ申請</string>
-
-
-    <!-- ==================== PENDAFTARAN ==================== -->
-
-    <string name="pendaftaran_">登録</string>
-    <string name="pendaftaran">登録</string>
-    <string name="lengkapi">以下の情報を正しく入力してください。</string>
-
-    <string name="data_pemohon">申請者情報</string>
-    <string name="nama_lengkap">氏名</string>
-    <string name="nik">NIK</string>
-    <string name="nomor_hp">携帯電話番号</string>
-    <string name="alamat">住所</string>
-
-    <string name="kirim_pengajuan">申請を送信</string>
-    <string name="pengajuan_berhasil">申請が正常に送信されました！</string>
-    <string name="harap_isi_data">すべての情報を正しく入力してください。</string>
-    <string name="harap_lampirkan_dokumen">必要なすべての書類を添付してください。</string>
-    <string name="err_empty_name">氏名を入力してください</string>
-    <string name="err_invalid_nik">NIKは16桁の数字で入力してください</string>
-    <string name="err_empty_no_kk">KK番号を入力してください</string>
-    <string name="err_invalid_no_hp">携帯電話番号は12桁の数字で入力してください</string>
-    <string name="err_empty_alamat">住所を入力してください</string>
-    <string name="err_empty_tempat_lahir">出生地を入力してください</string>
-    <string name="err_empty_tanggal_lahir">生年月日を入力してください</string>
-    <string name="err_empty_anak_ke">出生順位を入力してください</string>
-    <string name="err_empty_berat_bayi">出生時の体重を入力してください</string>
-    <string name="err_empty_panjang_bayi">出生時の身長を入力してください</string>
-    <string name="err_empty_persetujuan">同意事項にチェックを入れてください</string>
-    <string name="err_empty_waktu_lahir">出生時刻を入力してください</string>
-
-
-    <!-- ==================== DOKUMEN ==================== -->
-
-    <string name="dokumen_persyaratan">必要書類</string>
-    <string name="upload_dokumen_pendukung">添付書類をアップロード</string>
-    <string name="upload_kk_lama">旧KKをアップロード</string>
-    <string name="upload_ktp">KTPをアップロード</string>
-
-
-    <!-- ==================== KARTU KELUARGA ==================== -->
-
-    <string name="kartu_keluarga">家族カード</string>
-    <string name="nomor_kk_lama">旧KK番号</string>
-    <string name="nomor_KK">KK番号</string>
-
-
-    <!-- ==================== KARTU TANDA PENDUDUK ==================== -->
-
-    <string name="kartu_tanda_penduduk">住民身分証明書</string>
-
-
-    <!-- ==================== AKTA KELAHIRAN ==================== -->
-
-    <string name="akta_kelahiran">出生証明書</string>
-
-
-    <!-- ==================== AKTA KEMATIAN ==================== -->
-
-    <string name="akta_kematian">死亡証明書</string>
-
-    <string name="nik_alm">故人のNIK</string>
-    <string name="nomor_KK_alm">故人のKK番号</string>
-    <string name="nomor_aktalahir_alm">故人の出生証明書番号\n</string>
-    <string name="nama_alm">故人の氏名</string>
-
-    <string name="nik_saksi">証人のNIK\n</string>
-    <string name="nomor_hp_saksi">証人の携帯電話番号</string>
-    <string name="alamat_saksi">証人の住所</string>
-    <string name="nama_saksi">証人の氏名</string>
-
-
-    <!-- ==================== DATA SUAMI & ISTRI ==================== -->
-
-    <string name="nik_suami">夫のNIK</string>
-    <string name="nik_istri">妻のNIK</string>
-
-    <string name="nomor_kk_suami">夫のKK番号\n</string>
-    <string name="nomor_kk_istri">妻のKK番号\n</string>
-
-    <string name="nomor_ktp_suami">夫のKTP番号\n</string>
-    <string name="nomor_ktp_istri">妻のKTP番号\n</string>
+    <string name="versi_1_0_0">バージョン1.0.0</string>
+    <string name="silancar_versi_1_0_0">SiLancar • バージョン1.0.0</string>
 
 
     <!-- ==================== AUTHENTICATION ==================== -->
 
+    <string name="login">ログイン</string>
+    <string name="login_title">おかえりなさい</string>
+    <string name="login_desc">SiLancarのサービスを利用するにはログインしてください。</string>
+
     <string name="register">登録</string>
+    <string name="register_title">新しいアカウントを作成</string>
+    <string name="register_desc">登録するために以下の情報を入力してください。</string>
+
     <string name="email">メールアドレス</string>
     <string name="password">パスワード</string>
     <string name="confirm_password">パスワードを確認</string>
 
-    <string name="register_title">新しいアカウントを作成</string>
-    <string name="register_desc">登録するために以下の情報を入力してください。</string>
     <string name="already_have_account">すでにアカウントをお持ちですか？ログイン</string>
-
-    <string name="login_title">おかえりなさい</string>
-    <string name="login_desc">SiLancarのサービスを利用するにはログインしてください。</string>
-    <string name="login">ログイン</string>
     <string name="dont_have_account">アカウントをお持ちでないですか？登録</string>
     <string name="forgot_password">パスワードをお忘れですか？</string>
+
+
+    <!-- ==================== HOME ==================== -->
+
+    <string name="home">ホーム</string>
+    <string name="home_fragment">ホーム</string>
+    <string name="hello">こんにちは %1$s 👋</string>
+    <string name="welcome_message">SiLancarへようこそ</string>
+
+    <string name="pelayanan_silancar">SiLancarサービス</string>
+    <string name="pelayanan">サービス</string>
+    <string name="menu_layanan">サービスメニュー</string>
+
+    <string name="ajukan_surat_title">オンライン申請</string>
+    <string name="ajukan_surat_desc">行政手続きをより簡単かつ迅速にします。</string>
+    <string name="ajukan_sekarang">今すぐ申請</string>
 
 
     <!-- ==================== NAVIGATION ==================== -->
@@ -142,136 +61,40 @@
     <string name="pengaturan">設定</string>
 
 
-    <!-- ==================== PLACEHOLDER ==================== -->
+    <!-- ==================== PROFIL & PENGATURAN ==================== -->
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">空のフラグメント</string>
-
-    <string name="lorem_ipsum">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
-        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
-        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
-        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
-        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
-        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
-
-        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
-        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
-        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
-        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
-        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
-        bibendum, vel congue leo egestas.\n\n
-
-        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
-        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
-        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
-        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
-        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
-        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
-        est.\n\n
-
-        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
-        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
-        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
-        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
-        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
-        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
-        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
-        convallis.\n\n
-
-        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
-        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
-        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
-        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
-        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
-        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
-    </string>
-
-    <string name="upload_ktp_suami">夫のKTPをアップロード</string>
-    <string name="upload_ktp_istri">妻のKTPをアップロード</string>
-    <string name="upload_kk_suami">夫のKKをアップロード</string>
-    <string name="upload_kk_istri">妻のKKをアップロード</string>
-    <string name="upload_kk">KKをアップロード</string>
-    <string name="belum_ada_file">ファイルがありません</string>
-    <string name="upload_ktp_alm">故人のKTPをアップロード</string>
-    <string name="upload_kk_almarhum">故人のKKをアップロード</string>
-    <string name="upload_kk_alm">故人のKKをアップロード</string>
-    <string name="upload_aktakelahiran_alm">故人の出生証明書をアップロード</string>
-    <string name="upload_ktp_saksi">証人のKTPをアップロード</string>
-    <string name="surat_pindah_datang_provinsi_dan_kabupaten">州・県間の転出入届</string>
-    <string name="nomor_kk">KK番号\n</string>
-    <string name="upload_form_surat_pindah">転出届フォームをアップロード</string>
-    <string name="surat_pelayanan_pemanfaatan_data">データ利用サービス申請書</string>
-    <string name="upload_form_surat_permohonon">申請フォームをアップロード</string>
-    <string name="keluar_akun">ログアウト</string>
-    <string name="silancar_versi_1_0_0">SiLancar • バージョン1.0.0</string>
-    <string name="tentang_silancar">SiLancarについて</string>
-    <string name="pusat_bantuan">ヘルプセンター</string>
+    <string name="edit_profil">プロフィールを編集</string>
     <string name="keamanan_akun">アカウントセキュリティ</string>
     <string name="notifikasi">通知</string>
-    <string name="edit_profil">プロフィールを編集</string>
-    <string name="bantuan_whatsapp">SiLancar管理者様、申請についてサポートが必要です。</string>
+    <string name="language">言語</string>
+    <string name="tentang_silancar">SiLancarについて</string>
+    <string name="pusat_bantuan">ヘルプセンター</string>
     <string name="hubungi_kami">お問い合わせ</string>
-    <string name="upload_ktp_ibu">母親のKTPをアップロード</string>
-    <string name="upload_ktp_ayah">父親のKTPをアップロード</string>
-    <string name="upload_surat_keterangan_lahir">出生証明書をアップロード</string>
-    <string name="upload_dokumen_yang_diperlukan_dengan_jelas_dan_dapat_terbaca">必要な書類を鮮明で読み取れる状態でアップロードしてください。</string>
-    <string name="lengkapi_data_kelahiran_dan_dokumen_persyaratan_untuk_mengajukan_akta_kelahiran">出生証明書を申請するため、出生情報と必要書類を入力してください。</string>
-    <string name="kartu_identitas_anak">子ども身分証明書</string>
-    <string name="saya_menyatakan_bahwa_data_dan_dokumen_yang_saya_berikan_adalah_benar_dan_dapat_dipertanggungjawabkan">提出した情報および書類が正確であり、責任を持って申告することを確認します。</string>
-    <string name="nama_lengkap_ibu">母親の氏名</string>
-    <string name="waktu_kelahiran">出生時刻</string>
-    <string name="tanggal_lahir">生年月日</string>
-    <string name="tempat_kelahiran">出生地</string>
-    <string name="jenis_kelamin">性別</string>
-    <string name="nama_lengkap_anak">子どもの氏名</string>
-    <string name="nik_ibu">母親のNIK</string>
-    <string name="nama_lengkap_ayah">父親の氏名</string>
-    <string name="nik_ayah">父親のNIK</string>
-    <string name="data_ayah">父親情報</string>
-    <string name="panjang_bayi_saat_lahir_cm">出生時の身長（cm）</string>
-    <string name="berat_bayi_saat_lahir_gram">出生時の体重（g）</string>
-    <string name="anak_ke">出生順位</string>
-    <string name="data_anak">子どもの情報</string>
-    <string name="lengkapi_data_anak_dan_dokumen_persyaratan_untuk_mengajukan_kia">KIAを申請するため、子どもの情報と必要書類を入力してください。</string>
-    <string name="nik_anak">子どものNIK</string>
-    <string name="tempat_lahir">出生地</string>
-    <string name="data_orang_tua_wali">保護者情報</string>
-    <string name="pastikan_dokumen_yang_diunggah_dapat_dibaca_dengan_jelas">アップロードした書類が明瞭に読み取れることを確認してください。</string>
-    <string name="upload_akta_kelahiran">出生証明書をアップロード</string>
-    <string name="desa_kelurahan">村 / 都市村</string>
-    <string name="kecamatan">郡</string>
-    <string name="alamat_lengkap_tujuan">移転先の完全な住所</string>
-    <string name="alamat_asal">現在の住所</string>
-    <string name="alamat_tujuan">移転先住所</string>
-    <string name="upload_dokumen_sesuai_dengan_jenis_pengajuan_yang_dipilih">選択した申請種類に応じた書類をアップロードしてください。</string>
-    <string name="upload_kartu_keluarga">家族カードをアップロード</string>
-    <string name="upload_ktp_pemohon">申請者のKTPをアップロード</string>
-    <string name="data_instansi">機関情報</string>
-    <string name="nama_instansi">機関名</string>
-    <string name="jenis_instansi">機関の種類</string>
-    <string name="alamat_instansi">機関の住所</string>
-    <string name="upload_dokumen_legalitas_instansi">機関の法的書類をアップロード</string>
-    <string name="upload_ktp_penanggung_jawab">責任者のKTPをアップロード</string>
-    <string name="upload_surat_tugas">任命書をアップロード</string>
-    <string name="upload_surat_permohonan_instansi">機関の申請書をアップロード</string>
-    <string name="keterangan">備考</string>
-    <string name="data_yang_dibutuhkan">必要な情報</string>
-    <string name="tujuan_pemanfaatan_data">データ利用目的</string>
-    <string name="detail_permohonan">申請詳細</string>
-    <string name="nomor_telepon_instansi">機関の電話番号</string>
-    <string name="email_instansi">機関のメールアドレス</string>
-    <string name="penanggung_jawab">責任者</string>
-    <string name="nama_penanggung_jawab">責任者氏名</string>
-    <string name="jabatan">役職</string>
-    <string name="nik_penanggung_jawab">責任者のNIK</string>
-    <string name="nomor_hp_penanggung_jawab">責任者の携帯電話番号</string>
-    <string name="upload_dokumen_persyaratan_dengan_jelas_dan_dapat_terbaca">必要書類を鮮明で読み取れる状態でアップロードしてください。</string>
-    <string name="laki">男性</string>
-    <string name="perempuan">女性</string>
-    <string name="wajib_sesuai_ketentuan_layanan">サービス規定に従う必要があります</string>
-    <string name="upload_pas_foto_anak">子どもの証明写真をアップロード</string>
+    <string name="keluar_akun">ログアウト</string>
+
+    <string name="bantuan_whatsapp">SiLancar管理者様、申請についてサポートが必要です。</string>
+
+
+    <!-- ==================== PENDAFTARAN ==================== -->
+
+    <string name="pendaftaran_">登録</string>
+    <string name="pendaftaran">登録</string>
+    <string name="lengkapi">以下の情報を正しく入力してください。</string>
+
+    <string name="data_pemohon">申請者情報</string>
+    <string name="nama_lengkap">氏名</string>
+    <string name="nik">NIK</string>
+    <string name="nomor_kk">KK番号</string>
+    <string name="nomor_hp">携帯電話番号</string>
+    <string name="alamat">住所</string>
+
+    <string name="kirim_pengajuan">申請を送信</string>
+    <string name="pengajuan_berhasil">申請が正常に送信されました！</string>
+    <string name="harap_isi_data">すべての情報を正しく入力してください。</string>
+
+
+    <!-- ==================== MENU LAYANAN ==================== -->
+
     <string name="pendaftaran_kartu_keluarga">家族カード登録</string>
     <string name="pendaftaran_kartu_tanda_penduduk">住民身分証明書登録</string>
     <string name="pendaftaran_akta_kelahiran">出生証明書登録</string>
@@ -280,5 +103,200 @@
     <string name="pendaftaran_pemanfaatan_data">データ利用申請</string>
     <string name="pendaftaran_perpindahan_datang_provinsi_dan_kabupaten">州・県間の転出入登録</string>
 
-</resources>
 
+    <!-- ==================== KARTU KELUARGA ==================== -->
+
+    <string name="kartu_keluarga">家族カード</string>
+    <string name="nomor_kk_lama">旧KK番号</string>
+
+    <string name="upload_kk">KKをアップロード</string>
+    <string name="upload_kk_lama">旧KKをアップロード</string>
+
+
+    <!-- ==================== KARTU TANDA PENDUDUK ==================== -->
+
+    <string name="kartu_tanda_penduduk">住民身分証明書</string>
+
+    <string name="upload_ktp">KTPをアップロード</string>
+    <string name="upload_ktp_pemohon">申請者のKTPをアップロード</string>
+
+
+    <!-- ==================== AKTA KELAHIRAN ==================== -->
+
+    <string name="akta_kelahiran">出生証明書</string>
+
+    <string name="data_anak">子どもの情報</string>
+    <string name="nama_lengkap_anak">子どもの氏名</string>
+    <string name="nik_anak">子どものNIK</string>
+    <string name="jenis_kelamin">性別</string>
+    <string name="laki">男性</string>
+    <string name="perempuan">女性</string>
+
+    <string name="tempat_kelahiran">出生地</string>
+    <string name="tanggal_lahir">生年月日</string>
+    <string name="waktu_kelahiran">出生時刻</string>
+
+    <string name="berat_bayi_saat_lahir_gram">出生時の体重（g）</string>
+    <string name="panjang_bayi_saat_lahir_cm">出生時の身長（cm）</string>
+    <string name="anak_ke">出生順位</string>
+
+    <string name="data_ayah">父親情報</string>
+    <string name="nama_lengkap_ayah">父親の氏名</string>
+    <string name="nik_ayah">父親のNIK</string>
+
+    <string name="nama_lengkap_ibu">母親の氏名</string>
+    <string name="nik_ibu">母親のNIK</string>
+
+    <string name="upload_ktp_ayah">父親のKTPをアップロード</string>
+    <string name="upload_ktp_ibu">母親のKTPをアップロード</string>
+    <string name="upload_surat_keterangan_lahir">出生証明書をアップロード</string>
+
+    <string name="lengkapi_data_kelahiran_dan_dokumen_persyaratan_untuk_mengajukan_akta_kelahiran">出生証明書を申請するため、出生情報と必要書類を入力してください。</string>
+
+
+    <!-- ==================== KARTU IDENTITAS ANAK ==================== -->
+
+    <string name="kartu_identitas_anak">子ども身分証明書</string>
+
+    <string name="data_orang_tua_wali">保護者情報</string>
+
+    <string name="upload_akta_kelahiran">出生証明書をアップロード</string>
+    <string name="upload_pas_foto_anak">子どもの証明写真をアップロード</string>
+
+    <string name="lengkapi_data_anak_dan_dokumen_persyaratan_untuk_mengajukan_kia">KIAを申請するため、子どもの情報と必要書類を入力してください。</string>
+
+
+    <!-- ==================== AKTA KEMATIAN ==================== -->
+
+    <string name="akta_kematian">死亡証明書</string>
+
+    <string name="nik_alm">故人のNIK</string>
+    <string name="nomor_kk_alm">故人のKK番号</string>
+    <string name="nomor_aktalahir_alm">故人の出生証明書番号</string>
+    <string name="nama_alm">故人の氏名</string>
+
+    <string name="nik_saksi">証人のNIK</string>
+    <string name="nama_saksi">証人の氏名</string>
+    <string name="nomor_hp_saksi">証人の携帯電話番号</string>
+    <string name="alamat_saksi">証人の住所</string>
+
+    <string name="upload_ktp_alm">故人のKTPをアップロード</string>
+    <string name="upload_kk_almarhum">故人のKKをアップロード</string>
+    <string name="upload_aktakelahiran_alm">故人の出生証明書をアップロード</string>
+    <string name="upload_ktp_saksi">証人のKTPをアップロード</string>
+
+
+    <!-- ==================== DATA SUAMI & ISTRI ==================== -->
+
+    <string name="nik_suami">夫 of NIK</string>
+    <string name="nomor_kk_suami">夫のKK番号</string>
+    <string name="nomor_ktp_suami">夫のKTP番号</string>
+
+    <string name="nik_istri">妻 of NIK</string>
+    <string name="nomor_kk_istri">妻のKK番号</string>
+    <string name="nomor_ktp_istri">妻のKTP番号</string>
+
+    <string name="upload_ktp_suami">夫のKTPをアップロード</string>
+    <string name="upload_ktp_istri">妻のKTPをアップロード</string>
+    <string name="upload_kk_suami">夫のKK कोアップロード</string>
+    <string name="upload_kk_istri">妻のKKをアップロード</string>
+
+
+    <!-- ==================== SURAT PINDAH ==================== -->
+
+    <string name="surat_pindah_datang_provinsi_dan_kabupaten">州・県間の転出入届</string>
+
+    <string name="alamat_asal">現在の住所</string>
+    <string name="alamat_tujuan">移転先住所</string>
+    <string name="alamat_lengkap_tujuan">移転先の完全な住所</string>
+    <string name="desa_kelurahan">村 / 都市村</string>
+    <string name="kecamatan">郡</string>
+
+    <string name="upload_form_surat_pindah">転出届フォームをアップロード</string>
+
+
+    <!-- ==================== PEMANFAATAN DATA ==================== -->
+
+    <string name="surat_pelayanan_pemanfaatan_data">データ利用サービス申請書</string>
+
+    <string name="data_instansi">機関情報</string>
+    <string name="nama_instansi">機関名</string>
+    <string name="jenis_instansi">機関の種類</string>
+    <string name="alamat_instansi">機関の住所</string>
+    <string name="nomor_telepon_instansi">機関の電話番号</string>
+    <string name="email_instansi">機関のメールアドレス</string>
+
+    <string name="penanggung_jawab">責任者</string>
+    <string name="nama_penanggung_jawab">責任者氏名</string>
+    <string name="jabatan">役職</string>
+    <string name="nik_penanggung_jawab">責任者のNIK</string>
+    <string name="nomor_hp_penanggung_jawab">責任者の携帯電話番号</string>
+
+    <string name="data_yang_dibutuhkan">必要な情報</string>
+    <string name="tujuan_pemanfaatan_data">データ利用目的</string>
+    <string name="detail_permohonan">申請詳細</string>
+    <string name="keterangan">備考</string>
+
+    <string name="upload_dokumen_legalitas_instansi">機関の法的書類をアップロード</string>
+    <string name="upload_ktp_penanggung_jawab">責任者のKTPをアップロード</string>
+    <string name="upload_surat_tugas">任命書をアップロード</string>
+    <string name="upload_surat_permohonan_instansi">機関の申請書をアップロード</string>
+    <string name="upload_form_surat_permohonon">申請フォームをアップロード</string>
+
+
+    <!-- ==================== DOKUMEN ==================== -->
+
+    <string name="dokumen_persyaratan">必要書類</string>
+    <string name="upload_dokumen_pendukung">添付書類をアップロード</string>
+
+    <string name="upload_kartu_keluarga">家族カードをアップロード</string>
+
+    <string name="upload_dokumen_yang_diperlukan_dengan_jelas_dan_dapat_terbaca">必要な書類を鮮明で読み取れる状態でアップロードしてください。</string>
+    <string name="upload_dokumen_sesuai_dengan_jenis_pengajuan_yang_dipilih">選択した申請種類に応じた書類をアップロードしてください。</string>
+    <string name="upload_dokumen_persyaratan_dengan_jelas_dan_dapat_terbaca">必要書類を鮮明で読み取れる状態でアップロードしてください。</string>
+
+    <string name="belum_ada_file">ファイルがありません</string>
+    <string name="harap_lampirkan_dokumen">必要なすべての書類を添付してください。</string>
+
+
+    <!-- ==================== VALIDATION / ERROR ==================== -->
+
+    <string name="err_empty_name">氏名を入力してください</string>
+    <string name="err_empty_no_kk">KK番号を入力してください</string>
+    <string name="err_empty_alamat">住所を入力してください</string>
+    <string name="err_empty_desa">村を入力してください</string>
+    <string name="err_empty_kecamatan">郡を入力してください</string>
+    <string name="err_empty_tempat_lahir">出生地を入力してください</string>
+    <string name="err_empty_tanggal_lahir">生年月日を入力してください</string>
+    <string name="err_empty_anak_ke">出生順位を入力してください</string>
+    <string name="err_empty_berat_bayi">出生時の体重を入力してください</string>
+    <string name="err_empty_panjang_bayi">出生時の身長を入力してください</string>
+    <string name="err_empty_waktu_lahir">出生時刻を入力してください</string>
+
+    <string name="err_empty_nama_instansi">機関名を入力してください</string>
+    <string name="err_empty_email_instansi">機関のメールアドレスを入力してください</string>
+    <string name="err_empty_jenis_instansi">機関の種類を入力してください</string>
+    <string name="err_empty_alamat_instansi">機関の住所を入力してください</string>
+    <string name="err_empty_nama_penanggung_jawab">担当者名を入力してください</string>
+    <string name="err_empty_jabatan_penanggung_jawab">担当者の役職を入力してください</string>
+    <string name="err_empty_tujuan_pemanfaatan">データ利用目的を入力してください</string>
+    <string name="err_empty_data_dibutuhkan">必要なデータを入力してください</string>
+    <string name="err_empty_keterangan">備考を入力してください</string>
+
+    <string name="err_invalid_no_hp">電話番号は10桁から13桁の数字で入力してください</string>
+    <string name="err_invalid_nik">NIKは16桁の数字で入力してください</string>
+    <string name="err_empty_persetujuan">まず利用規約に同意してください</string>
+
+
+    <!-- ==================== PERSETUJUAN ==================== -->
+
+    <string name="saya_menyatakan_bahwa_data_dan_dokumen_yang_saya_berikan_adalah_benar_dan_dapat_dipertanggungjawabkan">提出した情報および書類が正確であり、責任を持って申告することを確認します。</string>
+
+    <string name="wajib_sesuai_ketentuan_layanan">サービス規定に従う必要があります</string>
+
+
+    <!-- ==================== PLACEHOLDER ==================== -->
+
+    <string name="hello_blank_fragment">空のフラグメント</string>
+
+</resources>

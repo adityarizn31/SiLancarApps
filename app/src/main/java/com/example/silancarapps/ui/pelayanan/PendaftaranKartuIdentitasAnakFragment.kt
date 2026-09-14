@@ -120,7 +120,7 @@ class PendaftaranKartuIdentitasAnakFragment : Fragment() {
         val selectedGenderId = binding.rgJenisKelamin.checkedRadioButtonId
         val jenisKelamin = if (selectedGenderId == R.id.rbLaki) "Laki-laki" else "Perempuan"
 
-        // 1. Validasi Teks
+        // 1. Memvalidasi teks
         val namaAnakErr = ValidateKIA.getNameAnakError(namaLengkapAnak)
         val nikAnakErr = ValidateKIA.getNikAnakError(nikAnak)
         val tempatErr = ValidateKIA.getTempatLahirError(tempatLahirAnak)
@@ -130,7 +130,7 @@ class PendaftaranKartuIdentitasAnakFragment : Fragment() {
         val namaIbuErr = ValidateKIA.getNameOrangTuaError(namaIbu)
         val nikIbuErr = ValidateKIA.getNikOrangTuaError(nikIbu)
 
-        // 2. Set Error ke UI
+        // 2. Menampilkan error di UI
         binding.edtNamaAnak.error = namaAnakErr?.let { getString(it) }
         binding.edtNikAnak.error = nikAnakErr?.let { getString(it) }
         binding.edtTempatLahir.error = tempatErr?.let { getString(it) }
@@ -140,6 +140,7 @@ class PendaftaranKartuIdentitasAnakFragment : Fragment() {
         binding.edtNamaIbu.error = namaIbuErr?.let { getString(it) }
         binding.edtNikIbu.error = nikIbuErr?.let { getString(it) }
 
+        // 3. Mengecek apakah ada error
         val hasError = listOf(namaAnakErr, nikAnakErr, tempatErr, tglErr, namaAyahErr, nikAyahErr, namaIbuErr, nikIbuErr).any { it != null }
 
         if (hasError) {
@@ -147,17 +148,19 @@ class PendaftaranKartuIdentitasAnakFragment : Fragment() {
             return
         }
 
+        // 4. Mengecek persetujuan
         if (!binding.cbPersetujuan.isChecked) {
             Toast.makeText(requireContext(), getString(R.string.err_empty_persetujuan), Toast.LENGTH_SHORT).show()
             return
         }
 
-        // 3. Cek Lampiran
+        // 5. Mengecek Lampiran
         if (aktaKelahiran == null || kk == null || ktpAyah == null || ktpIbu == null || pasFotoAnak == null) {
             Toast.makeText(requireContext(), getString(R.string.harap_lampirkan_dokumen), Toast.LENGTH_SHORT).show()
             return
         }
 
+        // 6. Menampilkan dialog konfirmasi
         showConfirmationDialog(namaLengkapAnak, nikAnak, tempatLahirAnak, tanggalLahirAnak, jenisKelamin, namaAyah, nikAyah, namaIbu, nikIbu)
     }
 

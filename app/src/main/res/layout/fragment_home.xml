@@ -66,7 +66,7 @@
                     android:padding="20dp">
 
                     <TextView
-                        android:id="@+id/tvBannerTitle"
+                        android:id="@+id/tvAjukanPendaftaranOnline"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/ajukan_surat_title"
@@ -78,7 +78,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvBannerDesc"
+                        android:id="@+id/tvProsesAdministrasiMenjadiLebihMudahdanCepat"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -87,7 +87,7 @@
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvBannerTitle" />
+                        app:layout_constraintTop_toBottomOf="@id/tvAjukanPendaftaranOnline" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnAjukan"
@@ -98,7 +98,7 @@
                         android:text="@string/ajukan_sekarang"
                         android:textAllCaps="false"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvBannerDesc" />
+                        app:layout_constraintTop_toBottomOf="@id/tvProsesAdministrasiMenjadiLebihMudahdanCepat" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -106,7 +106,7 @@
 
 <!-- Digunakan untuk Judul Menu -->
             <TextView
-                android:id="@+id/tvMenuTitle"
+                android:id="@+id/tvMenuLayanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -120,7 +120,7 @@
 
 <!-- Digunakan untuk RV Pendaftaran -->
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvMenu"
+                android:id="@+id/rvMenuLayanan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -128,7 +128,7 @@
                 android:layout_marginBottom="100dp"
                 android:nestedScrollingEnabled="false"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvMenuTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvMenuLayanan"
                 tools:listitem="@layout/item_menu" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

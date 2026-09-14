@@ -7,36 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Digunakan untuk Navigation Drawer -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background">
 
-<!-- Digunakan untuk Material Toolbar -->
+        <!-- Digunakan untuk Material Toolbar -->
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/primary"
             android:elevation="0dp"
-            app:titleTextColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
             app:navigationIconTint="@color/white"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:titleTextColor="@color/white" />
 
-<!-- Digunakan untuk Fragment Layout -->
+        <!-- Digunakan untuk Fragment Layout -->
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/main_navigation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:navGraph="@navigation/main_navigation" />
 
-<!-- Digunakan untuk Bottom Navigation -->
+        <!-- Digunakan untuk Bottom Navigation -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
@@ -49,9 +50,9 @@
             app:elevation="8dp"
             app:itemIconSize="24dp"
             app:itemIconTint="@color/nav_item_color"
-            app:itemTextColor="@color/nav_item_color"
-            app:itemPaddingTop="6dp"
             app:itemPaddingBottom="6dp"
+            app:itemPaddingTop="6dp"
+            app:itemTextColor="@color/nav_item_color"
             app:labelVisibilityMode="labeled"
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -59,26 +60,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/bottom_navigation" />
 
-<!-- Digunakan untuk Floating Action Button -->
+        <!-- Digunakan untuk Floating Action Button -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/hubungi_kami"
             android:src="@drawable/ic_wa"
             app:backgroundTint="#25D366"
-            app:tint="@null"
-            app:fabCustomSize="64dp"
-            app:maxImageSize="40dp"
             app:elevation="8dp"
+            app:fabCustomSize="64dp"
             app:layout_constraintBottom_toTopOf="@id/bottom_nav"
             app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/hubungi_kami" />
+            app:maxImageSize="40dp"
+            app:tint="@null" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!-- Digunakan untuk Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navDrawer"
         android:layout_width="wrap_content"

@@ -6,125 +6,44 @@
     <string name="app_name">SiLancar Apps</string>
     <string name="silancar">SiLancar</string>
     <string name="s_i_l_a_n_c_a_r">Sistem Layanan Cepat dari Rumah</string>
-
-
-    <!-- ==================== HOME ==================== -->
-
-    <string name="hello">Halo 👋</string>
-    <string name="welcome_message">Selamat Datang di SiLancar</string>
     <string name="app_description">Sistem Informasi Layanan Administrasi Cepat Dari Rumah</string>
-    <string name="pelayanan_silancar">Pelayanan SiLancar</string>
-    <string name="pelayanan">Pelayanan</string>
-    <string name="menu_layanan">Menu Layanan</string>
-    <string name="home">Home</string>
-    <string name="home_fragment">Home</string>
-
-
-    <!-- ==================== AJUKAN SURAT ==================== -->
-
-    <string name="ajukan_surat_title">Ajukan Pendaftaran Online</string>
-    <string name="ajukan_surat_desc">Proses administrasi menjadi lebih mudah dan cepat.</string>
-    <string name="ajukan_sekarang">Ajukan Sekarang</string>
-
-
-    <!-- ==================== PENDAFTARAN ==================== -->
-
-    <string name="pendaftaran_">PENDAFTARAN</string>
-    <string name="pendaftaran">Pendaftaran</string>
-    <string name="lengkapi">Silakan lengkapi data berikut dengan benar.</string>
-
-    <string name="data_pemohon">Data Pemohon</string>
-    <string name="nama_lengkap">Nama Lengkap</string>
-    <string name="nik">NIK</string>
-    <string name="nomor_hp">Nomor HP</string>
-    <string name="alamat">Alamat</string>
-
-    <string name="kirim_pengajuan">Kirim Pengajuan</string>
-    <string name="pengajuan_berhasil">Pengajuan Anda telah berhasil dikirim!</string>
-    <string name="harap_isi_data">Harap isi semua data dengan benar.</string>
-    <string name="harap_lampirkan_dokumen">Harap lampirkan semua dokumen persyaratan.</string>
-    <string name="err_empty_name">Nama tidak boleh kosong</string>
-    <string name="err_invalid_nik">NIK harus 16 digit angka</string>
-    <string name="err_empty_no_kk">Nomor KK tidak boleh kosong</string>
-    <string name="err_invalid_no_hp">Nomor HP harus 12 digit angka</string>
-    <string name="err_empty_alamat">Alamat tidak boleh kosong</string>
-    <string name="err_empty_tempat_lahir">Tempat lahir tidak boleh kosong</string>
-    <string name="err_empty_tanggal_lahir">Tanggal lahir tidak boleh kosong</string>
-    <string name="err_empty_anak_ke">Anak ke tidak boleh kosong</string>
-    <string name="err_empty_berat_bayi">Berat bayi tidak boleh kosong</string>
-    <string name="err_empty_panjang_bayi">Panjang bayi tidak boleh kosong</string>
-    <string name="err_empty_persetujuan">Anda harus centang persetujuan</string>
-    <string name="err_empty_waktu_lahir">Waktu lahir tidak boleh kosong</string>
-
-
-    <!-- ==================== DOKUMEN ==================== -->
-
-    <string name="dokumen_persyaratan">Dokumen Persyaratan</string>
-    <string name="upload_dokumen_pendukung">Upload Dokumen Pendukung</string>
-    <string name="upload_kk_lama">Upload KK Lama</string>
-    <string name="upload_ktp">Upload KTP</string>
-
-
-    <!-- ==================== KARTU KELUARGA ==================== -->
-
-    <string name="kartu_keluarga">Kartu Keluarga</string>
-    <string name="nomor_kk_lama">Nomor KK Lama</string>
-    <string name="nomor_KK">Nomor KK</string>
-
-
-    <!-- ==================== KARTU TANDA PENDUDUK ==================== -->
-
-    <string name="kartu_tanda_penduduk">Kartu Tanda Penduduk</string>
-
-
-    <!-- ==================== AKTA KELAHIRAN ==================== -->
-
-    <string name="akta_kelahiran">Akta Kelahiran</string>
-
-
-    <!-- ==================== AKTA KEMATIAN ==================== -->
-
-    <string name="akta_kematian">Akta Kematian</string>
-
-    <string name="nik_alm">NIK Almarhum</string>
-    <string name="nomor_KK_alm">No KK Almarhum</string>
-    <string name="nomor_aktalahir_alm">No Akta Lahir Almarhum\n</string>
-    <string name="nama_alm">Nama Almarhum</string>
-
-    <string name="nik_saksi">NIK Saksi\n</string>
-    <string name="nomor_hp_saksi">No Hp Saksi</string>
-    <string name="alamat_saksi">Alamat Saksi</string>
-    <string name="nama_saksi">Nama Saksi</string>
-
-
-    <!-- ==================== DATA SUAMI & ISTRI ==================== -->
-
-    <string name="nik_suami">NIK Suami</string>
-    <string name="nik_istri">NIK Istri</string>
-
-    <string name="nomor_kk_suami">No KK Suami\n</string>
-    <string name="nomor_kk_istri">No KK Istri\n</string>
-
-    <string name="nomor_ktp_suami">No KTP Suami\n</string>
-    <string name="nomor_ktp_istri">No KTP Istri\n</string>
+    <string name="versi_1_0_0">Versi 1.0.0</string>
+    <string name="silancar_versi_1_0_0">SiLancar • Versi 1.0.0</string>
 
 
     <!-- ==================== AUTHENTICATION ==================== -->
 
+    <string name="login">Masuk</string>
+    <string name="login_title">Selamat Datang Kembali</string>
+    <string name="login_desc">Silakan masuk untuk melanjutkan ke layanan SiLancar.</string>
+
     <string name="register">Daftar</string>
+    <string name="register_title">Buat Akun Baru</string>
+    <string name="register_desc">Silakan lengkapi data berikut untuk mendaftar.</string>
+
     <string name="email">Email</string>
     <string name="password">Kata Sandi</string>
     <string name="confirm_password">Konfirmasi Kata Sandi</string>
 
-    <string name="register_title">Buat Akun Baru</string>
-    <string name="register_desc">Silakan lengkapi data berikut untuk mendaftar.</string>
     <string name="already_have_account">Sudah punya akun? Masuk</string>
-
-    <string name="login_title">Selamat Datang Kembali</string>
-    <string name="login_desc">Silakan masuk untuk melanjutkan ke layanan SiLancar.</string>
-    <string name="login">Masuk</string>
     <string name="dont_have_account">Belum punya akun? Daftar</string>
     <string name="forgot_password">Lupa Kata Sandi?</string>
+
+
+    <!-- ==================== HOME ==================== -->
+
+    <string name="home">Home</string>
+    <string name="home_fragment">Home</string>
+    <string name="hello">Halo %1$s 👋</string>
+    <string name="welcome_message">Selamat Datang di SiLancar</string>
+
+    <string name="pelayanan_silancar">Pelayanan SiLancar</string>
+    <string name="pelayanan">Pelayanan</string>
+    <string name="menu_layanan">Menu Layanan</string>
+
+    <string name="ajukan_surat_title">Ajukan Pendaftaran Online</string>
+    <string name="ajukan_surat_desc">Proses administrasi menjadi lebih mudah dan cepat.</string>
+    <string name="ajukan_sekarang">Ajukan Sekarang</string>
 
 
     <!-- ==================== NAVIGATION ==================== -->
@@ -142,135 +61,40 @@
     <string name="pengaturan">Pengaturan</string>
 
 
-    <!-- ==================== PLACEHOLDER ==================== -->
+    <!-- ==================== PROFIL & PENGATURAN ==================== -->
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <string name="lorem_ipsum">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
-        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
-        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
-        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
-        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
-        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
-
-        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
-        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
-        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
-        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
-        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
-        bibendum, vel congue leo egestas.\n\n
-
-        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
-        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
-        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
-        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
-        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
-        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
-        est.\n\n
-
-        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
-        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
-        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
-        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
-        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
-        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
-        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
-        convallis.\n\n
-
-        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
-        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
-        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
-        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
-        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
-        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
-    </string>
-    <string name="upload_ktp_suami">Upload KTP Suami</string>
-    <string name="upload_ktp_istri">Upload KTP Istri</string>
-    <string name="upload_kk_suami">Upload KK Suami</string>
-    <string name="upload_kk_istri">Upload KK Istri</string>
-    <string name="upload_kk">Upload KK</string>
-    <string name="belum_ada_file">Belum ada file</string>
-    <string name="upload_ktp_alm">Upload KTP Almarhum</string>
-    <string name="upload_kk_almarhum">Upload KK Almarhum</string>
-    <string name="upload_kk_alm">Upload KK Almarhum</string>
-    <string name="upload_aktakelahiran_alm">Upload Akta Kelahiran Almarhum</string>
-    <string name="upload_ktp_saksi">Upload KTP Saksi</string>
-    <string name="surat_pindah_datang_provinsi_dan_kabupaten">Surat Pindah / Datang Provinsi dan Kabupaten</string>
-    <string name="nomor_kk">Nomor KK\n</string>
-    <string name="upload_form_surat_pindah">Upload Form Surat Pindah</string>
-    <string name="surat_pelayanan_pemanfaatan_data">Surat Pelayanan Pemanfaatan Data</string>
-    <string name="upload_form_surat_permohonon">Upload Form Surat Permohonon</string>
-    <string name="keluar_akun">Keluar Akun</string>
-    <string name="silancar_versi_1_0_0">SiLancar • Versi 1.0.0</string>
-    <string name="tentang_silancar">Tentang SiLancar</string>
-    <string name="pusat_bantuan">Pusat Bantuan</string>
+    <string name="edit_profil">Edit Profil</string>
     <string name="keamanan_akun">Keamanan Akun</string>
     <string name="notifikasi">Notifikasi</string>
-    <string name="edit_profil">Edit Profil</string>
-    <string name="bantuan_whatsapp">Halo Admin SiLancar, saya butuh bantuan terkait pengajuan saya.</string>
+    <string name="language">Language</string>
+    <string name="tentang_silancar">Tentang SiLancar</string>
+    <string name="pusat_bantuan">Pusat Bantuan</string>
     <string name="hubungi_kami">Hubungi Kami</string>
-    <string name="upload_ktp_ibu">Upload KTP Ibu</string>
-    <string name="upload_ktp_ayah">Upload KTP Ayah</string>
-    <string name="upload_surat_keterangan_lahir">Upload Surat Keterangan Lahir</string>
-    <string name="upload_dokumen_yang_diperlukan_dengan_jelas_dan_dapat_terbaca">Upload dokumen yang diperlukan dengan jelas dan dapat terbaca.</string>
-    <string name="lengkapi_data_kelahiran_dan_dokumen_persyaratan_untuk_mengajukan_akta_kelahiran">Lengkapi data kelahiran dan dokumen persyaratan untuk mengajukan Akta Kelahiran.</string>
-    <string name="kartu_identitas_anak">Kartu Identitas Anak</string>
-    <string name="saya_menyatakan_bahwa_data_dan_dokumen_yang_saya_berikan_adalah_benar_dan_dapat_dipertanggungjawabkan">Saya menyatakan bahwa data dan dokumen yang saya berikan adalah benar dan dapat dipertanggungjawabkan.</string>
-    <string name="nama_lengkap_ibu">Nama Lengkap Ibu</string>
-    <string name="waktu_kelahiran">Waktu Kelahiran</string>
-    <string name="tanggal_lahir">Tanggal Lahir</string>
-    <string name="tempat_kelahiran">Tempat Kelahiran</string>
-    <string name="jenis_kelamin">Jenis Kelamin</string>
-    <string name="nama_lengkap_anak">Nama Lengkap Anak</string>
-    <string name="nik_ibu">NIK Ibu</string>
-    <string name="nama_lengkap_ayah">Nama Lengkap Ayah</string>
-    <string name="nik_ayah">NIK Ayah</string>
-    <string name="data_ayah">Data Ayah</string>
-    <string name="panjang_bayi_saat_lahir_cm">Panjang Bayi Saat Lahir (cm)</string>
-    <string name="berat_bayi_saat_lahir_gram">Berat Bayi Saat Lahir (gram)</string>
-    <string name="anak_ke">Anak Ke-</string>
-    <string name="data_anak">Data Anak</string>
-    <string name="lengkapi_data_anak_dan_dokumen_persyaratan_untuk_mengajukan_kia">Lengkapi data anak dan dokumen persyaratan untuk mengajukan KIA.</string>
-    <string name="nik_anak">NIK Anak</string>
-    <string name="tempat_lahir">Tempat Lahir</string>
-    <string name="data_orang_tua_wali">Data Orang Tua / Wali</string>
-    <string name="pastikan_dokumen_yang_diunggah_dapat_dibaca_dengan_jelas">Pastikan dokumen yang diunggah dapat dibaca dengan jelas.</string>
-    <string name="upload_akta_kelahiran">Upload Akta Kelahiran</string>
-    <string name="desa_kelurahan">Desa / Kelurahan</string>
-    <string name="kecamatan">Kecamatan</string>
-    <string name="alamat_lengkap_tujuan">Alamat Lengkap Tujuan</string>
-    <string name="alamat_asal">Alamat Asal</string>
-    <string name="alamat_tujuan">Alamat Tujuan</string>
-    <string name="upload_dokumen_sesuai_dengan_jenis_pengajuan_yang_dipilih">Upload dokumen sesuai dengan jenis pengajuan yang dipilih.</string>
-    <string name="upload_kartu_keluarga">Upload Kartu Keluarga</string>
-    <string name="upload_ktp_pemohon">Upload KTP Pemohon</string>
-    <string name="data_instansi">Data Instansi</string>
-    <string name="nama_instansi">Nama Instansi</string>
-    <string name="jenis_instansi">Jenis Instansi</string>
-    <string name="alamat_instansi">Alamat Instansi</string>
-    <string name="upload_dokumen_legalitas_instansi">Upload Dokumen Legalitas Instansi</string>
-    <string name="upload_ktp_penanggung_jawab">Upload KTP Penanggung Jawab</string>
-    <string name="upload_surat_tugas">Upload Surat Tugas</string>
-    <string name="upload_surat_permohonan_instansi">Upload Surat Permohonan Instansi</string>
-    <string name="keterangan">Keterangan</string>
-    <string name="data_yang_dibutuhkan">Data yang Dibutuhkan</string>
-    <string name="tujuan_pemanfaatan_data">Tujuan Pemanfaatan Data</string>
-    <string name="detail_permohonan">Detail Permohonan</string>
-    <string name="nomor_telepon_instansi">Nomor Telepon Instansi</string>
-    <string name="email_instansi">Email Instansi</string>
-    <string name="penanggung_jawab">Penanggung Jawab</string>
-    <string name="nama_penanggung_jawab">Nama Penanggung Jawab</string>
-    <string name="jabatan">Jabatan</string>
-    <string name="nik_penanggung_jawab">NIK Penanggung Jawab</string>
-    <string name="nomor_hp_penanggung_jawab">Nomor HP Penanggung Jawab</string>
-    <string name="upload_dokumen_persyaratan_dengan_jelas_dan_dapat_terbaca">Upload dokumen persyaratan dengan jelas dan dapat terbaca.</string>
-    <string name="laki">Laki</string>
-    <string name="perempuan">Perempuan</string>
-    <string name="wajib_sesuai_ketentuan_layanan">Wajib sesuai ketentuan layanan</string>
-    <string name="upload_pas_foto_anak">Upload Pas Foto Anak</string>
+    <string name="keluar_akun">Keluar Akun</string>
+
+    <string name="bantuan_whatsapp">Halo Admin SiLancar, saya butuh bantuan terkait pengajuan saya.</string>
+
+
+    <!-- ==================== PENDAFTARAN ==================== -->
+
+    <string name="pendaftaran_">PENDAFTARAN</string>
+    <string name="pendaftaran">Pendaftaran</string>
+    <string name="lengkapi">Silakan lengkapi data berikut dengan benar.</string>
+
+    <string name="data_pemohon">Data Pemohon</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="nik">NIK</string>
+    <string name="nomor_kk">Nomor KK</string>
+    <string name="nomor_hp">Nomor HP</string>
+    <string name="alamat">Alamat</string>
+
+    <string name="kirim_pengajuan">Kirim Pengajuan</string>
+    <string name="pengajuan_berhasil">Pengajuan Anda telah berhasil dikirim!</string>
+    <string name="harap_isi_data">Harap isi semua data dengan benar.</string>
+
+
+    <!-- ==================== MENU LAYANAN ==================== -->
+
     <string name="pendaftaran_kartu_keluarga">Pendaftaran Kartu Keluarga</string>
     <string name="pendaftaran_kartu_tanda_penduduk">Pendaftaran Kartu Tanda Penduduk</string>
     <string name="pendaftaran_akta_kelahiran">Pendaftaran Akta Kelahiran</string>
@@ -278,5 +102,200 @@
     <string name="pendaftaran_kartu_identitas_anak">Pendaftaran Kartu Identitas Anak</string>
     <string name="pendaftaran_pemanfaatan_data">Pendaftaran Pemanfaatan Data</string>
     <string name="pendaftaran_perpindahan_datang_provinsi_dan_kabupaten">Pendaftaran Perpindahan Datang Provinsi dan Kabupaten</string>
+
+
+    <!-- ==================== KARTU KELUARGA ==================== -->
+
+    <string name="kartu_keluarga">Kartu Keluarga</string>
+    <string name="nomor_kk_lama">Nomor KK Lama</string>
+
+    <string name="upload_kk">Upload KK</string>
+    <string name="upload_kk_lama">Upload KK Lama</string>
+
+
+    <!-- ==================== KARTU TANDA PENDUDUK ==================== -->
+
+    <string name="kartu_tanda_penduduk">Kartu Tanda Penduduk</string>
+
+    <string name="upload_ktp">Upload KTP</string>
+    <string name="upload_ktp_pemohon">Upload KTP Pemohon</string>
+
+
+    <!-- ==================== AKTA KELAHIRAN ==================== -->
+
+    <string name="akta_kelahiran">Akta Kelahiran</string>
+
+    <string name="data_anak">Data Anak</string>
+    <string name="nama_lengkap_anak">Nama Lengkap Anak</string>
+    <string name="nik_anak">NIK Anak</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="laki">Laki</string>
+    <string name="perempuan">Perempuan</string>
+
+    <string name="tempat_kelahiran">Tempat Kelahiran</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <string name="waktu_kelahiran">Waktu Kelahiran</string>
+
+    <string name="berat_bayi_saat_lahir_gram">Berat Bayi Saat Lahir (gram)</string>
+    <string name="panjang_bayi_saat_lahir_cm">Panjang Bayi Saat Lahir (cm)</string>
+    <string name="anak_ke">Anak Ke-</string>
+
+    <string name="data_ayah">Data Ayah</string>
+    <string name="nama_lengkap_ayah">Nama Lengkap Ayah</string>
+    <string name="nik_ayah">NIK Ayah</string>
+
+    <string name="nama_lengkap_ibu">Nama Lengkap Ibu</string>
+    <string name="nik_ibu">NIK Ibu</string>
+
+    <string name="upload_ktp_ayah">Upload KTP Ayah</string>
+    <string name="upload_ktp_ibu">Upload KTP Ibu</string>
+    <string name="upload_surat_keterangan_lahir">Upload Surat Keterangan Lahir</string>
+
+    <string name="lengkapi_data_kelahiran_dan_dokumen_persyaratan_untuk_mengajukan_akta_kelahiran">Lengkapi data kelahiran dan dokumen persyaratan untuk mengajukan Akta Kelahiran.</string>
+
+
+    <!-- ==================== KARTU IDENTITAS ANAK ==================== -->
+
+    <string name="kartu_identitas_anak">Kartu Identitas Anak</string>
+
+    <string name="data_orang_tua_wali">Data Orang Tua / Wali</string>
+
+    <string name="upload_akta_kelahiran">Upload Akta Kelahiran</string>
+    <string name="upload_pas_foto_anak">Upload Pas Foto Anak</string>
+
+    <string name="lengkapi_data_anak_dan_dokumen_persyaratan_untuk_mengajukan_kia">Lengkapi data anak dan dokumen persyaratan untuk mengajukan KIA.</string>
+
+
+    <!-- ==================== AKTA KEMATIAN ==================== -->
+
+    <string name="akta_kematian">Akta Kematian</string>
+
+    <string name="nik_alm">NIK Almarhum</string>
+    <string name="nomor_kk_alm">No KK Almarhum</string>
+    <string name="nomor_aktalahir_alm">No Akta Lahir Almarhum</string>
+    <string name="nama_alm">Nama Almarhum</string>
+
+    <string name="nik_saksi">NIK Saksi</string>
+    <string name="nama_saksi">Nama Saksi</string>
+    <string name="nomor_hp_saksi">No Hp Saksi</string>
+    <string name="alamat_saksi">Alamat Saksi</string>
+
+    <string name="upload_ktp_alm">Upload KTP Almarhum</string>
+    <string name="upload_kk_almarhum">Upload KK Almarhum</string>
+    <string name="upload_aktakelahiran_alm">Upload Akta Kelahiran Almarhum</string>
+    <string name="upload_ktp_saksi">Upload KTP Saksi</string>
+
+
+    <!-- ==================== DATA SUAMI & ISTRI ==================== -->
+
+    <string name="nik_suami">NIK Suami</string>
+    <string name="nomor_kk_suami">No KK Suami</string>
+    <string name="nomor_ktp_suami">No KTP Suami</string>
+
+    <string name="nik_istri">NIK Istri</string>
+    <string name="nomor_kk_istri">No KK Istri</string>
+    <string name="nomor_ktp_istri">No KTP Istri</string>
+
+    <string name="upload_ktp_suami">Upload KTP Suami</string>
+    <string name="upload_ktp_istri">Upload KTP Istri</string>
+    <string name="upload_kk_suami">Upload KK Suami</string>
+    <string name="upload_kk_istri">Upload KK Istri</string>
+
+
+    <!-- ==================== SURAT PINDAH ==================== -->
+
+    <string name="surat_pindah_datang_provinsi_dan_kabupaten">Surat Pindah / Datang Provinsi dan Kabupaten</string>
+
+    <string name="alamat_asal">Alamat Asal</string>
+    <string name="alamat_tujuan">Alamat Tujuan</string>
+    <string name="alamat_lengkap_tujuan">Alamat Lengkap Tujuan</string>
+    <string name="desa_kelurahan">Desa / Kelurahan</string>
+    <string name="kecamatan">Kecamatan</string>
+
+    <string name="upload_form_surat_pindah">Upload Form Surat Pindah</string>
+
+
+    <!-- ==================== PEMANFAATAN DATA ==================== -->
+
+    <string name="surat_pelayanan_pemanfaatan_data">Surat Pelayanan Pemanfaatan Data</string>
+
+    <string name="data_instansi">Data Instansi</string>
+    <string name="nama_instansi">Nama Instansi</string>
+    <string name="jenis_instansi">Jenis Instansi</string>
+    <string name="alamat_instansi">Alamat Instansi</string>
+    <string name="nomor_telepon_instansi">Nomor Telepon Instansi</string>
+    <string name="email_instansi">Email Instansi</string>
+
+    <string name="penanggung_jawab">Penanggung Jawab</string>
+    <string name="nama_penanggung_jawab">Nama Penanggung Jawab</string>
+    <string name="jabatan">Jabatan</string>
+    <string name="nik_penanggung_jawab">NIK Penanggung Jawab</string>
+    <string name="nomor_hp_penanggung_jawab">Nomor HP Penanggung Jawab</string>
+
+    <string name="data_yang_dibutuhkan">Data yang Dibutuhkan</string>
+    <string name="tujuan_pemanfaatan_data">Tujuan Pemanfaatan Data</string>
+    <string name="detail_permohonan">Detail Permohonan</string>
+    <string name="keterangan">Keterangan</string>
+
+    <string name="upload_dokumen_legalitas_instansi">Upload Dokumen Legalitas Instansi</string>
+    <string name="upload_ktp_penanggung_jawab">Upload KTP Penanggung Jawab</string>
+    <string name="upload_surat_tugas">Upload Surat Tugas</string>
+    <string name="upload_surat_permohonan_instansi">Upload Surat Permohonan Instansi</string>
+    <string name="upload_form_surat_permohonon">Upload Form Surat Permohonon</string>
+
+
+    <!-- ==================== DOKUMEN ==================== -->
+
+    <string name="dokumen_persyaratan">Dokumen Persyaratan</string>
+    <string name="upload_dokumen_pendukung">Upload Dokumen Pendukung</string>
+
+    <string name="upload_kartu_keluarga">Upload Kartu Keluarga</string>
+
+    <string name="upload_dokumen_yang_diperlukan_dengan_jelas_dan_dapat_terbaca">Upload dokumen yang diperlukan dengan jelas dan dapat terbaca.</string>
+    <string name="upload_dokumen_sesuai_dengan_jenis_pengajuan_yang_dipilih">Upload dokumen sesuai dengan jenis pengajuan yang dipilih.</string>
+    <string name="upload_dokumen_persyaratan_dengan_jelas_dan_dapat_terbaca">Upload dokumen persyaratan dengan jelas dan dapat terbaca.</string>
+
+    <string name="belum_ada_file">Belum ada file</string>
+    <string name="harap_lampirkan_dokumen">Harap lampirkan semua dokumen persyaratan.</string>
+
+
+    <!-- ==================== VALIDATION / ERROR ==================== -->
+
+    <string name="err_empty_name">Nama tidak boleh kosong</string>
+    <string name="err_empty_no_kk">Nomor KK tidak boleh kosong</string>
+    <string name="err_empty_alamat">Alamat tidak boleh kosong</string>
+    <string name="err_empty_desa">Desa/Kelurahan tidak boleh kosong</string>
+    <string name="err_empty_kecamatan">Kecamatan tidak boleh kosong</string>
+    <string name="err_empty_tempat_lahir">Tempat lahir tidak boleh kosong</string>
+    <string name="err_empty_tanggal_lahir">Tanggal lahir tidak boleh kosong</string>
+    <string name="err_empty_anak_ke">Anak ke tidak boleh kosong</string>
+    <string name="err_empty_berat_bayi">Berat bayi tidak boleh kosong</string>
+    <string name="err_empty_panjang_bayi">Panjang bayi tidak boleh kosong</string>
+    <string name="err_empty_waktu_lahir">Waktu lahir tidak boleh kosong</string>
+
+    <string name="err_empty_nama_instansi">Nama instansi wajib diisi</string>
+    <string name="err_empty_email_instansi">Email instansi wajib diisi</string>
+    <string name="err_empty_jenis_instansi">Jenis instansi wajib diisi</string>
+    <string name="err_empty_alamat_instansi">Alamat instansi wajib diisi</string>
+    <string name="err_empty_nama_penanggung_jawab">Nama penanggung jawab wajib diisi</string>
+    <string name="err_empty_jabatan_penanggung_jawab">Jabatan penanggung jawab wajib diisi</string>
+    <string name="err_empty_tujuan_pemanfaatan">Tujuan pemanfaatan data wajib diisi</string>
+    <string name="err_empty_data_dibutuhkan">Data yang dibutuhkan wajib diisi</string>
+    <string name="err_empty_keterangan">Keterangan wajib diisi</string>
+
+    <string name="err_invalid_no_hp">Nomor HP harus 10-13 digit angka</string>
+    <string name="err_invalid_nik">NIK harus 16 digit angka</string>
+    <string name="err_empty_persetujuan">Anda harus menyetujui pernyataan terlebih dahulu</string>
+
+    <!-- ==================== PERSETUJUAN ==================== -->
+
+    <string name="saya_menyatakan_bahwa_data_dan_dokumen_yang_saya_berikan_adalah_benar_dan_dapat_dipertanggungjawabkan">Saya menyatakan bahwa data dan dokumen yang saya berikan adalah benar dan dapat dipertanggungjawabkan.</string>
+
+    <string name="wajib_sesuai_ketentuan_layanan">Wajib sesuai ketentuan layanan</string>
+
+
+    <!-- ==================== PLACEHOLDER ==================== -->
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -9,5 +9,7 @@ data class User(
     val email: String,
     val nama: String,
     val password: String,
+    val nik: String? = null,
+    val phone: String? = null,
     val tanggal: Long = System.currentTimeMillis()
 )

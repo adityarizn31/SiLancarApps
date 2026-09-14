@@ -13,9 +13,11 @@ import com.example.silancarapps.data.local.dao.*
         PengajuanKIA::class,
         PengajuanKK::class,
         PengajuanKTP::class,
+        PengajuanPelayananPemanfaatanData::class,
+        PengajuanSuratPindah::class,
         User::class
     ],
-    version = 11,
+    version = 15,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -26,6 +28,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun pengajuanKKDao(): PengajuanKKDao
     abstract fun pengajuanKTPDao(): PengajuanKTPDao
     abstract fun userDao(): UserDao
+    abstract fun pengajuanPelayananPemanfaatanDataDao(): PengajuanPelayananPemanfaatanDao
+    abstract fun pengajuanSuratPindahDao(): PengajuanSuratPindahDao
 
     companion object {
         @Volatile

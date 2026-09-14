@@ -58,10 +58,8 @@ class ProfileFragment : Fragment() {
                 binding.tvProfileEmail.text = user.email
                 binding.tvInfoName.text = user.nama
                 
-                // Karena di entity User belum ada NIK dan No HP, 
-                // kita biarkan dummy atau bisa dikosongkan dulu
-                binding.tvInfoNik.text = "Belum diatur"
-                binding.tvInfoPhone.text = "Belum diatur"
+                binding.tvInfoNik.text = user.nik ?: "Belum diatur"
+                binding.tvInfoPhone.text = user.phone ?: "Belum diatur"
             }
         }
     }

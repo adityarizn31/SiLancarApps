@@ -14,7 +14,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pengaturan"
+        android:text="@string/pengaturan"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/primary"
@@ -147,12 +147,31 @@
             <!-- Pusat Bantuan -->
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLanguage"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="start|center_vertical"
+                android:text="@string/language"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                app:icon="@android:drawable/ic_menu_manage"
+                app:iconTint="@color/primary" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="12dp"
+                android:background="#F1F5F9" />
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnHelp"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:gravity="start|center_vertical"
-                android:text="Pusat Bantuan"
+                android:text="@string/pusat_bantuan"
                 android:textColor="@color/text_primary"
                 android:textSize="15sp"
                 android:textAllCaps="false"
@@ -173,7 +192,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:gravity="start|center_vertical"
-                android:text="Tentang SiLancar"
+                android:text="@string/tentang_silancar"
                 android:textColor="@color/text_primary"
                 android:textSize="15sp"
                 android:textAllCaps="false"
@@ -194,7 +213,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="32dp"
-        android:text="SiLancar"
+        android:text="@string/silancar"
         android:textColor="@color/text_primary"
         android:textSize="14sp"
         android:textStyle="bold" />
@@ -204,7 +223,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="2dp"
-        android:text="Versi 1.0.0"
+        android:text="@string/versi_1_0_0"
         android:textColor="@color/text_secondary"
         android:textSize="12sp" />
 

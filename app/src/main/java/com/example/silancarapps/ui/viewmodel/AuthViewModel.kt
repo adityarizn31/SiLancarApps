@@ -35,4 +35,11 @@ class AuthViewModel(private val repository: PendaftaranRepository) : ViewModel()
             _loginUser.postValue(user)
         }
     }
+
+    fun updateUser(user: User) {
+        viewModelScope.launch {
+            repository.updateUser(user)
+            _loginUser.postValue(user)
+        }
+    }
 }

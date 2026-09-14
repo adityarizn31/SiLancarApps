@@ -42,34 +42,36 @@ class HomeFragment : Fragment() {
 
     private fun setupHeader() {
         val userName = sessionManager.getUserName()
-        binding.txtHello.text = "Halo $userName 👋"
+        binding.txtHello.text = getString(R.string.hello, userName)
     }
 
     private fun setupRecyclerView() {
         val listPendaftarans = listOf(
-            Pendaftaran("Kartu Keluarga", R.drawable.ic_kartukeluarga),
-            Pendaftaran("Kartu Tanda Penduduk", R.drawable.ic_kartutandapenduduk),
-            Pendaftaran("Akta Kelahiran", R.drawable.ic_aktakelahiran),
-            Pendaftaran("Akta Kematian", R.drawable.ic_aktakematian),
-            Pendaftaran("Kartu Identitas Anak", R.drawable.ic_kia),
-            Pendaftaran("Pendaftaran Pemanfaatan Data", R.drawable.ic_pelayanan_pemanfaatandata),
-            Pendaftaran("Surat Perpindahan/Datang Provinsi & Kabupaten", R.drawable.ic_suratpindah),
-
+            Pendaftaran(getString(R.string.pendaftaran_kartu_keluarga), R.drawable.ic_kartukeluarga),
+            Pendaftaran(getString(R.string.pendaftaran_kartu_tanda_penduduk), R.drawable.ic_kartutandapenduduk),
+            Pendaftaran(getString(R.string.pendaftaran_akta_kelahiran), R.drawable.ic_aktakelahiran),
+            Pendaftaran(getString(R.string.pendaftaran_akta_kematian), R.drawable.ic_aktakematian),
+            Pendaftaran(getString(R.string.pendaftaran_kartu_identitas_anak), R.drawable.ic_kia),
+            Pendaftaran(getString(R.string.pendaftaran_pemanfaatan_data), R.drawable.ic_pelayanan_pemanfaatandata),
+            Pendaftaran(
+                getString(R.string.pendaftaran_perpindahan_datang_provinsi_dan_kabupaten),
+                R.drawable.ic_suratpindah
+            )
         )
 
         val adapter = ListPendaftaranAdapter(listPendaftarans) { position ->
             when(position) {
                 0 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranKKFragment)
                 1 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranKTPFragment)
-                2 -> findNavController().navigate(R.id.pendaftaranAktaKelahiranFragment)
-                3 -> findNavController().navigate(R.id.pendaftaranAktaKematianFragment)
-                4 -> findNavController().navigate(R.id.pendaftaranKartuIdentitasAnakFragment)
-                5 -> findNavController().navigate(R.id.pendaftaranPelayananPemanfaatanDataFragment)
-                6 -> findNavController().navigate(R.id.pendaftaranSuratPindahFragment)
+                2 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranAktaKelahiranFragment)
+                3 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranAktaKematianFragment)
+                4 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranKartuIdentitasAnakFragment)
+                5 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranPelayananPemanfaatanDataFragment)
+                6 -> findNavController().navigate(R.id.action_homeFragment_to_pendaftaranSuratPindahFragment)
             }
         }
 
-        binding.rvMenu.apply {
+        binding.rvMenuLayanan.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
             this.adapter = adapter
             isNestedScrollingEnabled = false

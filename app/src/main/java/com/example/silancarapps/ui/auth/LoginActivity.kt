@@ -69,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
             if (user != null) {
                 if (user.password == binding.edtPassword.text.toString().trim()) {
                     // Simpan sesi login
-                    sessionManager.saveSession(user.nama, user.email)
+                    sessionManager.saveSession(user.nama, user.email, user.nik, user.phone)
 
                     Toast.makeText(this, "Login Berhasil, Halo ${user.nama}", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)

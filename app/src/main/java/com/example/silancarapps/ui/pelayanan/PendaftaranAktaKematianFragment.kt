@@ -110,7 +110,7 @@ class PendaftaranAktaKematianFragment : Fragment() {
         val noHpSaksi = binding.edtNoHpSaksi.text.toString().trim()
         val alamatSaksi = binding.edtAlamatSaksi.text.toString().trim()
 
-        // 1. Validasi Teks
+        // 1. Memvalidasi teks
         val namaAlmErr = ValidateAktaKematian.getNameAlmError(namaAlm)
         val nikAlmErr = ValidateAktaKematian.getNikAlmError(nikAlm)
         val noKKAlmErr = ValidateAktaKematian.getNoKKAlmError(noKKAlm)
@@ -119,7 +119,7 @@ class PendaftaranAktaKematianFragment : Fragment() {
         val noHpErr = ValidateAktaKematian.getNoHpSaksiError(noHpSaksi)
         val alamatErr = ValidateAktaKematian.getAlamatSaksiError(alamatSaksi)
 
-        // 2. Set Error ke UI
+        // 2. Menampilkan error di UI
         binding.edtNama.error = namaAlmErr?.let { getString(it) }
         binding.edtNikAlm.error = nikAlmErr?.let { getString(it) }
         binding.edtNoKKAlm.error = noKKAlmErr?.let { getString(it) }
@@ -128,6 +128,7 @@ class PendaftaranAktaKematianFragment : Fragment() {
         binding.edtNoHpSaksi.error = noHpErr?.let { getString(it) }
         binding.edtAlamatSaksi.error = alamatErr?.let { getString(it) }
 
+        // 3. Mengecek apakah ada error
         val hasError = listOf(namaAlmErr, nikAlmErr, noKKAlmErr, namaSaksiErr, nikSaksiErr, noHpErr, alamatErr).any { it != null }
 
         if (hasError) {
@@ -140,17 +141,18 @@ class PendaftaranAktaKematianFragment : Fragment() {
             return
         }
 
+        // 4. Mengecek persetujuan
         if (!binding.cbPersetujuan.isChecked) {
             Toast.makeText(requireContext(), getString(R.string.err_empty_persetujuan), Toast.LENGTH_SHORT).show()
             return
         }
 
-        // 3. Cek Lampiran
+        // 5. Mengecek Lampiran
         if (uriKtpAlm == null || uriKkAlm == null || uriAktaLahirAlm == null || uriKtpSaksi == null) {
             Toast.makeText(requireContext(), getString(R.string.harap_lampirkan_dokumen), Toast.LENGTH_SHORT).show()
             return
         }
-
+        // 6. Menampilkan dialog konfirmasi
         showConfirmationDialog(namaAlm, nikAlm, tglMati, namaSaksi, nikSaksi, noHpSaksi)
     }
 

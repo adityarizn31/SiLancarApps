@@ -15,6 +15,8 @@ import com.example.silancarapps.data.local.PengajuanAktaKematian
 import com.example.silancarapps.data.local.PengajuanKIA
 import com.example.silancarapps.data.local.PengajuanKK
 import com.example.silancarapps.data.local.PengajuanKTP
+import com.example.silancarapps.data.local.PengajuanPelayananPemanfaatanData
+import com.example.silancarapps.data.local.PengajuanSuratPindah
 import com.example.silancarapps.data.model.RiwayatPendaftaran
 import com.example.silancarapps.databinding.FragmentRiwayatBinding
 import com.example.silancarapps.ui.viewmodel.PendaftaranViewModel
@@ -70,10 +72,6 @@ class RiwayatFragment : Fragment() {
         }
     }
 
-//    private fun deletePengajuan(pengajuan: PengajuanKK) {
-//        viewModel.deleteKK(pengajuan)
-//        Toast.makeText(requireContext(), "Pengajuan dihapus", Toast.LENGTH_SHORT).show()
-//    }
 private fun deletePengajuan(item: RiwayatPendaftaran) {
     viewLifecycleOwner.lifecycleScope.launch {
         when (val data = item.dataAsli) {
@@ -82,6 +80,8 @@ private fun deletePengajuan(item: RiwayatPendaftaran) {
             is PengajuanAktaKelahiran -> viewModel.deleteAktaKelahiran(data)
             is PengajuanAktaKematian -> viewModel.deleteAktaKematian(data)
             is PengajuanKIA -> viewModel.deleteKIA(data)
+            is PengajuanPelayananPemanfaatanData -> viewModel.deletePelayananPemanfaatanData(data)
+            is PengajuanSuratPindah -> viewModel.deletePengajuanSuratPindah(data)
         }
         Toast.makeText(requireContext(), "Pengajuan dihapus", Toast.LENGTH_SHORT).show()
     }

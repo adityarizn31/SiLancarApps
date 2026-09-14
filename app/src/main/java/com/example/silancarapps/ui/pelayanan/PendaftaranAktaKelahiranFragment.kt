@@ -117,41 +117,56 @@ class PendaftaranAktaKelahiranFragment : Fragment() {
         val namaAyah = binding.edtNamaAyah.text.toString().trim()
         val nikIbu = binding.edtNikIbu.text.toString().trim()
         val namaIbu = binding.edtNamaIbu.text.toString().trim()
-
         val selectedGenderId = binding.rgJenisKelamin.checkedRadioButtonId
         val jenisKelamin = if (selectedGenderId == R.id.rbLaki) "Laki-laki" else "Perempuan"
 
-        val isNamaAnakValid = ValidateAktaKelahiran.isValidNameAnak(namaAnak)
-        val isTempatLahirValid = ValidateAktaKelahiran.isValidTempatLahir(tempatLahir)
-        val isTanggalLahirValid = ValidateAktaKelahiran.isValidTanggalLahir(tanggalLahir)
-        val isWaktuLahirValid = ValidateAktaKelahiran.isValidWaktuLahir(waktuLahir)
-        val isAnakKeValid = ValidateAktaKelahiran.isValidAnakKe(anakKe)
-        val isBeratBayiValid = ValidateAktaKelahiran.isValidBeratBayi(beratBayi)
-        val isPanjangBayiValid = ValidateAktaKelahiran.isValidPanjangBayi(panjangBayi)
-        val isNikAyahValid = ValidateAktaKelahiran.isValidNik(nikAyah)
-        val isNamaAyahValid = ValidateAktaKelahiran.isValidNameOrangTua(namaAyah)
-        val isNikIbuValid = ValidateAktaKelahiran.isValidNik(nikIbu)
-        val isNamaIbuValid = ValidateAktaKelahiran.isValidNameOrangTua(namaIbu)
+        // 1. Validate Text via Object
+        val namaAnakErr = ValidateAktaKelahiran.getNameAnakError(namaAnak)
+        val tempatLahirErr = ValidateAktaKelahiran.getTempatLahirError(tempatLahir)
+        val tanggalLahirErr = ValidateAktaKelahiran.getTanggalLahirError(tanggalLahir)
+        val waktuLahirErr = ValidateAktaKelahiran.getWaktuLahirError(waktuLahir)
+        val anakKeErr = ValidateAktaKelahiran.getAnakKeError(anakKe)
+        val beratBayiErr = ValidateAktaKelahiran.getBeratBayiError(beratBayi)
+        val panjangBayiErr = ValidateAktaKelahiran.getPanjangBayiError(panjangBayi)
+        val nikAyahErr = ValidateAktaKelahiran.getNikAyahError(nikAyah)
+        val namaAyahErr = ValidateAktaKelahiran.getNamaAyahError(namaAyah)
+        val nikIbuErr = ValidateAktaKelahiran.getNikIbuError(nikIbu)
+        val namaIburErr = ValidateAktaKelahiran.getNamaIbuError(namaIbu)
 
-        if (!isNamaAnakValid || !isTempatLahirValid || !isTanggalLahirValid || !isWaktuLahirValid || 
-            !isAnakKeValid || !isBeratBayiValid || !isPanjangBayiValid || 
-            !isNikAyahValid || !isNamaAyahValid || !isNikIbuValid || !isNamaIbuValid || 
-            !binding.cbPersetujuan.isChecked) {
-            
-            if (!isNamaAnakValid) binding.edtNamaAnak.error = "Nama anak harus diisi"
-            if (!isTempatLahirValid) binding.edtTempatLahir.error = "Tempat lahir harus diisi"
-            if (!isNikAyahValid) binding.edtNikAyah.error = "NIK Ayah harus 16 digit"
-            if (!isNikIbuValid) binding.edtNikIbu.error = "NIK Ibu harus 16 digit"
-            
-            Toast.makeText(requireContext(), "Lengkapi semua data dengan benar dan centang persetujuan", Toast.LENGTH_SHORT).show()
+        // 2. Tampilkan Error di UI
+        binding.edtNamaAnak.error = namaAnakErr?.let { getString(it)}
+        binding.edtTempatLahir.error = tempatLahirErr?.let { getString(it) }
+        binding.edtTanggalLahir.error = tanggalLahirErr?.let { getString(it) }
+        binding.edtWaktuLahir.error = waktuLahirErr?.let { getString(it) }
+        binding.edtAnakKe.error = anakKeErr?.let { getString(it) }
+        binding.edtBeratBayi.error = beratBayiErr?.let { getString(it) }
+        binding.edtPanjangBayi.error = panjangBayiErr?.let { getString(it) }
+        binding.edtNikAyah.error = nikAyahErr?.let { getString(it) }
+        binding.edtNamaAyah.error = namaAyahErr?.let { getString(it) }
+        binding.edtNikIbu.error = nikIbuErr?.let { getString(it) }
+        binding.edtNamaIbu.error = namaIburErr?.let { getString(it) }
+
+        // 3. Cek apakah ada error teks
+        val hasError = listOf(namaAnakErr, tempatLahirErr, tanggalLahirErr, waktuLahirErr, anakKeErr, beratBayiErr, panjangBayiErr, nikAyahErr, namaAyahErr, nikIbuErr, namaIburErr).any { it != null }
+
+        if (hasError) {
+            Toast.makeText(requireContext(), getString(R.string.harap_isi_data), Toast.LENGTH_SHORT).show()
             return
         }
 
+        // 4. Checkbox Persetujuan
+        if (!binding.cbPersetujuan.isChecked) {
+            Toast.makeText(requireContext(), getString(R.string.err_empty_persetujuan), Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // 5. Cek Lampiran
         if (uriSuratLahir == null || uriKK == null || uriKtpAyah == null || uriKtpIbu == null) {
             Toast.makeText(requireContext(), "Harap lampirkan semua dokumen persyaratan", Toast.LENGTH_SHORT).show()
             return
         }
 
+        // 6. Jika lolos semua, lanjut Konfirmasi
         showConfirmationDialog(namaAnak, jenisKelamin, tempatLahir, tanggalLahir, waktuLahir, anakKe, beratBayi, panjangBayi, nikAyah, namaAyah, nikIbu, namaIbu)
     }
 
@@ -184,7 +199,6 @@ class PendaftaranAktaKelahiranFragment : Fragment() {
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
         btnBatal.setOnClickListener { dialog.dismiss() }
-
         btnKirim.setOnClickListener {
             dialog.dismiss()
             submitData(namaAnak, jenisKelamin, tempatLahir, tanggalLahir, waktuLahir, anakKe, beratBayi, panjangBayi, nikAyah, namaAyah, nikIbu, namaIbu)
