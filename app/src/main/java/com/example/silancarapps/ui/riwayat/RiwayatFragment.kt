@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.silancarapps.R
 import com.example.silancarapps.adapter.RiwayatPendaftaranAdapter
 import com.example.silancarapps.data.local.PengajuanAktaKelahiran
 import com.example.silancarapps.data.local.PengajuanAktaKematian
@@ -48,9 +50,19 @@ class RiwayatFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = RiwayatPendaftaranAdapter(emptyList()) { item ->
-            deletePengajuan(item)
-        }
+        adapter = RiwayatPendaftaranAdapter(
+            emptyList(),
+            onItemClick = { item ->
+                val bundle = Bundle().apply {
+                    putInt(DetailRiwayatFragment.ARG_ID, item.id)
+                    putString(DetailRiwayatFragment.ARG_JENIS_LAYANAN, item.jenisLayanan)
+                }
+                findNavController().navigate(R.id.action_riwayatFragment_to_detailRiwayatFragment, bundle)
+            },
+            onDelete = { item ->
+                deletePengajuan(item)
+            }
+        )
         binding.rvRiwayat.apply {
             layoutManager = LinearLayoutManager(requireContext())
             this.adapter = this@RiwayatFragment.adapter
@@ -72,20 +84,20 @@ class RiwayatFragment : Fragment() {
         }
     }
 
-private fun deletePengajuan(item: RiwayatPendaftaran) {
-    viewLifecycleOwner.lifecycleScope.launch {
-        when (val data = item.dataAsli) {
-            is PengajuanKK -> viewModel.deleteKK(data)
-            is PengajuanKTP -> viewModel.deleteKTP(data)
-            is PengajuanAktaKelahiran -> viewModel.deleteAktaKelahiran(data)
-            is PengajuanAktaKematian -> viewModel.deleteAktaKematian(data)
-            is PengajuanKIA -> viewModel.deleteKIA(data)
-            is PengajuanPelayananPemanfaatanData -> viewModel.deletePelayananPemanfaatanData(data)
-            is PengajuanSuratPindah -> viewModel.deletePengajuanSuratPindah(data)
+    private fun deletePengajuan(item: RiwayatPendaftaran) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            when (val data = item.dataAsli) {
+                is PengajuanKK -> viewModel.deleteKK(data)
+                is PengajuanKTP -> viewModel.deleteKTP(data)
+                is PengajuanAktaKelahiran -> viewModel.deleteAktaKelahiran(data)
+                is PengajuanAktaKematian -> viewModel.deleteAktaKematian(data)
+                is PengajuanKIA -> viewModel.deleteKIA(data)
+                is PengajuanPelayananPemanfaatanData -> viewModel.deletePelayananPemanfaatanData(data)
+                is PengajuanSuratPindah -> viewModel.deletePengajuanSuratPindah(data)
+            }
+            Toast.makeText(requireContext(), "Pengajuan dihapus", Toast.LENGTH_SHORT).show()
         }
-        Toast.makeText(requireContext(), "Pengajuan dihapus", Toast.LENGTH_SHORT).show()
     }
-}
 
     override fun onDestroyView() {
         super.onDestroyView()

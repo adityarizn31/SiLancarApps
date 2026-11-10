@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- HEADER CARD -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SiLancar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvJenisLayanan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pendaftaran Layanan"
+                    android:textColor="@color/primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/tvNoRegistrasi"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNoRegistrasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#REG-000"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Tanggal: -"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvJenisLayanan" />
+
+                <TextView
+                    android:id="@+id/tvStatusBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/status_background"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="6dp"
+                    android:text="Menunggu"
+                    android:textColor="@color/primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTanggal" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- STEPPER / PROGRESS TRACKER CARD -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SiLancar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Progress Pengajuan"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Stepper circles and lines -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp">
+
+                    <!-- Connecting Line 1 to 2 -->
+                    <View
+                        android:id="@+id/lineStep1to2"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:background="#CBD5E1"
+                        app:layout_constraintBottom_toBottomOf="@id/step1Circle"
+                        app:layout_constraintEnd_toStartOf="@id/step2Circle"
+                        app:layout_constraintStart_toEndOf="@id/step1Circle"
+                        app:layout_constraintTop_toTopOf="@id/step1Circle" />
+
+                    <!-- Connecting Line 2 to 3 -->
+                    <View
+                        android:id="@+id/lineStep2to3"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:background="#CBD5E1"
+                        app:layout_constraintBottom_toBottomOf="@id/step2Circle"
+                        app:layout_constraintEnd_toStartOf="@id/step3Circle"
+                        app:layout_constraintStart_toEndOf="@id/step2Circle"
+                        app:layout_constraintTop_toTopOf="@id/step2Circle" />
+
+                    <!-- Connecting Line 3 to 4 -->
+                    <View
+                        android:id="@+id/lineStep3to4"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:background="#CBD5E1"
+                        app:layout_constraintBottom_toBottomOf="@id/step3Circle"
+                        app:layout_constraintEnd_toStartOf="@id/step4Circle"
+                        app:layout_constraintStart_toEndOf="@id/step3Circle"
+                        app:layout_constraintTop_toTopOf="@id/step3Circle" />
+
+                    <!-- Step 1 Circle -->
+                    <TextView
+                        android:id="@+id/step1Circle"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_stepper_circle_active"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Step 2 Circle -->
+                    <TextView
+                        android:id="@+id/step2Circle"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_stepper_circle_inactive"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/step3Circle"
+                        app:layout_constraintStart_toEndOf="@id/step1Circle"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Step 3 Circle -->
+                    <TextView
+                        android:id="@+id/step3Circle"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_stepper_circle_inactive"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/step4Circle"
+                        app:layout_constraintStart_toEndOf="@id/step2Circle"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Step 4 Circle -->
+                    <TextView
+                        android:id="@+id/step4Circle"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_stepper_circle_inactive"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Labels -->
+                    <TextView
+                        android:id="@+id/step1Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Diterima"
+                        android:textColor="@color/text_primary"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@id/step1Circle"
+                        app:layout_constraintStart_toStartOf="@id/step1Circle"
+                        app:layout_constraintTop_toBottomOf="@id/step1Circle" />
+
+                    <TextView
+                        android:id="@+id/step2Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Verifikasi"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        app:layout_constraintEnd_toEndOf="@id/step2Circle"
+                        app:layout_constraintStart_toStartOf="@id/step2Circle"
+                        app:layout_constraintTop_toBottomOf="@id/step2Circle" />
+
+                    <TextView
+                        android:id="@+id/step3Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Diproses"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        app:layout_constraintEnd_toEndOf="@id/step3Circle"
+                        app:layout_constraintStart_toStartOf="@id/step3Circle"
+                        app:layout_constraintTop_toBottomOf="@id/step3Circle" />
+
+                    <TextView
+                        android:id="@+id/step4Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Selesai"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        app:layout_constraintEnd_toEndOf="@id/step4Circle"
+                        app:layout_constraintStart_toStartOf="@id/step4Circle"
+                        app:layout_constraintTop_toBottomOf="@id/step4Circle" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Status Description Box -->
+                <TextView
+                    android:id="@+id/tvStatusDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="#F1F5F9"
+                    android:padding="12dp"
+                    android:text="Pengajuan Anda telah berhasil dikirim dan menunggu verifikasi oleh petugas."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- DETAIL DATA PEMOHON CARD -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SiLancar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Rincian Permohonan"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Dynamic Detail Layout -->
+                <LinearLayout
+                    android:id="@+id/containerDetailFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- DOKUMEN LAMPIRAN CARD -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.SiLancar.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Dokumen Lampiran"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Dynamic Document List Container -->
+                <LinearLayout
+                    android:id="@+id/containerDocuments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

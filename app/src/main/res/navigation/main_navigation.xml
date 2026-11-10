@@ -67,7 +67,11 @@
         android:id="@+id/riwayatFragment"
         android:name="com.example.silancarapps.ui.riwayat.RiwayatFragment"
         android:label="Riwayat Pendaftaran"
-        tools:layout="@layout/fragment_riwayat" />
+        tools:layout="@layout/fragment_riwayat" >
+        <action
+            android:id="@+id/action_riwayatFragment_to_detailRiwayatFragment"
+            app:destination="@id/detailRiwayatFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/profileFragment"
@@ -114,5 +118,11 @@
         android:name="com.example.silancarapps.ui.pelayanan.PendaftaranPelayananPemanfaatanDataFragment"
         android:label="Pendaftaran Pelayanan Pemanfaatan Data"
         tools:layout="@layout/fragment_pendaftaran_pelayanan_pemanfaatan_data" />
+
+    <fragment
+        android:id="@+id/detailRiwayatFragment"
+        android:name="com.example.silancarapps.ui.riwayat.DetailRiwayatFragment"
+        android:label="Detail Pengajuan"
+        tools:layout="@layout/fragment_detail_riwayat" />
 
 </navigation>

@@ -11,6 +11,7 @@ import java.util.Locale
 
 class RiwayatPendaftaranAdapter(
     private var list: List<RiwayatPendaftaran>,
+    private val onItemClick: (RiwayatPendaftaran) -> Unit,
     private val onDelete: (RiwayatPendaftaran) -> Unit
 ) : RecyclerView.Adapter<RiwayatPendaftaranAdapter.ViewHolder>() {
 
@@ -31,6 +32,7 @@ class RiwayatPendaftaranAdapter(
             val sdf = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault())
             tvTanggal.text = sdf.format(Date(item.tanggal))
 
+            cardView.setOnClickListener { onItemClick(item) }
             btnDelete.setOnClickListener { onDelete(item) }
         }
     }

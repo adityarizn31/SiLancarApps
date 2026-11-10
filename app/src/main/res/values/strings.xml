@@ -294,8 +294,13 @@
     <string name="wajib_sesuai_ketentuan_layanan">Wajib sesuai ketentuan layanan</string>
 
 
-    <!-- ==================== PLACEHOLDER ==================== -->
+    <!-- ==================== PLACEHOLDER & COMPATIBILITY ==================== -->
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nomor_KK_alm">No KK Almarhum</string>
+    <string name="upload_kk_alm">Upload KK Almarhum</string>
+    <string name="nomor_KK">Nomor KK</string>
+    <string name="tempat_lahir">Tempat Lahir</string>
+    <string name="pastikan_dokumen_yang_diunggah_dapat_dibaca_dengan_jelas">Pastikan dokumen yang diunggah dapat dibaca dengan jelas.</string>
 
 </resources>
